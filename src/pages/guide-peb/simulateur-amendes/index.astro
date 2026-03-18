@@ -1,0 +1,357 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CTA from '../../../components/sections/CTA.astro';
+import Card from '../../../components/ui/Card.astro';
+import Badge from '../../../components/ui/Badge.astro';
+
+const breadcrumb = [
+  { label: 'Guide PEB', href: '/guide-peb/' },
+  { label: 'Simulateur amendes', href: '/guide-peb/simulateur-amendes/' },
+];
+
+const scenarios = [
+  {
+    title: 'Studio loué sans PEB',
+    duration: '6 mois',
+    fineAdmin: 1500,
+    fineCivil: 500,
+    lostRental: 6000,
+    reputation: 'Élevé',
+    total: 8000,
+    description: 'Vous louez un studio sans PEB. Locataire découvre et signale.'
+  },
+  {
+    title: 'Appartement vendu sans PEB',
+    duration: '1 mois',
+    fineAdmin: 2000,
+    fineCivil: 2500,
+    lostRental: 15000,
+    reputation: 'Très élevé',
+    total: 19500,
+    description: 'Vente annulée après découverte absence PEB. Acheteur et notaire refusent.'
+  },
+  {
+    title: 'Maison 4 façades louée sans PEB',
+    duration: '1 an',
+    fineAdmin: 3000,
+    fineCivil: 2000,
+    lostRental: 24000,
+    reputation: 'Très élevé',
+    total: 29000,
+    description: 'Maison louée 1 an sans PEB. Locataire recours et rescision bail.'
+  },
+  {
+    title: 'Duplex vendu aux enchères, PEB manquant',
+    duration: 'Immédiat',
+    fineAdmin: 2500,
+    fineCivil: 5000,
+    lostRental: 25000,
+    reputation: 'Catastrophique',
+    total: 32500,
+    description: 'PEB nécessaire pour vente. Absence = transaction invalide et responsabilité majorée.'
+  },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Simulateur amendes PEB : coûts d\'absence certificat à Bruxelles',
+  description: 'Simulateur amendes PEB : calculez les risques financiers d\'absence certificat. Amendes, perte de revenus, dommages. Scénarios réalistes.',
+  author: {
+    '@type': 'Organization',
+    name: 'PEBify',
+  },
+};
+---
+
+<PageLayout
+  title="Simulateur amendes PEB | Coûts d'absence certificat | PEBify"
+  description="Simulateur amendes PEB à Bruxelles : calculez les risques financiers. Amende 1000€-5000€, perte revenus, dommages-intérêts."
+  canonical="https://pebify.be/guide-peb/simulateur-amendes/"
+  breadcrumb={breadcrumb}
+  heroLabel="Évaluez les risques"
+  heroTitle="Simulateur amendes PEB"
+  heroSubtitle="Calculez le coût réel d'une absence de certificat PEB. Amendes, perte de revenus, dommages-intérêts."
+  schemaJson={schemaJson}
+>
+  <!-- Introduction -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6 reveal">
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Nombreux propriétaires underestiment le coût réel d'une absence de certificat PEB. Ce simulateur vous montre exactement combien vous coûte cette omission : amendes administratives, perte de revenus locatifs, dommages-intérêts civils.
+        </p>
+
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Comparé au coût d'un PEB (189€-249€), les amendes et pertes sont dramatiquement supérieures. Un PEB coûte peu mais évite gros problèmes.
+        </p>
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6">
+          <p class="font-semibold text-red-600 mb-3">⚠️ Avertissement:</p>
+          <p class="text-peb-text2">
+            Ces chiffres sont des estimations basées sur cas réels et jurisprudence bruxelloise. Les montants réels peuvent varier selon circonstances précises.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scenarios -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Scénarios <span class="gradient-text-cyan">réalistes</span> & leurs coûts
+        </h2>
+      </div>
+
+      <div class="space-y-8 reveal-stagger">
+        {scenarios.map((scenario, index) => (
+          <div key={index} class="bg-peb-card border border-peb-border rounded-2xl overflow-hidden">
+            <div class="bg-gradient-to-r from-red-500/10 to-transparent p-6 border-b border-peb-border">
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <h3 class="text-2xl font-display font-bold text-peb-text">{scenario.title}</h3>
+                </div>
+                <Badge variant="cyan" text={`COÛT TOTAL: ${scenario.total.toLocaleString('fr-FR')}€`} />
+              </div>
+              <p class="text-peb-text2">{scenario.description}</p>
+            </div>
+
+            <div class="p-6 space-y-6">
+              {/* Cost Breakdown */}
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-peb-bg rounded-lg p-4 border-l-4 border-red-500">
+                  <p class="text-sm text-peb-text2 mb-1">Amende administrative</p>
+                  <p class="text-3xl font-display font-bold text-red-500">{scenario.fineAdmin.toLocaleString('fr-FR')}€</p>
+                  <p class="text-xs text-peb-text2 mt-2">Région bruxelloise</p>
+                </div>
+
+                <div class="bg-peb-bg rounded-lg p-4 border-l-4 border-orange-500">
+                  <p class="text-sm text-peb-text2 mb-1">Dommages-intérêts civils</p>
+                  <p class="text-3xl font-display font-bold text-orange-500">{scenario.fineCivil.toLocaleString('fr-FR')}€</p>
+                  <p class="text-xs text-peb-text2 mt-2">Poursuites acheteur/locataire</p>
+                </div>
+
+                <div class="bg-peb-bg rounded-lg p-4 border-l-4 border-yellow-500">
+                  <p class="text-sm text-peb-text2 mb-1">Perte de revenus</p>
+                  <p class="text-3xl font-display font-bold text-yellow-500">{scenario.lostRental.toLocaleString('fr-FR')}€</p>
+                  <p class="text-xs text-peb-text2 mt-2">Transaction annulée/rescision</p>
+                </div>
+
+                <div class="bg-peb-bg rounded-lg p-4 border-l-4 border-purple-500">
+                  <p class="text-sm text-peb-text2 mb-1">Impact réputation</p>
+                  <p class="text-xl font-display font-bold text-purple-500">{scenario.reputation}</p>
+                  <p class="text-xs text-peb-text2 mt-2">Futur difficile</p>
+                </div>
+              </div>
+
+              {/* Timeline */}
+              <div class="bg-peb-bg rounded-lg p-4">
+                <p class="font-semibold text-peb-text mb-2 text-sm">Durée avant découverte</p>
+                <p class="text-peb-text2 text-sm">{scenario.duration}</p>
+              </div>
+
+              {/* Cost Comparison */}
+              <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-4">
+                <p class="font-semibold text-emerald-600 mb-2 text-sm">Comparé à un PEB:</p>
+                <p class="text-sm text-peb-text2">
+                  Coût PEB : <span class="font-bold">189€-249€</span> | Coût sans PEB : <span class="font-bold text-red-600">{scenario.total.toLocaleString('fr-FR')}€</span> | Perte : <span class="font-bold text-red-600">{(scenario.total - 240).toLocaleString('fr-FR')}€</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost Breakdown Details -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Types de <span class="gradient-text-cyan">coûts expliqués</span>
+        </h2>
+      </div>
+
+      <div class="space-y-8 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">1. Amende administrative (1000€-5000€)</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Prononcée par la Région bruxelloise après inspection ou dénonciation. Montant dépend récidive et gravité.
+          </p>
+          <div class="bg-peb-bg rounded-lg p-4 space-y-2 text-sm text-peb-text2">
+            <p>• Première infraction : 1000€ - 2500€</p>
+            <p>• Infraction répétée : 2500€ - 5000€</p>
+            <p>• Pénalités supplémentaires si plusieurs biens</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">2. Dommages-intérêts civils (500€-10000€+)</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Acheteur ou locataire peut vous poursuivre civilement pour préjudice. Montants variables selon cas.
+          </p>
+          <div class="bg-peb-bg rounded-lg p-4 space-y-2 text-sm text-peb-text2">
+            <p>• Frais PEB remboursables : 200€-500€</p>
+            <p>• Frais légaux & notaires : 1000€-3000€</p>
+            <p>• Préjudice moral : 1000€-5000€ selon cas</p>
+            <p>• Perte valeur bien : jusqu\'à 50000€</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">3. Perte de revenus locatifs</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Si location annulée ou bien ne peut être loué légalement, perte de revenus s'accumule rapidement.
+          </p>
+          <div class="bg-peb-bg rounded-lg p-4 space-y-2 text-sm text-peb-text2">
+            <p>• Studio : 600€/mois non loué = 7200€/an</p>
+            <p>• Duplex : 1000€/mois non loué = 12000€/an</p>
+            <p>• Maison : 1500€/mois non loué = 18000€/an</p>
+            <p>• Durée : entre 2-12 mois selon solution</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">4. Impact réputation & futur</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Non quantifiable en €, mais très réel. Antécédent d'amende PEB rend futur immobilier difficile. Assurances refusent, notaires vigilants, acheteurs méfiants.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Risk Factors -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Facteurs <span class="gradient-text-cyan">augmentant les risques</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">🚨</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Location longue durée</h3>
+            <p class="text-peb-text2">
+              Locataire peut découvrir absence après mois d'occupation. Cumul perte loyers + dommages-intérêts = très coûteux.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">🚨</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Inspection région</h3>
+            <p class="text-peb-text2">
+              Région bruxelloise fait inspections aléatoires. Si découvert lors inspection : amende direct + dossier signalé.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">🚨</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Dénonciation</h3>
+            <p class="text-peb-text2">
+              Agent immobilier, voisin, ou concurrent peuvent dénoncer absence PEB. 10% des amendes viennent de dénonciations.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">🚨</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Récidive</h3>
+            <p class="text-peb-text2">
+              Deuxième infraction = amende doublée. Antécédent PEB = surveillance accrue pour futurs dossiers.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">🚨</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Bien de valeur</h3>
+            <p class="text-peb-text2">
+              Maison 400 000€ sans PEB : dommages-intérêts plus importants. Risque proportionnel à valeur du bien.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solution -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          La <span class="gradient-text-cyan">solution simple</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal">
+        <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-8 space-y-6">
+          <h3 class="text-2xl font-display font-bold text-emerald-600">Établissez votre PEB maintenant</h3>
+
+          <div class="space-y-4">
+            <div class="flex gap-4">
+              <span class="text-3xl flex-shrink-0">✓</span>
+              <div>
+                <p class="font-semibold text-emerald-600 mb-1">Coût : 189€-249€</p>
+                <p class="text-sm text-peb-text2">Selon type bien. TVA incluse. Pas de frais caché.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="text-3xl flex-shrink-0">✓</span>
+              <div>
+                <p class="font-semibold text-emerald-600 mb-1">Délai : 3-5 jours</p>
+                <p class="text-sm text-peb-text2">Visite + rapport + certificat officiel.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="text-3xl flex-shrink-0">✓</span>
+              <div>
+                <p class="font-semibold text-emerald-600 mb-1">Protection complète</p>
+                <p class="text-sm text-peb-text2">Légal, reconnu, valide 10 ans. Zéro risque.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <span class="text-3xl flex-shrink-0">✓</span>
+              <div>
+                <p class="font-semibold text-emerald-600 mb-1">Économie nette</p>
+                <p class="text-sm text-peb-text2">Évite 5000€-30000€ de risques en dépensant 240€.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center mt-8">
+            <p class="text-xl font-display font-bold text-peb-text mb-4">
+              ROI : <span class="text-emerald-600">100x</span> votre investissement
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="N'attendez pas de problèmes!"
+    title="Faites établir votre PEB aujourd'hui"
+    subtitle="189€-249€. Pas cher. Légal. Obligatoire. Évite amendes et complications. Contactez-moi maintenant."
+    primaryHref="/contact/"
+    primaryText="Demander audit PEB"
+    secondaryHref="/tarifs-peb-bruxelles/"
+    secondaryText="Voir les tarifs"
+  />
+</PageLayout>

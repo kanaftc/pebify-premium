@@ -1,0 +1,198 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+
+const faqItems = [
+  {
+    question: 'Comment certifier un hôtel particulier Art nouveau à Ixelles?',
+    answer: 'Les hôtels particuliers Art nouveau d\'Ixelles représentent un véritable défi mais je les maîtrise parfaitement. Mon expertise permet une certification complète respectant les spécificités architecturales de ces immeubles prestigieux.'
+  },
+  {
+    question: 'Quel est le profil énergétique typique des propriétés ixelloises?',
+    answer: 'Ixelles présente une grande diversité. Les hôtels particuliers anciens obtiennent généralement D à F, tandis que les immeubles modernes peuvent atteindre A ou B. L\'amélioration des vitrages est souvent prioritaire.'
+  },
+  {
+    question: 'Quel tarif pour un immeuble prestigieux à Ixelles?',
+    answer: 'Pour les propriétés de prestige à Ixelles, je propose des forfaits adaptés selon la complexité. Contactez-moi pour un devis personnalisé reflétant votre bien particulier.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Ixelles",
+  "description": "Expert en certification PEB agréé à Ixelles (1050)",
+  "url": "https://pebify.be/certificat-peb-ixelles/",
+  "areaServed": { "@type": "City", "name": "Ixelles", "postalCode": "1050" },
+  "priceRange": "€€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Ixelles (1050) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Ixelles (1050). Spécialiste des hôtels particuliers, immeubles Art nouveau et villas de prestige. Certification agréée complète."
+  breadcrumb={[{ label: 'Certificat PEB Ixelles', href: '/certificat-peb-ixelles/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Ixelles"
+  heroSubtitle="Spécialiste de la certification énergétique des propriétés ixelloises. Expert en hôtels particuliers et immeubles de prestige."
+  canonical="https://pebify.be/certificat-peb-ixelles/"
+  schemaJson={jsonLd}
+>
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certificat PEB à <span class="gradient-text-cyan">Ixelles</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Ixelles, commune du centre-sud bruxellois, rayonne comme l'un des quartiers les plus prestigieux et dynamiques de la capitale. Avec plus de 87 000 habitants, elle concentre une remarquable diversité immobilière : somptueux hôtels particuliers Art nouveau, élégants immeubles d'appartements, demeures bourgeoises de prestige et logements modernes.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Je suis spécialisé dans la certification énergétique des propriétés ixelloises prestigieuses. Mon expertise approfondie me permet d'évaluer précisément la performance énergétique de ces biens remarquables, du Parlement bruxellois aux rues commerçantes dynamiques d'Ixelles.
+        </p>
+      </div>
+
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Propriétés à Ixelles
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Hôtels particuliers Art nouveau</p>
+              <p class="text-peb-text2 text-sm">Certification spécialisée de bâtiments patrimoniaux remarquables.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Immeubles résidentiels prestigieux</p>
+              <p class="text-peb-text2 text-sm">Certification complète d'immeubles d'habitation de haut standing.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Villas de prestige</p>
+              <p class="text-peb-text2 text-sm">Certification de propriétés exceptionnelles d'Ixelles.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Collectifs modernes</p>
+              <p class="text-peb-text2 text-sm">Certification de constructions contemporaines ixelloises.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Profil énergétique à Ixelles
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Ixelles présente un portefeuille énergétique diversifié. Les hôtels particuliers anciens obtiennent généralement D à F, tandis que les immeubles modernes et rénovés peuvent atteindre A, B ou C. L'amélioration des vitrages et de l'isolation est souvent prioritaire pour les bâtiments anciens.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Les propriétaires ixellois investissent volontiers dans des rénovations respectueuses du patrimoine architectural. Les améliorations énergétiques compatibles avec la préservation historique offrent d'excellents résultats.
+        </p>
+      </div>
+
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services spécialisés
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certificat PEB agréé</h4>
+            <p class="text-peb-text2 text-sm">Certification officielle pour propriétés ixelloises de prestige.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit patrimoine-énergie</h4>
+            <p class="text-peb-text2 text-sm">Analyse respectant les contraintes architecturales.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport stratégique</h4>
+            <p class="text-peb-text2 text-sm">Recommandations compatibles avec la préservation.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation d'exception</h4>
+            <p class="text-peb-text2 text-sm">Expertise pour propriétés remarquables ixelloises.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Petit bien</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Villa/Immeuble</p>
+            <p class="text-3xl font-bold text-peb-cyan">249€+</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">Devis personnalisé</a> pour propriétés complexes ou patrimoniales.
+        </p>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Ressources PEB
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre la certification.</p>
+          </a>
+          <a href="/guide-peb/ameliorer-score/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Améliorer votre score</p>
+            <p class="text-sm text-peb-text2">Recommandations d'amélioration.</p>
+          </a>
+          <a href="/guide-peb/echelle-classes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Classes énergétiques</p>
+            <p class="text-sm text-peb-text2">Échelle A++ à G.</p>
+          </a>
+          <a href="/guide-peb/primes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Aides rénovation</p>
+            <p class="text-sm text-peb-text2">Primes 2026.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <CTA
+    title="Certificat PEB à Ixelles"
+    subtitle="Spécialiste des propriétés prestigieuses ixelloises. Contactez-moi pour votre certification."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <CommuneLinks />
+</PageLayout>

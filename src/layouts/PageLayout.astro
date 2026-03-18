@@ -1,0 +1,109 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+
+interface Breadcrumb {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  breadcrumb: Breadcrumb[];
+  heroLabel?: string;
+  heroTitle: string;
+  heroSubtitle: string;
+  schemaJson?: Record<string, any>;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage,
+  breadcrumb = [],
+  heroLabel,
+  heroTitle,
+  heroSubtitle,
+  schemaJson,
+  noindex = false,
+} = Astro.props;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  canonical={canonical}
+  ogImage={ogImage}
+  schemaJson={schemaJson}
+  noindex={noindex}
+>
+  <!-- Hero Section with Breadcrumb -->
+  <section class="relative py-20 md:py-32 bg-peb-bg border-b border-peb-border">
+    <!-- Dot Pattern Background -->
+    <div class="absolute inset-0 bg-dot-pattern -z-10" />
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb Navigation -->
+      {
+        breadcrumb.length > 0 && (
+          <nav
+            class="mb-8 flex items-center space-x-2 text-sm"
+            aria-label="Breadcrumb"
+          >
+            <a
+              href="/"
+              class="text-peb-text2 hover:text-peb-cyan transition-colors"
+            >
+              Accueil
+            </a>
+            {breadcrumb.map((crumb, index) => (
+              <>
+                <span class="text-peb-text2">/</span>
+                {index === breadcrumb.length - 1 ? (
+                  <span class="text-peb-cyan font-medium">{crumb.label}</span>
+                ) : (
+                  <a
+                    href={crumb.href}
+                    class="text-peb-text2 hover:text-peb-cyan transition-colors"
+                  >
+                    {crumb.label}
+                  </a>
+                )}
+              </>
+            ))}
+          </nav>
+        )
+      }
+
+      <!-- Page Title & Subtitle -->
+      <div class="max-w-3xl">
+        {heroLabel && (
+          <div class="inline-flex items-center space-x-2 mb-6">
+            <div class="w-2 h-2 rounded-full bg-peb-cyan animate-pulse-dot" />
+            <span class="text-sm font-medium text-peb-cyan uppercase tracking-wider">
+              {heroLabel}
+            </span>
+          </div>
+        )}
+
+        <h1
+          class="text-4xl sm:text-5xl md:text-6xl font-display font-bold mb-6 leading-tight"
+        >
+          <span class="gradient-text-cyan">{heroTitle}</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-peb-text2 leading-relaxed">
+          {heroSubtitle}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Content Slot -->
+  <slot />
+</BaseLayout>

@@ -1,0 +1,175 @@
+---
+import Nav from '../components/navigation/Nav.astro';
+import Footer from '../components/navigation/Footer.astro';
+import WhatsApp from '../components/ui/WhatsApp.astro';
+import { siteConfig } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  schemaJson?: Record<string, any>;
+  noindex?: boolean;
+}
+
+const {
+  title = siteConfig.seo.defaultTitle,
+  description = siteConfig.seo.defaultDescription,
+  canonical = Astro.url.href,
+  ogImage = siteConfig.seo.ogImage,
+  schemaJson,
+  noindex = false,
+} = Astro.props;
+
+// Ensure title follows template format if custom
+const finalTitle = title.includes('|')
+  ? title
+  : title === siteConfig.seo.defaultTitle
+    ? title
+    : `${title} | ${siteConfig.siteName}`;
+---
+
+<!doctype html>
+<html lang={siteConfig.language}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>{finalTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content={siteConfig.seo.keywords.join(', ')} />
+    <meta name="author" content={siteConfig.company.owner} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    {!noindex && <meta name="robots" content="index, follow" />}
+
+    <!-- Canonical -->
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:title" content={finalTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(ogImage, Astro.url.origin).href} />
+    <meta property="og:site_name" content={siteConfig.siteName} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={Astro.url.href} />
+    <meta property="twitter:title" content={finalTitle} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(ogImage, Astro.url.origin).href} />
+    <meta property="twitter:creator" content={siteConfig.seo.twitterHandle} />
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="/styles/global.css" />
+
+    <!-- Favicon (SVG Emoji ⚡) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+
+    <!-- Schema.org JSON-LD -->
+    {
+      schemaJson ? (
+        <script type="application/ld+json" set:html={JSON.stringify(schemaJson)} />
+      ) : (
+        <script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "PEBify",
+            "url": "https://pebify.be",
+            "logo": "https://pebify.be/logo.svg",
+            "description": "Expert en certification de performance énergétique des bâtiments (PEB) agréé par la Région bruxelloise",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Rue Emile Wauters 58",
+              "addressLocality": "Bruxelles",
+              "postalCode": "1020",
+              "addressCountry": "BE"
+            },
+            "telephone": "+32 484 63 08 15",
+            "email": "info@pebify.be",
+            "sameAs": [
+              "https://facebook.com/pebify.be",
+              "https://instagram.com/pebify.be",
+              "https://linkedin.com/company/pebify"
+            ]
+          }
+        </script>
+      )
+    }
+
+    <!-- Astro injected head -->
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+
+  <body class="bg-peb-bg text-peb-text antialiased font-body">
+    <!-- Skip Link for Accessibility -->
+    <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Navigation -->
+    <Nav />
+
+    <!-- Main Content -->
+    <main id="main">
+      <slot />
+    </main>
+
+    <!-- Footer -->
+    <Footer />
+
+    <!-- WhatsApp Floating Button -->
+    <WhatsApp />
+
+    <!-- Scroll Reveal Init Script -->
+    <script>
+      // Initialize scroll reveal animations
+      const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px',
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translate(0)';
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      revealElements.forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Stagger reveal animation handler
+      const staggerContainers = document.querySelectorAll('.reveal-stagger');
+      staggerContainers.forEach((container) => {
+        const children = container.children;
+        Array.from(children).forEach((child, index) => {
+          if (child instanceof HTMLElement) {
+            child.style.opacity = '0';
+            child.style.transform = 'translateY(30px)';
+            child.style.animation = `reveal 0.6s ease-out forwards`;
+            child.style.animationDelay = `${index * 0.1}s`;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

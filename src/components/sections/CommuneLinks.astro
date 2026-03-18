@@ -1,0 +1,61 @@
+---
+import { siteConfig } from '../../data/site';
+
+interface Props {}
+
+// Generate slug from commune name
+function generateSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[àâä]/g, 'a')
+    .replace(/[èéêë]/g, 'e')
+    .replace(/[ìîï]/g, 'i')
+    .replace(/[òôö]/g, 'o')
+    .replace(/[ùûü]/g, 'u')
+    .replace(/[ç]/g, 'c');
+}
+---
+
+<section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Title -->
+    <div class="text-center mb-12 reveal">
+      <h2 class="text-4xl sm:text-5xl font-display font-bold mb-4">
+        Certificat PEB dans les <span class="gradient-text-cyan">19 communes</span>
+      </h2>
+      <p class="text-lg text-peb-text2">
+        Sélectionnez votre commune pour plus d'informations sur nos services.
+      </p>
+    </div>
+
+    <!-- Communes Grid -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 reveal-stagger">
+      {
+        siteConfig.serviceAreas.map((commune, index) => {
+          const slug = generateSlug(commune);
+          return (
+            <a
+              href={`/peb-${slug}/`}
+              class="inline-flex items-center justify-center px-4 py-3 rounded-lg bg-peb-card border border-peb-border text-peb-text2 font-medium text-sm hover:bg-peb-card-hover hover:border-peb-cyan hover:text-peb-cyan hover:glow-cyan-subtle transition-all duration-200 reveal"
+              style={`animation-delay: ${(index % 10) * 0.05}s`}
+            >
+              {commune}
+            </a>
+          );
+        })
+      }
+    </div>
+
+    <!-- Info Box -->
+    <div class="mt-12 bg-peb-surface border border-peb-border rounded-xl p-6 sm:p-8 text-center reveal">
+      <p class="text-peb-text2 mb-4">
+        Vous ne trouvez pas votre commune?
+      </p>
+      <p class="text-sm text-peb-text2">
+        PEBify intervient dans toute la Région bruxelloise. Nos experts se déplacent dans les 19 communes de
+        Bruxelles-Capitale et ses environs proches.
+      </p>
+    </div>
+  </div>
+</section>

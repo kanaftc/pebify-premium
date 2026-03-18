@@ -1,0 +1,485 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CUSTOM PROPERTIES & ROOT STYLES
+   ============================================================ */
+:root {
+  --color-bg: #06070a;
+  --color-bg2: #0b0e14;
+  --color-surface: #111620;
+  --color-card: #151c28;
+  --color-card-hover: #1a2332;
+  --color-cyan: #00d4ff;
+  --color-blue: #0066ff;
+  --color-green: #00ffb2;
+  --color-text: #e6edf3;
+  --color-text2: #8b949e;
+  --color-muted: #5a6370;
+  --color-border: rgba(255, 255, 255, 0.06);
+  --color-border2: rgba(255, 255, 255, 0.1);
+
+  --transition-fast: 150ms ease-out;
+  --transition-base: 300ms ease-out;
+  --transition-slow: 500ms ease-out;
+}
+
+* {
+  @apply transition-colors;
+  transition-duration: var(--transition-base);
+}
+
+html {
+  @apply scroll-smooth;
+}
+
+body {
+  @apply bg-peb-bg text-peb-text antialiased;
+}
+
+/* ============================================================
+   DOT PATTERN BACKGROUND
+   ============================================================ */
+.bg-dot-pattern {
+  position: relative;
+  background-image: radial-gradient(
+    circle,
+    rgba(0, 212, 255, 0.15) 1px,
+    transparent 1px
+  );
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+.bg-dot-pattern::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 0%) var(--mouse-y, 0%),
+    rgba(0, 212, 255, 0.08),
+    transparent 80%
+  );
+  pointer-events: none;
+}
+
+/* ============================================================
+   GLOW EFFECTS
+   ============================================================ */
+.glow-cyan {
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.3),
+    0 0 80px rgba(0, 212, 255, 0.15);
+}
+
+.glow-blue {
+  box-shadow: 0 0 40px rgba(0, 102, 255, 0.3),
+    0 0 80px rgba(0, 102, 255, 0.15);
+}
+
+.glow-green {
+  box-shadow: 0 0 40px rgba(0, 255, 178, 0.3),
+    0 0 80px rgba(0, 255, 178, 0.15);
+}
+
+.glow-cyan-subtle {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+}
+
+/* ============================================================
+   GLASS MORPHISM
+   ============================================================ */
+.glass {
+  @apply bg-white/5 backdrop-blur-md border border-peb-border;
+}
+
+.glass-lg {
+  @apply bg-white/5 backdrop-blur-xl border border-peb-border2;
+}
+
+.glass-hover {
+  @apply glass hover:bg-white/10 hover:border-peb-cyan/30 cursor-pointer;
+}
+
+/* ============================================================
+   GRADIENT TEXT & BACKGROUNDS
+   ============================================================ */
+.gradient-text-cyan {
+  @apply bg-gradient-to-r from-peb-cyan to-peb-blue bg-clip-text text-transparent;
+}
+
+.gradient-text-multi {
+  @apply bg-gradient-to-r from-peb-cyan via-peb-blue to-peb-green bg-clip-text text-transparent;
+}
+
+.gradient-bg-cyan {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.1) 0%,
+    rgba(0, 102, 255, 0.05) 100%
+  );
+}
+
+.gradient-bg-multi {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.08) 0%,
+    rgba(0, 102, 255, 0.05) 50%,
+    rgba(0, 255, 178, 0.05) 100%
+  );
+}
+
+/* ============================================================
+   SCROLL REVEAL ANIMATIONS
+   ============================================================ */
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal-right {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.reveal {
+  animation: reveal 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.reveal-left {
+  animation: reveal-left 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.reveal-right {
+  animation: reveal-right 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Stagger effect */
+.reveal-stagger > * {
+  animation: reveal 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.reveal-stagger > :nth-child(1) {
+  animation-delay: 0s;
+}
+.reveal-stagger > :nth-child(2) {
+  animation-delay: 0.1s;
+}
+.reveal-stagger > :nth-child(3) {
+  animation-delay: 0.2s;
+}
+.reveal-stagger > :nth-child(4) {
+  animation-delay: 0.3s;
+}
+.reveal-stagger > :nth-child(5) {
+  animation-delay: 0.4s;
+}
+.reveal-stagger > :nth-child(n + 6) {
+  animation-delay: 0.5s;
+}
+
+/* ============================================================
+   FAQ ACCORDION STYLES
+   ============================================================ */
+.faq-accordion {
+  @apply border border-peb-border rounded-xl overflow-hidden;
+}
+
+.faq-item {
+  @apply border-b border-peb-border last:border-b-0;
+}
+
+.faq-button {
+  @apply w-full px-6 py-4 flex items-center justify-between hover:bg-peb-card-hover transition-colors text-left;
+}
+
+.faq-button:focus-visible {
+  @apply outline-none ring-2 ring-peb-cyan ring-offset-2 ring-offset-peb-bg;
+}
+
+.faq-button[aria-expanded='true'] .faq-icon {
+  @apply rotate-180;
+}
+
+.faq-icon {
+  @apply flex-shrink-0 w-5 h-5 text-peb-cyan transition-transform duration-300;
+}
+
+.faq-content {
+  @apply px-6 py-4 bg-peb-bg2 text-peb-text2;
+}
+
+/* ============================================================
+   SLIDER / RANGE INPUT STYLES
+   ============================================================ */
+input[type='range'] {
+  @apply w-full h-2 rounded-lg appearance-none cursor-pointer accent-peb-cyan;
+  background: linear-gradient(
+    to right,
+    rgba(0, 212, 255, 0.5),
+    rgba(0, 102, 255, 0.5)
+  );
+}
+
+input[type='range']::-webkit-slider-thumb {
+  @apply appearance-none w-6 h-6 rounded-full cursor-pointer shadow-lg;
+  background: linear-gradient(135deg, #00d4ff, #0066ff);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+input[type='range']::-moz-range-thumb {
+  @apply w-6 h-6 rounded-full cursor-pointer border-0 shadow-lg;
+  background: linear-gradient(135deg, #00d4ff, #0066ff);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  @apply h-2 rounded-lg;
+  background: linear-gradient(
+    to right,
+    rgba(0, 212, 255, 0.3),
+    rgba(0, 102, 255, 0.3)
+  );
+}
+
+input[type='range']::-moz-range-track {
+  @apply h-2 rounded-lg bg-transparent;
+  background: linear-gradient(
+    to right,
+    rgba(0, 212, 255, 0.3),
+    rgba(0, 102, 255, 0.3)
+  );
+}
+
+/* ============================================================
+   FORM ELEMENTS
+   ============================================================ */
+input[type='text'],
+input[type='email'],
+input[type='phone'],
+input[type='number'],
+textarea,
+select {
+  @apply w-full px-4 py-3 rounded-lg bg-peb-card border border-peb-border text-peb-text placeholder-peb-text2;
+  @apply focus:outline-none focus:border-peb-cyan focus:ring-2 focus:ring-peb-cyan/30;
+  @apply transition-all duration-200;
+}
+
+textarea {
+  @apply resize-vertical;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-peb-bg;
+}
+
+.btn-primary {
+  @apply bg-peb-cyan text-peb-bg hover:shadow-lg hover:glow-cyan active:scale-95;
+  @apply focus:ring-peb-cyan;
+}
+
+.btn-secondary {
+  @apply bg-peb-blue text-white hover:shadow-lg hover:glow-blue active:scale-95;
+  @apply focus:ring-peb-blue;
+}
+
+.btn-outline {
+  @apply border-2 border-peb-cyan text-peb-cyan hover:bg-peb-cyan/10;
+  @apply focus:ring-peb-cyan;
+}
+
+.btn-ghost {
+  @apply text-peb-cyan hover:bg-peb-cyan/10;
+  @apply focus:ring-peb-cyan;
+}
+
+/* ============================================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================================ */
+@screen sm {
+  .text-display-sm {
+    @apply text-2xl;
+  }
+  .text-display-md {
+    @apply text-3xl;
+  }
+  .text-display-lg {
+    @apply text-4xl;
+  }
+  .text-display-xl {
+    @apply text-5xl;
+  }
+}
+
+@screen md {
+  .text-display-sm {
+    @apply text-3xl;
+  }
+  .text-display-md {
+    @apply text-4xl;
+  }
+  .text-display-lg {
+    @apply text-5xl;
+  }
+  .text-display-xl {
+    @apply text-6xl;
+  }
+}
+
+@screen lg {
+  .text-display-sm {
+    @apply text-4xl;
+  }
+  .text-display-md {
+    @apply text-5xl;
+  }
+  .text-display-lg {
+    @apply text-6xl;
+  }
+  .text-display-xl {
+    @apply text-7xl;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION SUPPORT
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    @apply !transition-none !animate-none;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    @apply !scroll-auto;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-stagger > * {
+    @apply !opacity-100 !transform-none;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY & UTILITIES
+   ============================================================ */
+.sr-only {
+  @apply absolute w-1 h-1 p-0 -m-1 overflow-hidden clip-rect-0 whitespace-nowrap border-0;
+}
+
+.skip-link {
+  @apply absolute top-0 left-0 px-4 py-2 -translate-y-full bg-peb-cyan text-peb-bg font-medium rounded-b-lg;
+  @apply focus:translate-y-0 transition-transform;
+}
+
+/* Smooth scroll behavior for navigation */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ============================================================
+   CARD STYLES
+   ============================================================ */
+.card {
+  @apply bg-peb-card border border-peb-border rounded-xl p-6;
+  @apply hover:bg-peb-card-hover hover:border-peb-cyan/20 transition-all duration-200;
+}
+
+.card-interactive {
+  @apply card cursor-pointer hover:shadow-lg hover:glow-cyan-subtle;
+}
+
+/* ============================================================
+   LINKS & TEXT UTILITIES
+   ============================================================ */
+a {
+  @apply text-peb-cyan hover:text-peb-green transition-colors;
+}
+
+.text-muted {
+  @apply text-peb-text2;
+}
+
+.text-subtle {
+  @apply text-peb-muted;
+}
+
+/* ============================================================
+   LAYOUT UTILITIES
+   ============================================================ */
+.container-tight {
+  @apply max-w-3xl;
+}
+
+.container-wide {
+  @apply max-w-7xl;
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(
+      rgba(0, 212, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 212, 255, 0.03) 1px,
+      transparent 1px
+    );
+  background-size: 50px 50px;
+}
+
+/* ============================================================
+   RESPONSIVE PADDING & MARGINS
+   ============================================================ */
+.px-safe {
+  @apply px-4 sm:px-6 md:px-8 lg:px-10;
+}
+
+.py-section {
+  @apply py-12 sm:py-16 md:py-20 lg:py-24;
+}
+
+/* ============================================================
+   SECTION DIVIDERS
+   ============================================================ */
+.section-divider {
+  @apply border-t border-peb-border my-12 sm:my-16 md:my-20;
+}

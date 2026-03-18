@@ -1,0 +1,329 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CTA from '../../../components/sections/CTA.astro';
+import Card from '../../../components/ui/Card.astro';
+import Badge from '../../../components/ui/Badge.astro';
+
+const breadcrumb = [
+  { label: 'Guide PEB', href: '/guide-peb/' },
+  { label: 'Certificat PEB complet', href: '/guide-peb/certificat-peb-bruxelles/' },
+];
+
+const sections = [
+  { id: 'definition', title: 'Définition & fondamentaux', href: '/guide-peb/definition/' },
+  { id: 'obligations', title: 'Obligations légales', href: '/guide-peb/obligations/' },
+  { id: 'classes', title: 'Échelle énergétique A-G', href: '/guide-peb/echelle-classes/' },
+  { id: 'prix', title: 'Prix & tarification', href: '/guide-peb/prix/' },
+  { id: 'amelioration', title: 'Améliorer votre score', href: '/guide-peb/ameliorer-score/' },
+  { id: 'primes', title: 'Primes & subventions', href: '/guide-peb/primes/' },
+  { id: 'faq', title: 'FAQ 30 questions', href: '/guide-peb/faq/' },
+  { id: 'simulateur', title: 'Simulateur amendes', href: '/guide-peb/simulateur-amendes/' },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Certificat PEB Bruxelles : guide complet et intégré',
+  description: 'Guide complet du certificat PEB à Bruxelles : définition, obligations, classes énergétiques, prix, améliorations, primes, FAQ, et simulateur.',
+  author: {
+    '@type': 'Organization',
+    name: 'PEBify',
+  },
+};
+---
+
+<PageLayout
+  title="Certificat PEB Bruxelles : Guide Complet Intégré | PEBify"
+  description="Guide complet du certificat PEB Bruxelles : définition, obligations légales, classes A++ à G, prix, amélioration énergétique, primes RENOLUTION."
+  canonical="https://pebify.be/guide-peb/certificat-peb-bruxelles/"
+  breadcrumb={breadcrumb}
+  heroLabel="Ressource complète"
+  heroTitle="Certificat PEB Bruxelles : Guide Complet"
+  heroSubtitle="Ressource intégrée couvrant tous les aspects du certificat PEB à Bruxelles. Définition, obligations, classes, amélioration, primes, et FAQ."
+  schemaJson={schemaJson}
+>
+  <!-- Introduction -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6 reveal">
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Cette page est votre ressource complète et intégrée sur le certificat PEB à Bruxelles. Vous y trouverez tout : de la définition aux obligations légales, en passant par les classes énergétiques, le prix, comment améliorer votre score, les primes disponibles, et réponses à 30 questions fréquentes.
+        </p>
+
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Que vous soyez propriétaire, bailleur, acheteur, ou simplement curieux, ce guide couvre tous les aspects du PEB bruxellois de manière claire et professionnelle.
+        </p>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <p class="font-semibold text-peb-text mb-3">📌 À retenir:</p>
+          <p class="text-peb-text2">
+            Le certificat PEB est obligatoire à Bruxelles pour vente et location. C'est un investissement de 189€-249€ qui évite amendes jusqu'à 5000€ et complications légales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Navigation -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Navigation <span class="gradient-text-cyan">rapide</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Cliquez pour accéder directement à chaque section
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 reveal-stagger">
+        {sections.map((section, index) => (
+          <a key={index} href={section.href} class="group">
+            <Card hover={true}>
+              <div class="space-y-3 text-center h-full flex flex-col justify-center">
+                <div class="text-4xl">{['📚', '⚖️', '📊', '💰', '⚡', '💚', '❓', '⚠️'][index]}</div>
+                <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan transition-colors">
+                  {section.title}
+                </h3>
+              </div>
+            </Card>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Outline -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Couverture <span class="gradient-text-cyan">complète</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">📚 PARTIE 1 : Définition & Fondamentaux</h3>
+          <ul class="space-y-2 text-peb-text2 text-sm">
+            <li>✓ Qu'est-ce que le PEB?</li>
+            <li>✓ D'où vient le PEB? (directives européennes, ordonnance bruxelloise)</li>
+            <li>✓ Ce que le PEB mesure : isolation, chauffage, ventilation, eau chaude, énergies renouvelables</li>
+            <li>✓ Qui en a besoin : vendeurs, bailleurs, constructeurs</li>
+            <li>✓ Indicateurs clés : consommation d'énergie primaire, émissions CO2</li>
+          </ul>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">⚖️ PARTIE 2 : Obligations Légales & Sanctions</h3>
+          <ul class="space-y-2 text-peb-text2 text-sm">
+            <li>✓ Qui est responsable : vendeur vs bailleur vs agent</li>
+            <li>✓ Quand c'est obligatoire : vente, location > 6 mois, visibilité annonce</li>
+            <li>✓ Amendes administratives : 1000€-5000€</li>
+            <li>✓ Annulation de transaction & responsabilité civile</li>
+            <li>✓ Comment vous protéger : anticipation et documentation</li>
+          </ul>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">📊 PARTIE 3 : Échelle Énergétique A++ à G</h3>
+          <ul class="space-y-2 text-peb-text2 text-sm">
+            <li>✓ Les 9 classes expliquées : A++, A+, A, B, C, D, E, F, G</li>
+            <li>✓ Consommation énergétique kWh/m²/an par classe</li>
+            <li>✓ Moyennes bruxelloises (classe D-E = moyenne)</li>
+            <li>✓ Impact sur valeur et factures énergétiques</li>
+            <li>✓ Types de bâtiments : ancien vs moderne</li>
+          </ul>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">💰 PARTIE 4 : Prix & Tarification 2026</h3>
+          <ul class="space-y-2 text-peb-text2 text-sm">
+            <li>✓ Facteurs influençant le prix : type bien, surface, complexité, services</li>
+            <li>✓ Comparaison marché Bruxelles : gamme budget à premium</li>
+            <li>✓ Ce qui est inclus : visite, certificat, rapport, TVA</li>
+            <li>✓ Frais cachés à éviter : déplacement, enregistrement, admin</li>
+            <li>✓ Tarifs transparents PEBify : 189€-249€</li>
+          </ul>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">⚡ PARTIE 5 : Amélioration Énergétique</h3>
+          <ul class="space-y-2 text-peb-text2 text-sm">
+            <li>✓ Top 6 actions : isolation toiture, murs, sol, fenêtres, chauffage, ventilation</li>
+            <li>✓ Impact énergétique et ROI pour chaque action</li>
+            <li>✓ Stratégies d'amélioration : quick win, optimale, complète</li>
+            <li>✓ Erreurs à éviter : ne pas faire tous travaux d'un coup</li>
+            <li>✓ Valeur de revente : +5-15% avec meilleure classe</li>
+          </ul>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">💚 PARTIE 6 : Primes & Subventions RENOLUTION</h3>
+          <ul class="space-y-2 text-peb-text2 text-sm">
+            <li>✓ Programme RENOLUTION : qui, quoi, combien</li>
+            <li>✓ Montants par action : toiture, murs, fenêtres, pompe à chaleur, VMC</li>
+            <li>✓ Comment demander : avant/pendant/après travaux</li>
+            <li>✓ Conditions d'obtention : entrepreneurs agréés, performance technique</li>
+            <li>✓ Cumulabilité : primes RENOLUTION + crédit impôt + TVA réduite</li>
+          </ul>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">❓ PARTIE 7 : FAQ - 30 Questions</h3>
+          <ul class="space-y-2 text-peb-text2 text-sm">
+            <li>✓ Questions définition & bases (5)</li>
+            <li>✓ Questions obligations légales (5)</li>
+            <li>✓ Questions classes énergétiques (5)</li>
+            <li>✓ Questions prix & tarifs (5)</li>
+            <li>✓ Questions amélioration & primes (5)</li>
+            <li>✓ Questions spécificités Bruxelles (5)</li>
+          </ul>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">⚠️ PARTIE 8 : Simulateur Amendes</h3>
+          <ul class="space-y-2 text-peb-text2 text-sm">
+            <li>✓ Scénarios réalistes : studio loué sans PEB, vente sans PEB, etc.</li>
+            <li>✓ Décomposition coûts : amende admin, dommages-intérêts, perte revenus</li>
+            <li>✓ Facteurs augmentant risques : location longue durée, inspection, dénonciation</li>
+            <li>✓ Comparaison : coût PEB vs coût sans PEB</li>
+            <li>✓ ROI : 100x votre investissement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          7 points clés à <span class="gradient-text-cyan">retenir</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <Badge variant="cyan" text="1" />
+          <div>
+            <h3 class="font-semibold text-peb-text mb-1">C'est obligatoire à Bruxelles</h3>
+            <p class="text-sm text-peb-text2">Tout bien vendu ou loué doit avoir un PEB avant contrat. Pas d'exception.</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <Badge variant="blue" text="2" />
+          <div>
+            <h3 class="font-semibold text-peb-text mb-1">Seul expert agréé peut l'établir</h3>
+            <p class="text-sm text-peb-text2">Certificateur comme PEBify agréé par Région bruxelloise. DIY invalide légalement.</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <Badge variant="green" text="3" />
+          <div>
+            <h3 class="font-semibold text-peb-text mb-1">Peu coûteux (189€-249€)</h3>
+            <p class="text-sm text-peb-text2">Investissement minimal comparé aux amendes (1000€-5000€) et complications légales.</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <Badge variant="cyan" text="4" />
+          <div>
+            <h3 class="font-semibold text-peb-text mb-1">Valide 10 ans</h3>
+            <p class="text-sm text-peb-text2">Une fois établi, ne refaites pas de PEB avant 10 ans sauf rénovations majeures.</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <Badge variant="blue" text="5" />
+          <div>
+            <h3 class="font-semibold text-peb-text mb-1">Classe moyenne Bruxelles est D-E</h3>
+            <p class="text-sm text-peb-text2">Parc immobilier ancien. Amélioration possible avec isolation toiture/pompe chaleur.</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <Badge variant="green" text="6" />
+          <div>
+            <h3 class="font-semibold text-peb-text mb-1">Amélioration = primes disponibles</h3>
+            <p class="text-sm text-peb-text2">RENOLUTION couvre 30-50% coûts rénovation. Demandez AVANT travaux.</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <Badge variant="cyan" text="7" />
+          <div>
+            <h3 class="font-semibold text-peb-text mb-1">Impact majeur sur valeur bien</h3>
+            <p class="text-sm text-peb-text2">Classe A = +5-15% prix revente. Acheteurs exigent classe énergétique moderne.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Property Type Links -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Par type de <span class="gradient-text-cyan">bien</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Consultez les tarifs spécifiques à votre type de propriété
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal-stagger">
+        <a href="/tarifs-peb-bruxelles/peb-appartement/" class="group">
+          <Card hover={true}>
+            <div class="space-y-4 text-center">
+              <div class="text-5xl">🏠</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Appartement</h3>
+              <p class="text-sm text-peb-text2">Studio à T3</p>
+              <p class="text-2xl font-display font-bold text-peb-cyan">189€</p>
+              <p class="text-xs text-peb-text2">30-45 min audit</p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/tarifs-peb-bruxelles/peb-duplex/" class="group">
+          <Card hover={true}>
+            <div class="space-y-4 text-center">
+              <div class="text-5xl">🏘️</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Duplex/Triplex</h3>
+              <p class="text-sm text-peb-text2">Multi-niveaux</p>
+              <p class="text-2xl font-display font-bold text-peb-cyan">225€</p>
+              <p class="text-xs text-peb-text2">45 min - 1h30 audit</p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/tarifs-peb-bruxelles/peb-maison/" class="group">
+          <Card hover={true}>
+            <div class="space-y-4 text-center">
+              <div class="text-5xl">🏡</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Maison</h3>
+              <p class="text-sm text-peb-text2">Unifamiliale</p>
+              <p class="text-2xl font-display font-bold text-peb-cyan">235€</p>
+              <p class="text-xs text-peb-text2">1h - 2h audit</p>
+            </div>
+          </Card>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Prêt pour votre certificat PEB?"
+    title="Contactez-moi maintenant"
+    subtitle="Expert agréé Région bruxelloise. Service complet : audit, rapport, certificat. Réponse sous 24 heures."
+    primaryHref="/contact/"
+    primaryText="Demander audit"
+    secondaryHref="/tarifs-peb-bruxelles/"
+    secondaryText="Voir tarifs détaillés"
+  />
+</PageLayout>

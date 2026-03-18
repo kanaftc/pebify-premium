@@ -1,0 +1,355 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Card from '../../components/ui/Card.astro';
+import Button from '../../components/ui/Button.astro';
+import { siteConfig } from '../../data/site';
+
+const breadcrumb = [
+  { label: 'Expert PEB agréé', href: '/expert-peb-agree-bruxelles/' },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'PEBify - Expert PEB Agréé',
+  description: 'Expert en certification PEB agréé par la Région bruxelloise',
+  url: 'https://pebify.be/expert-peb-agree-bruxelles/',
+  areaServed: 'Bruxelles-Capitale',
+};
+---
+
+<PageLayout
+  title="Expert PEB Agréé Bruxelles | Certification énergétique professionnelle"
+  description="Expert PEB agréé Bruxelles. Qu'est-ce que cela signifie, critères, formation. Milad Mollaey Tabriz - Certificateur accrédité."
+  canonical="https://pebify.be/expert-peb-agree-bruxelles/"
+  breadcrumb={breadcrumb}
+  heroLabel="Qualification professionnelle"
+  heroTitle="Expert PEB Agréé Bruxelles"
+  heroSubtitle="Qu'est-ce que cela signifie d'être un certificateur PEB agréé et pourquoi c'est important pour vous"
+  schemaJson={schemaJson}
+>
+  <!-- What Does It Mean Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 reveal">
+          <h2 class="text-4xl sm:text-5xl font-display font-bold">
+            Qu'est-ce qu'un expert <span class="gradient-text-cyan">PEB agréé</span>?
+          </h2>
+
+          <p class="text-lg text-peb-text2 leading-relaxed">
+            Un expert PEB agréé est un professionnel formé et certifié par les autorités régionales bruxelloises (Bruxelles Environnement) pour émettre des certificats de performance énergétique légalement reconnus.
+          </p>
+
+          <p class="text-peb-text2 leading-relaxed">
+            Cela signifie que j'ai suivi une formation reconnue, que j'ai réussi un examen officiel, et que je suis inscrit au registre public des certificateurs agréés. Mon agrément est vérifié régulièrement.
+          </p>
+
+          <p class="text-peb-text2 leading-relaxed">
+            Faire appel à un expert agréé vous garantit une certification :
+          </p>
+
+          <ul class="space-y-3">
+            <li class="flex gap-3">
+              <span class="text-peb-cyan">✓</span>
+              <span class="text-peb-text2">Légalement incontestable</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-peb-cyan">✓</span>
+              <span class="text-peb-text2">Valide auprès de l'administration</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-peb-cyan">✓</span>
+              <span class="text-peb-text2">Conforme aux standards bruxellois</span>
+            </li>
+            <li class="flex gap-3">
+              <span class="text-peb-cyan">✓</span>
+              <span class="text-peb-text2">Établie par un véritable expert</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="space-y-6 reveal-right">
+          <Card hover={true}>
+            <div class="space-y-4">
+              <h3 class="text-2xl font-display font-bold text-peb-text">
+                Pourquoi c'est crucial pour vous
+              </h3>
+
+              <p class="text-peb-text2">
+                Sans certificat d'un expert agréé, vous risquez :
+              </p>
+
+              <ul class="space-y-2 text-peb-text2">
+                <li class="flex gap-2">
+                  <span class="text-peb-cyan">⚠️</span>
+                  <span>Certificat rejeté par l'administration</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="text-peb-cyan">⚠️</span>
+                  <span>Transaction immobilière annulée</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="text-peb-cyan">⚠️</span>
+                  <span>Amendes jusqu'à 10 000 €</span>
+                </li>
+                <li class="flex gap-2">
+                  <span class="text-peb-cyan">⚠️</span>
+                  <span>Obligation de refaire le certificat</span>
+                </li>
+              </ul>
+            </div>
+          </Card>
+
+          <Card hover={true}>
+            <div class="space-y-4">
+              <h3 class="text-2xl font-display font-bold text-peb-text">
+                Mon agrément
+              </h3>
+
+              <div class="space-y-3">
+                <div>
+                  <p class="text-sm text-peb-cyan font-semibold mb-1">Certificateur PEB</p>
+                  <p class="text-peb-text2">Agréé par Bruxelles Environnement</p>
+                </div>
+
+                <div>
+                  <p class="text-sm text-peb-cyan font-semibold mb-1">Depuis</p>
+                  <p class="text-peb-text2">2020</p>
+                </div>
+
+                <div>
+                  <p class="text-sm text-peb-cyan font-semibold mb-1">Status</p>
+                  <p class="text-peb-text2">Actif et à jour</p>
+                </div>
+
+                <div>
+                  <p class="text-sm text-peb-cyan font-semibold mb-1">Zones couvertes</p>
+                  <p class="text-peb-text2">19 communes Bruxelles</p>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certification Process -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Processus d'<span class="gradient-text-cyan">agrément</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Ce qui se cache derrière la certification "Expert PEB agréé"
+        </p>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0 text-3xl">🎓</div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Formation complète</h3>
+            <p class="text-peb-text2">
+              Formation théorique et pratique sur les normes énergétiques, le logiciel de calcul PEB officiel, et la législation bruxelloise.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0 text-3xl">📋</div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Examen officiel</h3>
+            <p class="text-peb-text2">
+              Test théorique et pratique pour valider la compréhension des normes et la capacité à émettre des certificats conformes.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0 text-3xl">📝</div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Inscription officielle</h3>
+            <p class="text-peb-text2">
+              Inscription au registre public des certificateurs agréés de Bruxelles Environnement. Vérifiable publiquement en ligne.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0 text-3xl">🔄</div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Formation continue</h3>
+            <p class="text-peb-text2">
+              Mise à jour annuelle des connaissances pour rester au fait des évolutions réglementaires et des nouvelles méthodes.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0 text-3xl">🔍</div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Contrôle qualité</h3>
+            <p class="text-peb-text2">
+              Audit régulier de la qualité des certificats émis par Bruxelles Environnement. Non-conformités peuvent entrainer suspension.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Certified Expert -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Pourquoi choisir un expert <span class="gradient-text-cyan">agréé</span>?
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal-stagger">
+        <Card hover={true}>
+          <div class="space-y-3">
+            <div class="text-4xl">✓</div>
+            <h3 class="font-display font-bold text-peb-text">Certificat légalement valide</h3>
+            <p class="text-peb-text2">
+              Reconnue par l'administration, les notaires, les banques. Aucune contestation possible.
+            </p>
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-3">
+            <div class="text-4xl">🛡️</div>
+            <h3 class="font-display font-bold text-peb-text">Vérifiabilité transparente</h3>
+            <p class="text-peb-text2">
+              Mon agrément est publiquement vérifiable auprès de Bruxelles Environnement. Pas de doute.
+            </p>
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-3">
+            <div class="text-4xl">⚡</div>
+            <h3 class="font-display font-bold text-peb-text">Expertise vérifiée</h3>
+            <p class="text-peb-text2">
+              Formation officielle, examen réussi, contrôle qualité régulier. Vrai professionnel.
+            </p>
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-3">
+            <div class="text-4xl">💼</div>
+            <h3 class="font-display font-bold text-peb-text">Responsabilité assurée</h3>
+            <p class="text-peb-text2">
+              Expert PEB agréé = responsabilité civile professionnelle. Vous êtes couvert en cas d'erreur.
+            </p>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Risk of Non-Certified -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Les risques d'un <span class="gradient-text-cyan">non-agréé</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Ce qui peut arriver si vous travaillez avec quelqu'un sans agrément officiel
+        </p>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl">⚠️</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Certificat rejeté</h3>
+            <p class="text-peb-text2">
+              L'administration peut refuser votre certificat s'il n'a pas été émis par un expert agréé. Remise à zéro.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl">⚠️</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Transaction annulée</h3>
+            <p class="text-peb-text2">
+              Acheteur ou locataire refuse d'avancer sans certificat légitime. Contrat peut être résolu.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl">⚠️</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Amendes élevées</h3>
+            <p class="text-peb-text2">
+              Amende jusqu'à 10 000 € pour absence ou falsification de certificat. Plus les frais légaux.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl">⚠️</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Responsabilité personnelle</h3>
+            <p class="text-peb-text2">
+              Vous êtes légalement responsable si le certificat est contesté. Sans assurance professionnelle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Registry -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-6 text-center reveal">
+        <h2 class="text-3xl font-display font-bold text-peb-text">
+          Vérifier mon agrément officiellement
+        </h2>
+
+        <p class="text-peb-text2">
+          Vous pouvez consulter le registre public officiel de Bruxelles Environnement pour vérifier que mon agrément est actif et à jour.
+        </p>
+
+        <Button
+          href="https://environnement.brussels/"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="primary"
+          size="lg"
+          hasArrow
+        >
+          Consulter le registre officiel
+        </Button>
+
+        <p class="text-sm text-peb-text2">
+          Mon nom : Milad Mollaey Tabriz<br />
+          Certificateur PEB agréé depuis 2020
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Besoin d'un certificat agréé?"
+    title="Contactez un expert certifié"
+    subtitle="En tant qu'expert PEB agréé depuis 2020, je vous garantis certification 100% légale et conforme."
+    primaryHref="/contact/"
+    primaryText="Prendre rendez-vous"
+    secondaryHref="/a-propos/"
+    secondaryText="En savoir plus sur moi"
+  />
+</PageLayout>

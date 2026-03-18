@@ -1,0 +1,226 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+import { communes } from '../../data/communes';
+import { siteConfig } from '../../data/site';
+
+const commune = communes.find(c => c.slug === 'berchem-sainte-agathe');
+
+const faqItems = [
+  {
+    question: 'Mon petit immeuble à Berchem-Sainte-Agathe a 100 ans. Peut-il être certifié?',
+    answer: 'Oui, absolument. Je certifie régulièrement des bâtiments anciens à Berchem-Sainte-Agathe. L\'âge du bâtiment n\'empêche pas la certification. Mon expertise permet d\'évaluer précisément la performance même sans normes de construction modernes.'
+  },
+  {
+    question: 'Quel est le prix d\'une certification PEB pour un petit immeuble collectif?',
+    answer: 'Pour un petit immeuble résidenciel, je propose des forfaits adaptés. Contactez-moi pour un devis basé sur le nombre d\'unités. Mes tarifs restent très compétitifs pour les multi-propriétés à Berchem-Sainte-Agathe.'
+  },
+  {
+    question: 'Comment améliorer l\'efficacité énergétique d\'une petite maison mitoyenne?',
+    answer: 'L\'amélioration des vitrages, l\'isolation des combles et du toit sont prioritaires pour les maisons de Berchem-Sainte-Agathe. Mon rapport détaillé identifie les interventions les plus rentables pour votre situation spécifique.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Berchem-Sainte-Agathe",
+  "description": "Expert en certification PEB agréé à Berchem-Sainte-Agathe (1070)",
+  "image": "https://pebify.be/og-image.jpg",
+  "url": "https://pebify.be/certificat-peb-berchem-sainte-agathe/",
+  "telephone": "+32 484 63 08 15",
+  "email": "info@pebify.be",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue Emile Wauters 58",
+    "addressLocality": "Bruxelles",
+    "postalCode": "1020",
+    "addressCountry": "BE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Berchem-Sainte-Agathe",
+    "postalCode": "1070"
+  },
+  "priceRange": "€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Berchem-Sainte-Agathe (1070) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Berchem-Sainte-Agathe (1070). Certificats énergétiques agréés pour petits immeubles, maisons mitoyennes et logements sociaux. Service agréé complet."
+  breadcrumb={[{ label: 'Certificat PEB Berchem-Sainte-Agathe', href: '/certificat-peb-berchem-sainte-agathe/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Berchem-Sainte-Agathe"
+  heroSubtitle="Certificateur agréé pour vos propriétés à Berchem-Sainte-Agathe (1070). Expertise en petits immeubles et habitats collectifs."
+  canonical="https://pebify.be/certificat-peb-berchem-sainte-agathe/"
+  schemaJson={jsonLd}
+>
+  <!-- Main Content Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Introduction -->
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certificat PEB à <span class="gradient-text-cyan">Berchem-Sainte-Agathe</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Berchem-Sainte-Agathe, petite commune de l'ouest bruxellois avec environ 34 000 habitants, se distingue par son caractère paisible et son tissu urbain compact. Elle combine habitat résidentiel de qualité et petites activités commerciales locales, offrant une atmosphère tranquille tout en restant bien connectée à la capitale.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          En tant que certificateur PEB agréé, j'interviens régulièrement à Berchem-Sainte-Agathe pour certifier les petits immeubles, les maisons mitoyennes et les logements sociaux. Ma spécialité concerne la certification des propriétés anciennes typiques de la commune, datant du début du XXe siècle, avec d'excellentes perspectives de rénovation énergétique.
+        </p>
+      </div>
+
+      <!-- Property Types Section -->
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Propriétés certificables à Berchem-Sainte-Agathe
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Maisons mitoyennes</p>
+              <p class="text-peb-text2 text-sm">Certification des petites maisons typiques de Berchem-Sainte-Agathe, construites au début du XXe siècle.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petits immeubles résidentiels</p>
+              <p class="text-peb-text2 text-sm">Immeubles de 3 à 5 étages avec logements locatifs, très présents à Berchem-Sainte-Agathe.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Logements sociaux</p>
+              <p class="text-peb-text2 text-sm">Certification des habitats sociaux avec approche adaptée aux enjeux de performance collective.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petits commerces</p>
+              <p class="text-peb-text2 text-sm">Certification des petites structures commerciales et mixtes résidentiel-commercial.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Energy Profile Section -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Profil énergétique des propriétés berchemoises
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Les propriétés de Berchem-Sainte-Agathe obtiennent généralement des classifications PEB entre D et F. Cette moyenne reflète l'ancienneté des constructions, avec nombreuses maisons et petits immeubles du début du siècle ayant peu subi de rénovations énergétiques majeures.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Les maisons mitoyennes de la commune présentent d'excellentes opportunités d'amélioration. L'isolation des combles, le remplacement des vitrages simples et l'modernisation du chauffage offrent généralement les meilleurs résultats pour améliorer significativement votre classement PEB.
+        </p>
+      </div>
+
+      <!-- Services Section -->
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services de certification à Berchem-Sainte-Agathe
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certificat PEB agréé</h4>
+            <p class="text-peb-text2 text-sm">Certification officielle conforme aux normes bruxelloises pour tous les types de propriétés.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit énergétique complet</h4>
+            <p class="text-peb-text2 text-sm">Analyse détaillée des performances avec recommandations d'amélioration prioritaires.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport d'amélioration</h4>
+            <p class="text-peb-text2 text-sm">Guide stratégique pour optimiser votre classe énergétique progressivement.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation immeuble collectif</h4>
+            <p class="text-peb-text2 text-sm">Expertise spécialisée pour les petits immeubles à plusieurs unités.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Section -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification pour Berchem-Sainte-Agathe
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Petit immeuble</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Maison mitoyenne</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          Tous les tarifs incluent visite complète, analyse détaillée et certificat officiel. Pour les immeubles collectifs à Berchem-Sainte-Agathe, <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">demandez un devis spécifique</a>.
+        </p>
+      </div>
+
+      <!-- Internal Links -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Ressources PEB utiles
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre la certification énergétique.</p>
+          </a>
+          <a href="/guide-peb/obligations/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Obligations PEB</p>
+            <p class="text-sm text-peb-text2">Quand est-ce obligatoire à Bruxelles?</p>
+          </a>
+          <a href="/guide-peb/ameliorer-score/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Améliorer son score PEB</p>
+            <p class="text-sm text-peb-text2">Recommandations d'amélioration énergétique.</p>
+          </a>
+          <a href="/guide-peb/primes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Primes rénovation 2026</p>
+            <p class="text-sm text-peb-text2">Financer vos améliorations énergétiques.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQ items={faqItems} />
+
+  <!-- CTA Section -->
+  <CTA
+    title="Votre certificat PEB à Berchem-Sainte-Agathe"
+    subtitle="Contactez-moi pour planifier votre certification et obtenir votre rapport énergétique complet."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <!-- Commune Links -->
+  <CommuneLinks />
+</PageLayout>

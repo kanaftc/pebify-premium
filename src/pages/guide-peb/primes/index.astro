@@ -1,0 +1,428 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CTA from '../../../components/sections/CTA.astro';
+import Card from '../../../components/ui/Card.astro';
+import Badge from '../../../components/ui/Badge.astro';
+
+const breadcrumb = [
+  { label: 'Guide PEB', href: '/guide-peb/' },
+  { label: 'Primes rénovation', href: '/guide-peb/primes/' },
+];
+
+const subsidies = [
+  {
+    name: 'Isolation toiture',
+    amount: '25€-35€/m²',
+    max: '2500€-3500€',
+    conditions: ['Surface min. 50m²', 'Coefficient U < 0,20 W/m²K', 'Entreprise agréée requise'],
+    timeline: '4-8 semaines après travaux',
+  },
+  {
+    name: 'Isolation murs',
+    amount: '20€-40€/m²',
+    max: '5000€-8000€',
+    conditions: ['Surface min. 50m²', 'Coefficient U < 0,20 W/m²K', 'Isolation intérieure ou extérieure'],
+    timeline: '4-8 semaines après travaux',
+  },
+  {
+    name: 'Pompe à chaleur air-air',
+    amount: '30-50% du coût',
+    max: '6000€-8000€',
+    conditions: ['COP min. 3,5', 'Installation agréée', 'Remplacement chaudière recommandé'],
+    timeline: '6-10 semaines après installation',
+  },
+  {
+    name: 'Fenêtres triple vitrage',
+    amount: '15€-25€/m²',
+    max: '2000€-3000€',
+    conditions: ['Coefficient U < 0,80 W/m²K', 'Surface min. 20m²', 'Entreprise certifiée'],
+    timeline: '4-8 semaines après pose',
+  },
+  {
+    name: 'Ventilation mécanique (VMC)',
+    amount: '1500€-2500€',
+    max: 'Forfaitaire',
+    conditions: ['Récupération chaleur min. 70%', 'Rendement certifié', 'Installation professionnelle'],
+    timeline: '4-6 semaines après pose',
+  },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Primes rénovation Bruxelles 2026 | RENOLUTION et aides énergétiques',
+  description: 'Guide complet des primes rénovation Bruxelles 2026. RENOLUTION, montants, conditions et comment les demander.',
+  author: {
+    '@type': 'Organization',
+    name: 'PEBify',
+  },
+};
+---
+
+<PageLayout
+  title="Primes rénovation Bruxelles 2026 | RENOLUTION | PEBify"
+  description="Primes rénovation Bruxelles 2026 : RENOLUTION, montants, conditions. Isolation, chauffage, fenêtres. Guide complet et comment demander."
+  canonical="https://pebify.be/guide-peb/primes/"
+  breadcrumb={breadcrumb}
+  heroLabel="Financer vos rénovations"
+  heroTitle="Primes rénovation Bruxelles 2026"
+  heroSubtitle="Guide complet du programme RENOLUTION : montants, conditions, et comment obtenir vos subventions pour travaux énergétiques."
+  schemaJson={schemaJson}
+>
+  <!-- Introduction -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6 reveal">
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          La Région bruxelloise offre des aides financières importantes pour les rénovations énergétiques via le programme RENOLUTION. Ces primes peuvent couvrir 30-50% du coût de vos travaux d'amélioration énergétique.
+        </p>
+
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Que vous isoliez votre toiture, changiez vos fenêtres, installiez une pompe à chaleur, ou amélioriez votre ventilation, vous pouvez accéder à des subventions substantielles.
+        </p>
+
+        <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-6">
+          <p class="font-semibold text-emerald-600 mb-3">💚 Point important:</p>
+          <p class="text-peb-text2">
+            Les primes RENOLUTION doivent être demandées AVANT le début des travaux. Une demande après travaux n'est généralement pas acceptée.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENOLUTION Program Overview -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Programme <span class="gradient-text-cyan">RENOLUTION</span>
+        </h2>
+      </div>
+
+      <div class="space-y-8 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Qu'est-ce que RENOLUTION?</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            RENOLUTION est le programme de subvention énergétique de Bruxelles Environnement. Son objectif : aider les propriétaires et locataires à rénover énergétiquement leurs bâtiments pour réduire les émissions de CO2 et les factures énergétiques.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Qui peut en bénéficier?</h3>
+          <ul class="space-y-3 text-peb-text2">
+            <li>✓ Propriétaires occupants (logement principal)</li>
+            <li>✓ Propriétaires bailleurs (immeubles de rapport)</li>
+            <li>✓ Copropriétés (parties communes)</li>
+            <li>✓ Petits bâtiments tertiaires et commerciaux</li>
+            <li>⚠️ Locataires : généralement NON éligibles (c'est au propriétaire)</li>
+          </ul>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Montants et couverture</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Les subventions varient selon le type de travaux et votre situation financière :
+          </p>
+          <div class="space-y-2 text-sm text-peb-text2">
+            <p>• Couverture standard : 20-35% du coût</p>
+            <p>• Couverture augmentée (bas revenus) : 40-50% du coût</p>
+            <p>• Montants maximums par action (voir tableau ci-dessous)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subsidies Grid -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Montants des <span class="gradient-text-cyan">primes par action</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        {subsidies.map((subsidy, index) => (
+          <div key={index} class="bg-peb-card border border-peb-border rounded-2xl overflow-hidden">
+            <div class="p-6 space-y-4">
+              <div class="flex items-start justify-between mb-4">
+                <h3 class="text-xl font-display font-bold text-peb-text">{subsidy.name}</h3>
+                <Badge variant="cyan" text={subsidy.amount} />
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                <div class="bg-peb-bg rounded-lg p-4">
+                  <p class="text-sm text-peb-text2 mb-1">Montant max</p>
+                  <p class="text-2xl font-display font-bold text-peb-cyan">{subsidy.max}</p>
+                </div>
+                <div class="bg-peb-bg rounded-lg p-4">
+                  <p class="text-sm text-peb-text2 mb-1">Délai de paiement</p>
+                  <p class="text-lg font-semibold text-peb-text">{subsidy.timeline}</p>
+                </div>
+              </div>
+
+              <div>
+                <p class="font-semibold text-peb-text mb-2 text-sm">Conditions d'obtention:</p>
+                <ul class="space-y-1">
+                  {subsidy.conditions.map((cond, cIndex) => (
+                    <li key={cIndex} class="text-sm text-peb-text2 flex gap-2">
+                      <span class="text-peb-cyan flex-shrink-0">✓</span>
+                      <span>{cond}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Apply -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Comment <span class="gradient-text-cyan">demander les primes</span>?
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8">
+          <div class="flex gap-4 mb-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-peb-cyan/20 flex items-center justify-center">
+              <span class="text-xl font-bold text-peb-cyan">1</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-display font-bold text-peb-text mb-2">Vérifiez votre éligibilité</h3>
+              <p class="text-peb-text2">
+                Consultez le site renolution.brussels ou contactez un guichet RENOLUTION. Vous devez avoir un bien à Bruxelles et prévoir des travaux éligibles.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8">
+          <div class="flex gap-4 mb-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-peb-cyan/20 flex items-center justify-center">
+              <span class="text-xl font-bold text-peb-cyan">2</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-display font-bold text-peb-text mb-2">Demandez les primes AVANT les travaux</h3>
+              <p class="text-peb-text2">
+                Téléchargez le dossier de demande sur renolution.brussels. Vous devez remplir un formulaire avec devis des entrepreneurs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8">
+          <div class="flex gap-4 mb-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-peb-cyan/20 flex items-center justify-center">
+              <span class="text-xl font-bold text-peb-cyan">3</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-display font-bold text-peb-text mb-2">Faites approuver votre dossier</h3>
+              <p class="text-peb-text2">
+                La Région examinera votre demande (2-4 semaines). Une fois approuvée, vous recevez une décision formelle.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8">
+          <div class="flex gap-4 mb-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-peb-cyan/20 flex items-center justify-center">
+              <span class="text-xl font-bold text-peb-cyan">4</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-display font-bold text-peb-text mb-2">Réalisez les travaux</h3>
+              <p class="text-peb-text2">
+                Une fois approuvé, vous pouvez commencer. Utilisez les entrepreneurs cités dans votre dossier (exigence de qualité).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8">
+          <div class="flex gap-4 mb-4">
+            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-peb-cyan/20 flex items-center justify-center">
+              <span class="text-xl font-bold text-peb-cyan">5</span>
+            </div>
+            <div>
+              <h3 class="text-xl font-display font-bold text-peb-text mb-2">Demandez le paiement</h3>
+              <p class="text-peb-text2">
+                Une fois les travaux terminés, soumettez factures et justificatifs. La prime est versée dans les 4-8 semaines.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-peb-surface border border-peb-border rounded-xl p-6 reveal">
+        <p class="font-semibold text-peb-text mb-3">⏱️ Timing important:</p>
+        <p class="text-peb-text2 mb-2">
+          La demande doit être faite AVANT de signer avec les entrepreneurs. Une fois travaux engagés, il est trop tard.
+        </p>
+        <p class="text-peb-text2">
+          Durée totale du processus : 2-3 mois (demande + approbation + travaux).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conditions & Tips -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Conditions <span class="gradient-text-cyan">essentielles</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">✓ Entrepreneurs agréés requis</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Vous DEVEZ faire appel à des entrepreneurs certifiés/agréés. Les travaux DIY ou par des non-professionnels ne sont pas éligibles aux primes.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">✓ Performance technique minimale</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Chaque travaux doit respecter des normes techniques (Coefficient U pour isolation, COP pour pompe à chaleur, etc.). Faites-vous recommander par RENOLUTION.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">✓ Cumulabilité avec crédit d'impôt fédéral</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Les primes bruxelloises se cumulent avec le crédit d'impôt fédéral (30%). Vous pouvez bénéficier des deux!
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">✓ TVA réduite 6%</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Les travaux de rénovation énergétique bénéficient d'une TVA réduite de 6% au lieu de 21%. Assurez-vous que votre entrepreneur applique ce taux.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">⚠️ Budget limité - Anticipez!</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Le budget RENOLUTION est limité chaque année. Si vous prévoyez des travaux, ne tardez pas à demander. Les fonds peuvent s'épuiser avant la fin de l'année.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Example -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Exemple <span class="gradient-text-cyan">concret</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text mb-4">Scénario : Amélioration toiture + chauffage</h3>
+
+          <div class="space-y-4">
+            <div class="bg-peb-bg rounded-lg p-4 space-y-3">
+              <p class="font-semibold text-peb-text">Travaux prévus :</p>
+              <ul class="space-y-2 text-sm text-peb-text2">
+                <li>• Isolation toiture 150 m² : 3 000€</li>
+                <li>• Pompe à chaleur air-air : 10 000€</li>
+                <li>• TOTAL : 13 000€ TTC</li>
+              </ul>
+            </div>
+
+            <div class="bg-peb-bg rounded-lg p-4 space-y-3">
+              <p class="font-semibold text-peb-text">Aides obtenues :</p>
+              <ul class="space-y-2 text-sm text-peb-text2">
+                <li>• Prime toiture (30€/m²) : 4 500€</li>
+                <li>• Prime pompe à chaleur (40%) : 4 000€</li>
+                <li>• Crédit impôt fédéral (30%) : 3 900€</li>
+                <li>• TVA réduite (6% vs 21%) : -1 950€</li>
+                <li>• TOTAL AIDES : 11 450€</li>
+              </ul>
+            </div>
+
+            <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-lg p-4">
+              <p class="font-semibold text-emerald-600 mb-2">Coût final:</p>
+              <p class="text-xl text-peb-text font-bold">13 000€ - 11 450€ = <span class="text-peb-cyan">1 550€</span> seulement!</p>
+              <p class="text-sm text-peb-text2 mt-2">
+                Les aides couvrent 88% du coût! Les économies énergétiques annuelles (~2000€) payent le reste en moins de 1 an.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Pour <span class="gradient-text-cyan">aller plus loin</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+        <a href="/guide-peb/ameliorer-score/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">⚡</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Améliorer votre score</h3>
+              <p class="text-sm text-peb-text2">
+                Top 6 actions pour progresser.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/contact/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">📋</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Audit et conseils</h3>
+              <p class="text-sm text-peb-text2">
+                Identifier VOS primes possibles.
+              </p>
+            </div>
+          </Card>
+        </a>
+      </div>
+
+      <div class="mt-8 text-center reveal">
+        <p class="text-peb-text2 mb-4">
+          Pour plus d'infos sur le programme RENOLUTION :
+        </p>
+        <a href="https://renolution.brussels" target="_blank" class="text-peb-cyan font-semibold hover:underline">
+          renolution.brussels →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Maximisez vos aides!"
+    title="Consultez un expert RENOLUTION"
+    subtitle="Je vous aide à identifier vos primes et optimiser votre demande. Support complet du dossier gratuit."
+    primaryHref="/contact/"
+    primaryText="Prendre rendez-vous"
+    secondaryHref="/guide-peb/ameliorer-score/"
+    secondaryText="Voir les actions recommandées"
+  />
+</PageLayout>

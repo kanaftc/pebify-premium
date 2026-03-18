@@ -1,0 +1,31 @@
+---
+type Variant = 'default' | 'glass';
+
+interface Props {
+  variant?: Variant;
+  class?: string;
+  hover?: boolean;
+  [key: string]: any;
+}
+
+const { variant = 'default', class: customClass = '', hover = true, ...rest } =
+  Astro.props;
+
+// Variant classes
+const variantClasses = {
+  default:
+    'bg-peb-card border border-peb-border rounded-xl p-6 hover:bg-peb-card-hover hover:border-peb-cyan/20 transition-all duration-200',
+  glass:
+    'glass rounded-xl p-6 hover:bg-white/10 hover:border-peb-cyan/30 transition-all duration-200',
+};
+
+const hoverClasses = hover ? 'hover:shadow-lg hover:glow-cyan-subtle hover:translate-y-[-4px]' : '';
+
+const baseClasses = variantClasses[variant];
+
+const finalClass = `${baseClasses} ${hoverClasses} ${customClass}`;
+---
+
+<div class={finalClass} {...rest}>
+  <slot />
+</div>

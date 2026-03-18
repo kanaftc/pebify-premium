@@ -1,0 +1,152 @@
+---
+import Badge from '../ui/Badge.astro';
+
+interface ProcessStep {
+  number: number;
+  title: string;
+  description: string;
+  duration: string;
+  icon: string;
+}
+
+interface Props {}
+
+const steps: ProcessStep[] = [
+  {
+    number: 1,
+    title: 'Contact',
+    description: 'Nous contacter',
+    duration: '2 min',
+    icon: '📞',
+  },
+  {
+    number: 2,
+    title: 'RDV',
+    description: 'Fixer une date',
+    duration: '24h',
+    icon: '📅',
+  },
+  {
+    number: 3,
+    title: 'Visite',
+    description: 'Inspection du bien',
+    duration: '1-2h',
+    icon: '🔍',
+  },
+  {
+    number: 4,
+    title: 'Encodage',
+    description: 'Analyse complète',
+    duration: '3-5j',
+    icon: '💻',
+  },
+  {
+    number: 5,
+    title: 'Certificat',
+    description: 'Résultats officiels',
+    duration: 'Immédiat',
+    icon: '✅',
+  },
+];
+---
+
+<section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Title -->
+    <div class="text-center mb-16 reveal">
+      <h2 class="text-4xl sm:text-5xl font-display font-bold mb-4">
+        Comment ça <span class="gradient-text-cyan">fonctionne</span>
+      </h2>
+      <p class="text-lg text-peb-text2 max-w-2xl mx-auto">
+        5 étapes simples pour obtenir votre certificat PEB agréé en quelques jours.
+      </p>
+    </div>
+
+    <!-- Desktop: Horizontal Process -->
+    <div class="hidden md:block">
+      <div class="relative">
+        <!-- Connection Line -->
+        <div
+          class="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-peb-cyan via-peb-blue to-peb-green transform -translate-y-1/2 z-0"
+        />
+
+        <!-- Steps -->
+        <div class="relative z-10 grid grid-cols-5 gap-4">
+          {
+            steps.map((step, index) => (
+              <div class="flex flex-col items-center reveal" style={`animation-delay: ${index * 0.1}s`}>
+                <!-- Circle with number -->
+                <div class="relative mb-6">
+                  <div class="w-20 h-20 rounded-full bg-gradient-to-br from-peb-blue to-peb-cyan flex items-center justify-center text-2xl font-display font-bold text-peb-bg shadow-lg">
+                    {step.number}
+                  </div>
+                  <div class="absolute inset-0 rounded-full bg-gradient-to-br from-peb-blue to-peb-cyan opacity-20 blur-xl" />
+                </div>
+
+                <!-- Content -->
+                <div class="text-center space-y-2">
+                  <h3 class="font-display font-bold text-peb-text">{step.title}</h3>
+                  <p class="text-sm text-peb-text2">{step.description}</p>
+                  <Badge variant="cyan" text={step.duration} />
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile: Vertical Process -->
+    <div class="md:hidden">
+      <div class="space-y-8">
+        {
+          steps.map((step, index) => (
+            <div class="flex gap-6 reveal" style={`animation-delay: ${index * 0.1}s`}>
+              <!-- Circle -->
+              <div class="flex-shrink-0">
+                <div class="w-16 h-16 rounded-full bg-gradient-to-br from-peb-blue to-peb-cyan flex items-center justify-center text-xl font-display font-bold text-peb-bg shadow-lg">
+                  {step.number}
+                </div>
+              </div>
+
+              <!-- Content -->
+              <div class="flex-1 pt-1">
+                <h3 class="font-display font-bold text-peb-text mb-1">
+                  {step.title}
+                </h3>
+                <p class="text-sm text-peb-text2 mb-2">{step.description}</p>
+                <Badge variant="cyan" text={step.duration} />
+              </div>
+
+              <!-- Connector Line (except last) -->
+              {index < steps.length - 1 && (
+                <div class="absolute left-8 top-20 w-0.5 h-12 bg-gradient-to-b from-peb-cyan to-transparent" />
+              )}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 text-center reveal">
+      <p class="text-lg text-peb-text2 mb-6">
+        Prêt à obtenir votre certificat PEB?
+      </p>
+      <a
+        href="/contact/"
+        class="inline-flex items-center space-x-2 px-8 py-4 rounded-lg bg-gradient-to-r from-peb-blue to-peb-cyan text-peb-bg font-semibold hover:shadow-lg hover:glow-cyan transition-all duration-200 active:scale-95"
+      >
+        <span>Prendre rendez-vous</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 7l5 5m0 0l-5 5m5-5H6"
+          />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

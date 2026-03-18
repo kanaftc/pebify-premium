@@ -1,0 +1,212 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+
+const faqItems = [
+  {
+    question: 'Les pavillons neufs d\'Evere ont-ils besoin d\'un certificat PEB?',
+    answer: 'Oui, même les constructions récentes ont besoin d\'un certificat PEB lors d\'une vente ou location. Les pavillons modernes d\'Evere obtiennent généralement de bonnes classes (A, B ou C) grâce aux normes de construction actuelles.'
+  },
+  {
+    question: 'Comment améliorer l\'efficacité énergétique d\'un pavillon collectif?',
+    answer: 'L\'isolation des toits et des murs, ainsi que l\'amélioration de la ventilation sont prioritaires. Les pavillons d\'Evere, moins anciens que ceux d\'autres communes, offrent souvent des performances déjà correctes nécessitant peu d\'amélioration.'
+  },
+  {
+    question: 'Quel est le tarif pour un pavillon moderne à Evere?',
+    answer: 'Pour un pavillon individuel, j\'applique 249€. Les pavillons d\'Evere, généralement modernes, demandent moins de temps que les propriétés anciennes d\'autres communes. Contactez-moi pour les multi-propriétés.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Evere",
+  "description": "Expert en certification PEB agréé à Evere (1140)",
+  "image": "https://pebify.be/og-image.jpg",
+  "url": "https://pebify.be/certificat-peb-evere/",
+  "telephone": "+32 484 63 08 15",
+  "email": "info@pebify.be",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue Emile Wauters 58",
+    "addressLocality": "Bruxelles",
+    "postalCode": "1020",
+    "addressCountry": "BE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Evere",
+    "postalCode": "1140"
+  },
+  "priceRange": "€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Evere (1140) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Evere (1140). Certificats énergétiques agréés pour pavillons, petits collectifs et maisons récentes. Service rapide et transparent."
+  breadcrumb={[{ label: 'Certificat PEB Evere', href: '/certificat-peb-evere/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Evere"
+  heroSubtitle="Certificateur agréé pour vos propriétés everioises. Expertise en pavillons et petits immeubles collectifs modernes."
+  canonical="https://pebify.be/certificat-peb-evere/"
+  schemaJson={jsonLd}
+>
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certificat PEB à <span class="gradient-text-cyan">Evere</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Evere, commune du nord-est bruxellois, se développe sur un territoire marqué par la modernité et l'urbanisation progressive. Avec ses 40 000 habitants environ, elle offre un habitat résidentiel dominé par les pavillons individuels et les petits immeubles collectifs. La dynamique de cette commune attire de nombreux jeunes couples et familles en recherche de qualité de vie.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          En tant que certificateur PEB agréé, j'interviens régulièrement sur l'ensemble du territoire everios pour évaluer la performance énergétique de vos propriétés. Ma spécialité concerne les pavillons modernes et les petits collectifs d'Evere, qui offrent généralement des performances énergétiques déjà satisfaisantes.
+        </p>
+      </div>
+
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Types de propriétés à Evere
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Pavillons individuels</p>
+              <p class="text-peb-text2 text-sm">Certification de pavillons résidentiels modernes typiques d'Evere.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petits collectifs</p>
+              <p class="text-peb-text2 text-sm">Immeubles d'habitation de 2 à 4 étages de construction récente.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Maisons récentes</p>
+              <p class="text-peb-text2 text-sm">Certification de maisons de construction moderne et rénovée.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Logements modernes</p>
+              <p class="text-peb-text2 text-sm">Certification de structures résidentielles contemporaines et durables.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Profil énergétique à Evere
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Evere se distingue par une bonne performance énergétique moyenne. Les pavillons et petits collectifs modernes obtiennent généralement des classes A, B ou C grâce aux normes de construction contemporaines. Peu de propriétés obtiennent des classes F ou G.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Contrairement à d'autres communes plus anciennes, Evere ne présente pas de défis énergétiques majeurs. Les propriétaires everios bénéficient généralement de bâtiments déjà performants, nécessitant peu d'amélioration pour vendre ou louer légalement.
+        </p>
+      </div>
+
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services de certification
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certificat PEB agréé</h4>
+            <p class="text-peb-text2 text-sm">Certification officielle pour tous types de propriétés everioises.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit énergétique</h4>
+            <p class="text-peb-text2 text-sm">Analyse détaillée avec recommandations d'optimisation.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport complèt</h4>
+            <p class="text-peb-text2 text-sm">Documentation détaillée de votre performance énergétique.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation pavillon</h4>
+            <p class="text-peb-text2 text-sm">Expertise spécialisée pour maisons individuelles modernes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification à Evere
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Appartement</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Pavillon/Maison</p>
+            <p class="text-3xl font-bold text-peb-cyan">249€</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          Prix transparents incluant visite et rapport complet. <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">Contactez-moi</a> pour vos besoins spécifiques.
+        </p>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          En savoir plus sur le PEB
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre la certification énergétique.</p>
+          </a>
+          <a href="/guide-peb/obligations/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Obligations légales</p>
+            <p class="text-sm text-peb-text2">Quand est-ce obligatoire?</p>
+          </a>
+          <a href="/guide-peb/echelle-classes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Classes énergétiques</p>
+            <p class="text-sm text-peb-text2">Échelle A++ à G.</p>
+          </a>
+          <a href="/guide-peb/primes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Aides rénovation</p>
+            <p class="text-sm text-peb-text2">Primes et subventions 2026.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <CTA
+    title="Certificat PEB à Evere"
+    subtitle="Je vous contacte rapidement pour planifier votre certification énergétique."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <CommuneLinks />
+</PageLayout>

@@ -1,0 +1,30 @@
+---
+type Variant = 'cyan' | 'green' | 'blue';
+
+interface Props {
+  variant?: Variant;
+  text: string;
+  [key: string]: any;
+}
+
+const { variant = 'cyan', text, ...rest } = Astro.props;
+
+// Variant classes
+const variantClasses = {
+  cyan:
+    'bg-peb-cyan/15 border border-peb-cyan/30 text-peb-cyan',
+  green:
+    'bg-peb-green/15 border border-peb-green/30 text-peb-green',
+  blue:
+    'bg-peb-blue/15 border border-peb-blue/30 text-peb-blue',
+};
+
+const baseClasses =
+  'inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold tracking-wide';
+
+const finalClass = `${baseClasses} ${variantClasses[variant]}`;
+---
+
+<span class={finalClass} {...rest}>
+  {text}
+</span>

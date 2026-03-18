@@ -1,0 +1,84 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Button from '../../components/ui/Button.astro';
+import { faqItems } from '../../data/faq';
+
+const breadcrumb = [
+  { label: 'FAQ', href: '/faq/' },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+---
+
+<PageLayout
+  title="FAQ Certificat PEB Bruxelles | Questions fréquentes"
+  description="Questions fréquentes sur le certificat PEB à Bruxelles. 30+ réponses détaillées sur définition, obligations, tarifs, amélioration énergétique."
+  canonical="https://pebify.be/faq/"
+  breadcrumb={breadcrumb}
+  heroLabel="Questions fréquentes"
+  heroTitle="FAQ Certificat PEB"
+  heroSubtitle="30+ réponses détaillées à toutes vos questions sur la performance énergétique et la certification à Bruxelles."
+  schemaJson={schemaJson}
+>
+  <!-- Search Info -->
+  <section class="py-8 sm:py-12 md:py-16 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-peb-card border border-peb-border rounded-xl p-6 text-center reveal">
+        <p class="text-peb-text2">
+          Utilisez Ctrl+F (ou Cmd+F sur Mac) pour rechercher rapidement une réponse à votre question.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Accordion -->
+  {faqItems.length > 0 && (
+    <FAQ
+      items={faqItems.map((item) => ({
+        question: item.question,
+        answer: item.answer,
+      }))}
+    />
+  )}
+
+  <!-- No Answer Found Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-peb-card border border-peb-border rounded-2xl p-8 sm:p-12 text-center space-y-6 reveal">
+        <h2 class="text-3xl font-display font-bold text-peb-text">
+          Vous ne trouvez pas votre réponse?
+        </h2>
+        <p class="text-lg text-peb-text2">
+          J'ai répondu à plus de 30 questions, mais si vous avez une question spécifique, contactez-moi directement. Je vous répondrai en détail.
+        </p>
+        <Button href="/contact/" variant="primary" size="lg" hasArrow>
+          Poser votre question
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Prêt à avancer?"
+    title="Commencez votre audit PEB dès maintenant"
+    subtitle="Contactez-moi pour une consultation gratuite et un devis sans engagement. Agréé Région bruxelloise."
+    primaryHref="/contact/"
+    primaryText="Prendre rendez-vous"
+    secondaryHref="/tarifs-peb-bruxelles/"
+    secondaryText="Voir les tarifs"
+  />
+</PageLayout>

@@ -1,0 +1,194 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+
+const faqItems = [
+  {
+    question: 'Comment certifier une villa auprès de la Forêt de Soignes à Woluwe-Saint-Pierre?',
+    answer: 'Les villas de Woluwe-Saint-Pierre, même auprès de la Forêt de Soignes, se certifient de manière standard. La proximité de la forêt n\'affecte pas la certification. Je maîtrise l\'architecture typique woluwéenne-pierroise.'
+  },
+  {
+    question: 'Quel profil énergétique pour les villas de Woluwe-Saint-Pierre?',
+    answer: 'Les villas obtiennent généralement C à F. L\'environnement naturel préservé reflète souvent des propriétés bien entretenues offrant bon potentiel d\'amélioration significative.'
+  },
+  {
+    question: 'Quel tarif pour une grande villa à Woluwe-Saint-Pierre?',
+    answer: 'Pour les villas de Woluwe-Saint-Pierre, mon tarif est 249€ minimum. Contactez-moi pour les propriétés exceptionnelles. Je maîtrise bien ce territoire élégant.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Woluwe-Saint-Pierre",
+  "description": "Expert en certification PEB agréé à Woluwe-Saint-Pierre (1150)",
+  "url": "https://pebify.be/certificat-peb-woluwe-saint-pierre/",
+  "areaServed": { "@type": "City", "name": "Woluwe-Saint-Pierre", "postalCode": "1150" },
+  "priceRange": "€€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Woluwe-Saint-Pierre (1150) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Woluwe-Saint-Pierre (1150). Spécialiste des villas de prestige et demeures bourgeoises. Certificats énergétiques agréés complets."
+  breadcrumb={[{ label: 'Certificat PEB Woluwe-Saint-Pierre', href: '/certificat-peb-woluwe-saint-pierre/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Woluwe-Saint-Pierre"
+  heroSubtitle="Spécialiste de la certification énergétique à Woluwe-Saint-Pierre (1150). Expert en villas et propriétés de prestige élégantes."
+  canonical="https://pebify.be/certificat-peb-woluwe-saint-pierre/"
+  schemaJson={jsonLd}
+>
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certificat PEB à <span class="gradient-text-cyan">Woluwe-Saint-Pierre</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Woluwe-Saint-Pierre, commune du sud-est bruxellois, respire l'élégance résidentielle et l'harmonie environnementale. Avec environ 43 000 habitants, elle constitue un territoire marqué par la présence de la Forêt de Soignes et offre un habitat dominé par les villas résidentielles et les demeures individuelles de prestige.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Je suis spécialisé dans la certification des propriétés woluwéennes-pierroises remarquables. Mon expertise approfondie me permet d'évaluer précisément ces biens élégants avec exactitude. L'environnement naturel exceptionnel offre un contexte optimal pour des rénovations énergétiques performantes et durables.
+        </p>
+      </div>
+
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Propriétés à Woluwe-Saint-Pierre
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Villas de prestige</p>
+              <p class="text-peb-text2 text-sm">Certification de villas élégantes et spacieuses.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Demeures bourgeoises</p>
+              <p class="text-peb-text2 text-sm">Certification de propriétés bourgeoises élégantes.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Maisons spacieuses</p>
+              <p class="text-peb-text2 text-sm">Certification de propriétés grandes et élégantes.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Propriétés élégantes</p>
+              <p class="text-peb-text2 text-sm">Certification d'exception et prestige.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Profil énergétique
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Woluwe-Saint-Pierre offre un portefeuille énergétique de qualité exceptionnelle. Les villas obtiennent généralement C à F. L\'amélioration énergétique offre d\'excellentes perspectives de valorisation patrimoniale.</p>
+      </div>
+
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certificat PEB prestige</h4>
+            <p class="text-peb-text2 text-sm">Certification pour villas de prestige.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit de prestige</h4>
+            <p class="text-peb-text2 text-sm">Analyse approfondie des propriétés élégantes.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport d\'excellence</h4>
+            <p class="text-peb-text2 text-sm">Documentation complète et stratégique.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation villa d'exception</h4>
+            <p class="text-peb-text2 text-sm">Expertise pour propriétés élégantes.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Petit bien</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Villa</p>
+            <p class="text-3xl font-bold text-peb-cyan">249€+</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">Devis personnalisé</a> pour propriétés exceptionnelles.
+        </p>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Ressources
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre la certification.</p>
+          </a>
+          <a href="/guide-peb/ameliorer-score/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Améliorer votre score</p>
+            <p class="text-sm text-peb-text2">Recommandations d'amélioration.</p>
+          </a>
+          <a href="/guide-peb/echelle-classes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Classes énergétiques</p>
+            <p class="text-sm text-peb-text2">Échelle A++ à G.</p>
+          </a>
+          <a href="/guide-peb/primes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Aides rénovation</p>
+            <p class="text-sm text-peb-text2">Primes et subventions 2026.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <CTA
+    title="Certificat PEB pour votre villa à Woluwe-Saint-Pierre"
+    subtitle="Spécialiste des propriétés élégantes. Contactez-moi pour votre certification."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <CommuneLinks />
+</PageLayout>

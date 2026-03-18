@@ -1,0 +1,342 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CTA from '../../../components/sections/CTA.astro';
+import Card from '../../../components/ui/Card.astro';
+import Badge from '../../../components/ui/Badge.astro';
+import Button from '../../../components/ui/Button.astro';
+
+const breadcrumb = [
+  { label: 'Guide PEB', href: '/guide-peb/' },
+  { label: 'Définition', href: '/guide-peb/definition/' },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Qu\'est-ce que le PEB ? Définition et explication complète',
+  description: 'Guide complet : définition du certificat PEB, performance énergétique des bâtiments, bases légales et ce qu\'il mesure à Bruxelles.',
+  author: {
+    '@type': 'Organization',
+    name: 'PEBify',
+  },
+  image: 'https://pebify.be/og-image.jpg',
+};
+---
+
+<PageLayout
+  title="Qu'est-ce que le PEB ? Définition complète | PEBify"
+  description="Définition du certificat PEB : Performance Énergétique des Bâtiments. Explications sur la base légale, ce qu'il mesure et pourquoi à Bruxelles."
+  canonical="https://pebify.be/guide-peb/definition/"
+  breadcrumb={breadcrumb}
+  heroLabel="Comprendre les fondamentaux"
+  heroTitle="Qu'est-ce que le PEB ?"
+  heroSubtitle="Guide complet de la Performance Énergétique des Bâtiments : définitions, principes, et fondements légaux à Bruxelles."
+  schemaJson={schemaJson}
+>
+  <!-- Introduction -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6 reveal">
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Le PEB (Performance Énergétique du Bâtiment) est un certificat officiel qui évalue la performance énergétique globale d'un bâtiment. C'est un document légal essentiel à Bruxelles, qui mesure l'efficacité énergétique d'un bien immobilier et le classe sur une échelle de A++ à G.
+        </p>
+
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Ce certificat est devenu obligatoire pour toute transaction immobilière (vente ou location) en Belgique francophone. Il fournit aux propriétaires et aux acheteurs une information transparente sur la consommation énergétique réelle ou estimée d'un bien.
+        </p>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <p class="font-semibold text-peb-text mb-3">📌 Définition officielle:</p>
+          <p class="text-peb-text2">
+            Le PEB est un certificat attestant la performance énergétique d'un bâtiment, exprimée par sa consommation d'énergie primaire estimée en kWh/m²/an. Il classe le bien sur une échelle de performance (A++ étant le meilleur, G le moins performant).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Historical & Legal Basis -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Contexte <span class="gradient-text-cyan">légal et historique</span>
+        </h2>
+      </div>
+
+      <div class="space-y-8 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">La directive européenne EPBD</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Le PEB découle de la directive européenne EPBD (Energy Performance of Buildings Directive), adoptée en 2002 et renforcée en 2010. Cette directive vise à réduire la consommation énergétique des bâtiments en Europe de 20% d'ici 2020.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">La loi bruxelloise (2008)</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            La Région bruxelloise a transposé cette directive dans l'ordonnance du 2 mai 2008. Depuis 2009, le PEB est obligatoire lors de toute transaction immobilière (vente ou location supérieure à 6 mois).
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Objectifs climatiques</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Le PEB s'inscrit dans la stratégie climatique belge et européenne : réduire les émissions de CO2, améliorer l'efficacité énergétique des bâtiments (qui représentent 40% de la consommation énergétique), et sensibiliser propriétaires et locataires.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Évolution récente</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Depuis 2020, les critères PEB se sont renforcés. Les bâtiments doivent atteindre des niveaux de performance énergétique plus élevés. En 2030, tous les nouveaux bâtiments devront être à zéro émission nette (nZEB).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What PEB Measures -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Qu'est-ce que le PEB <span class="gradient-text-cyan">évalue</span>?
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">🧱</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Isolation thermique</h3>
+            <p class="text-peb-text2">
+              Qualité de l'isolation des toitures, murs, sol et fenêtres. Une bonne isolation réduit les fuites thermiques et la consommation énergétique.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">🔥</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Systèmes de chauffage</h3>
+            <p class="text-peb-text2">
+              Type et efficacité de la chaudière/pompe à chaleur. Un système moderne et bien entretenu consomme moins d'énergie.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">💨</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Ventilation</h3>
+            <p class="text-peb-text2">
+              Type de ventilation (naturelle ou mécanique contrôlée). Une bonne ventilation assure la qualité de l'air intérieur et l'efficacité énergétique.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">💧</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Production d'eau chaude sanitaire</h3>
+            <p class="text-peb-text2">
+              Mode de production (chaudière, boiler électrique, panneaux solaires). Le mode influence directement la consommation énergétique.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">☀️</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Énergies renouvelables</h3>
+            <p class="text-peb-text2">
+              Présence de panneaux solaires, pompes à chaleur ou autres systèmes bas-carbone. Ils réduisent la dépendance énergétique.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">📐</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Géométrie du bâtiment</h3>
+            <p class="text-peb-text2">
+              Surface habitable, compacité, nombre de fenêtres, exposition. Ces facteurs affectent les déperditions thermiques.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who Needs PEB -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Qui en a <span class="gradient-text-cyan">besoin</span>?
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <Badge variant="cyan" text="VENTE" />
+          <div>
+            <h3 class="font-semibold text-peb-text mb-1">Vendeurs immobiliers</h3>
+            <p class="text-peb-text2">
+              Obligatoire avant la conclusion de la vente. À votre charge de le fournir à l'acheteur.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <Badge variant="blue" text="LOCATION" />
+          <div>
+            <h3 class="font-semibold text-peb-text mb-1">Propriétaires-bailleurs</h3>
+            <p class="text-peb-text2">
+              Obligatoire pour toute location résidentielle de plus de 6 mois à Bruxelles.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <Badge variant="green" text="RÉNOVATION" />
+          <div>
+            <h3 class="font-semibold text-peb-text mb-1">Propriétaires en rénovation</h3>
+            <p class="text-peb-text2">
+              Recommandé avant travaux pour un diagnostic énergétique complet et un plan d'amélioration.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <Badge variant="cyan" text="CONSTRUCTEURS" />
+          <div>
+            <h3 class="font-semibold text-peb-text mb-1">Constructeurs et promoteurs</h3>
+            <p class="text-peb-text2">
+              Obligatoire pour tous les nouveaux bâtiments avant mise sur le marché.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-peb-surface border border-peb-border rounded-xl p-6 reveal">
+        <p class="font-semibold text-peb-text mb-3">⏱️ Timing important:</p>
+        <p class="text-peb-text2 mb-3">
+          Le PEB doit être établi AVANT la signature définitive du contrat de vente ou la conclusion d'un bail de location. Un certificat établi après la transaction n'est pas valide légalement.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Metrics -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Les <span class="gradient-text-cyan">indicateurs clés</span>
+        </h2>
+      </div>
+
+      <div class="space-y-8 reveal">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-2xl font-display font-bold text-peb-text">Consommation d'énergie primaire (kWh/m²/an)</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            C'est l'indicateur principal. Il représente la quantité totale d'énergie primaire consommée annuellement par mètre carré de surface habitable. Cette valeur détermine votre classe PEB (A++, A+, A, B, C, D, E, F ou G).
+          </p>
+          <div class="bg-peb-bg border border-peb-border rounded-lg p-4">
+            <p class="text-sm font-mono text-peb-cyan">
+              Exemple: 150 kWh/m²/an = classe D | 75 kWh/m²/an = classe A+
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-2xl font-display font-bold text-peb-text">Émissions de CO2 (kg CO2/m²/an)</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Second indicateur important, mesurant l'impact climatique du bâtiment. Un bâtiment plus performant produit moins d'émissions de CO2. Cet indicateur encourage la transition vers les énergies renouvelables.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-2xl font-display font-bold text-peb-text">Score PEB global</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Résultat global combinant tous les facteurs. C'est ce score qui détermine votre classement final de A++ à G. Plus le score est bas, mieux c'est pour votre portefeuille.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Pour <span class="gradient-text-cyan">aller plus loin</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+        <a href="/guide-peb/obligations/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">⚖️</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Obligations légales</h3>
+              <p class="text-sm text-peb-text2">
+                Quand le PEB est obligatoire et quelles sanctions risquez-vous.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/echelle-classes/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">📊</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Échelle de classes</h3>
+              <p class="text-sm text-peb-text2">
+                Comprendre les 9 classes énergétiques (A++ à G).
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/tarifs-peb-bruxelles/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">💰</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Tarifs PEB</h3>
+              <p class="text-sm text-peb-text2">
+                Prix pour obtenir votre certificat à Bruxelles.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/ameliorer-score/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">⚡</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Améliorer votre score</h3>
+              <p class="text-sm text-peb-text2">
+                Meilleures actions pour optimiser votre performance.
+              </p>
+            </div>
+          </Card>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Besoin d'un certificat PEB?"
+    title="Commencez votre audit maintenant"
+    subtitle="Définition claire, explications transparentes et un certificat agréé. Réponse sous 24 heures."
+    primaryHref="/contact/"
+    primaryText="Demander un audit"
+    secondaryHref="/tarifs-peb-bruxelles/"
+    secondaryText="Voir les tarifs"
+  />
+</PageLayout>

@@ -1,0 +1,226 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+import { communes } from '../../data/communes';
+import { siteConfig } from '../../data/site';
+
+const commune = communes.find(c => c.slug === 'auderghem');
+
+const faqItems = [
+  {
+    question: 'Pourquoi la certification PEB est-elle importante à Auderghem?',
+    answer: 'Auderghem concentre de nombreuses villas et propriétés de prestige. Une bonne classification PEB améliore considérablement la valeur de revente. Je certifie régulièrement des demeures auderghermoises avec des classifications D à F, avec potentiel d\'amélioration grâce à des rénovations ciblées.'
+  },
+  {
+    question: 'Mes vitrages simples et mon isolation sont-ils problématiques?',
+    answer: 'Oui, les vitrages simples et une isolation insuffisante réduisent la performance énergétique. C\'est courant à Auderghem dans les propriétés anciennes. Mon audit identifie précisément ces faiblesses et vous propose les amélirations prioritaires pour optimiser votre classe PEB.'
+  },
+  {
+    question: 'Combien coûte une certification PEB pour une villa à Auderghem?',
+    answer: 'Pour une villa, mon tarif est 249€, incluant visite complète et rapport détaillé. Les villas de prestige auderghermoises nécessitent une évaluation approfondie. Contactez-moi pour un devis si vous avez plusieurs propriétés.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Auderghem",
+  "description": "Expert en certification PEB agréé à Auderghem (1160)",
+  "image": "https://pebify.be/og-image.jpg",
+  "url": "https://pebify.be/certificat-peb-auderghem/",
+  "telephone": "+32 484 63 08 15",
+  "email": "info@pebify.be",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue Emile Wauters 58",
+    "addressLocality": "Bruxelles",
+    "postalCode": "1020",
+    "addressCountry": "BE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Auderghem",
+    "postalCode": "1160"
+  },
+  "priceRange": "€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Auderghem (1160) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Auderghem (1160). Certificats énergétiques agréés pour villas, propriétés de prestige et maisons particulières. Expertise en biens haut de gamme."
+  breadcrumb={[{ label: 'Certificat PEB Auderghem', href: '/certificat-peb-auderghem/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Auderghem"
+  heroSubtitle="Expert agréé pour la certification énergétique de vos propriétés auderghermoises. Spécialiste des villas et propriétés de prestige."
+  canonical="https://pebify.be/certificat-peb-auderghem/"
+  schemaJson={jsonLd}
+>
+  <!-- Main Content Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Introduction -->
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certification PEB à <span class="gradient-text-cyan">Auderghem</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Auderghem, commune verdoyante du sud-est bruxellois, incarne l'élégance résidentielle avec ses environ 37 000 habitants. Réputée pour son cadre de qualité exceptionnelle, elle accueille principalement des villas spacieuses et des propriétés particulières, attirant les familles cherchant tranquillité et prestige. En tant que certificateur PEB agréé, j'interviens régulièrement sur le territoire auderghmois pour certifier ces biens immobiliers de prestige.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Ma spécialité à Auderghem concerne la certification des villas de prestige, des demeures bourgeoises et des résidences de haut standing. Le Parc de Wolvendael, la Chaussée de Wavre et ses environs sont des secteurs dynamiques où j'interviens régulièrement pour optimiser la performance énergétique de propriétés remarquables.
+        </p>
+      </div>
+
+      <!-- Property Types Section -->
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Types de propriétés à Auderghem
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Villas résidentielles spacieuses</p>
+              <p class="text-peb-text2 text-sm">Je certifie les villas modernes et traditionnelles d'Auderghem, souvent avec jardins importants.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Maisons bourgeoises</p>
+              <p class="text-peb-text2 text-sm">Certification de demeures bourgeoises classiques avec caractère architectural particulier.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petits collectifs de prestige</p>
+              <p class="text-peb-text2 text-sm">Petits immeubles d'habitation de prestige et résidences de haut standing.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Propriétés de prestige</p>
+              <p class="text-peb-text2 text-sm">Maisons exceptionnelles, terrains et complexes résidentiels d'exception.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Energy Profile Section -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Performance énergétique des propriétés auderghermoises
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Auderghem présente un portefeuille énergétique relativement diversifié. De nombreuses villas anciennes obtiennent des classes D à F, tandis que les constructions plus récentes ou rénovées peuvent atteindre des classes C ou mieux. L'isolation thermique est souvent le point faible des anciennes demeures.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Les propriétaires auderghmois investissent volontiers dans des rénovations énergétiques pour préserver la valeur de leurs biens. L'amélioration des vitrages, du chauffage central et de l'isolation des combles offrent généralement les meilleurs retours sur investissement.
+        </p>
+      </div>
+
+      <!-- Services Section -->
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services PEB pour propriétés auderghermoises
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certification PEB complète</h4>
+            <p class="text-peb-text2 text-sm">Certification agréée pour tous les types de propriétés auderghermoises.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit énergétique spécialisé</h4>
+            <p class="text-peb-text2 text-sm">Analyse détaillée pour les villas et propriétés de prestige avec recommandations ciblées.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport d'amélioration optimisé</h4>
+            <p class="text-peb-text2 text-sm">Stratégie d'amélioration adaptée à votre bien et à vos objectifs de revente.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation en rénovation</h4>
+            <p class="text-peb-text2 text-sm">Conseils stratégiques pour optimiser votre classe PEB avec efficacité.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Section -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification pour Auderghem
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Appartement</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Villa/Maison</p>
+            <p class="text-3xl font-bold text-peb-cyan">249€</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          Tous les services incluent visite complète, audit énergétique et certificat officiel. Pour les demeures exceptionnelles auderghermoises, <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">demandez un devis personnalisé</a>.
+        </p>
+      </div>
+
+      <!-- Internal Links -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          En savoir plus sur la certification PEB
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre la certification énergétique.</p>
+          </a>
+          <a href="/guide-peb/ameliorer-score/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Améliorer son score PEB</p>
+            <p class="text-sm text-peb-text2">Stratégies d'amélioration pour vos propriétés.</p>
+          </a>
+          <a href="/guide-peb/echelle-classes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Échelle des classes PEB</p>
+            <p class="text-sm text-peb-text2">De A++ à G : comprendre les classes.</p>
+          </a>
+          <a href="/guide-peb/primes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Primes rénovation 2026</p>
+            <p class="text-sm text-peb-text2">Financer vos améliorations énergétiques.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQ items={faqItems} />
+
+  <!-- CTA Section -->
+  <CTA
+    title="Certificat PEB pour votre propriété auderghmoise?"
+    subtitle="Contactez-moi pour une visite d'expertise et obtenir votre certificat énergétique agréé."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <!-- Commune Links -->
+  <CommuneLinks />
+</PageLayout>

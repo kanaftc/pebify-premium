@@ -1,0 +1,256 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CTA from '../../../components/sections/CTA.astro';
+import Card from '../../../components/ui/Card.astro';
+
+const breadcrumb = [
+  { label: 'Guide PEB', href: '/guide-peb/' },
+  { label: 'FAQ', href: '/guide-peb/faq/' },
+];
+
+const faqCategories = [
+  {
+    title: 'DÉFINITION & BASES',
+    questions: [
+      { q: 'Qu\'est-ce que le PEB?', a: 'Le PEB (Performance Énergétique du Bâtiment) est un certificat officiel qui évalue l\'efficacité énergétique d\'un bâtiment et le classe sur une échelle A++ à G.' },
+      { q: 'D\'où vient le PEB?', a: 'Le PEB vient d\'une directive européenne (EPBD) transposée en Belgique en 2008. C\'est obligatoire depuis 2009 à Bruxelles.' },
+      { q: 'Qui établit le PEB?', a: 'Seul un certificateur agréé par la Région bruxelloise peut établir un PEB légalement valide. PEBify en est un.' },
+      { q: 'Comment est calculé le PEB?', a: 'Via une consommation d\'énergie primaire estimée en kWh/m²/an, tenant compte de l\'isolation, chauffage, ventilation, eau chaude, et énergies renouvelables.' },
+      { q: 'Qu\'est-ce que l\'énergie primaire?', a: 'C\'est l\'énergie totale depuis source (charbon pour électricité, gaz naturel) jusqu\'à usage final. Moins efficace que conversion directe.' },
+    ],
+  },
+  {
+    title: 'OBLIGATIONS LÉGALES',
+    questions: [
+      { q: 'Le PEB est obligatoire?', a: 'OUI. Pour toute vente immobilière et location de plus de 6 mois à Bruxelles. Absence = amende jusqu\'à 5000€.' },
+      { q: 'Qui doit le payer?', a: 'Vendeur (en vente) ou bailleur (en location). Ils en sont légalement responsables.' },
+      { q: 'Quand le PEB est-il requis?', a: 'AVANT signature du contrat (vente) ou bail (location). Un PEB établi après n\'a aucune valeur légale.' },
+      { q: 'Que se passe-t-il sans PEB?', a: 'Amende 1000€-5000€, transaction annulable, responsabilité civile possible, et pénalités légales.' },
+      { q: 'Depuis quand est-ce obligatoire?', a: 'Depuis 2009 à Bruxelles. Depuis 2021, le PEB doit aussi figurer en annonce immobilière.' },
+    ],
+  },
+  {
+    title: 'CLASSES ÉNERGÉTIQUES',
+    questions: [
+      { q: 'Combien de classes PEB?', a: '9 classes : A++ (meilleur), A+, A, B, C, D, E, F, G (pire). Déterminées par consommation énergétique.' },
+      { q: 'Classe D c\'est bon?', a: 'Moyen. C\'est la moyenne bruxelloise. Pour être au-dessus, viser classe C ou mieux (B, A).' },
+      { q: 'Comment améliorer ma classe?', a: 'Isolation toiture/murs, changement fenêtres, pompe à chaleur, ventilation. Voir guide \"Améliorer votre score\".' },
+      { q: 'Classe A+++ existe?', a: 'Non. A++ est le maximum. Mais le très bâtiments sont À+ ou mieux (ultra performants).' },
+      { q: 'La classe change avec rénovations?', a: 'Oui. Un nouveau PEB après travaux montrera une meilleure classe. Important pour valeur revente.' },
+    ],
+  },
+  {
+    title: 'PRIX & TARIFS',
+    questions: [
+      { q: 'Combien coûte un PEB?', a: 'À Bruxelles : 189€ (appartement) à 249€ (maison). TVA incluse. Services additionnels: thermographie (+120€-180€).' },
+      { q: 'Pourquoi les prix varient?', a: 'Type de bien, surface, complexité énergétique. Maison > duplex > appartement. Temps d\'inspection = coût.' },
+      { q: 'Frais cachés possibles?', a: 'Méfiez-vous. Vrais certificateurs ne facturent que le PEB. Pas d\'enregistrement, pas d\'admin, pas de déplacement supplémentaire.' },
+      { q: 'Devis gratuit possible?', a: 'Oui, PEBify propose devis gratuit sans engagement. Contactez directement pour estimation précise.' },
+      { q: 'PEB lors achat/vente, qui paie?', a: 'Vendeur paie. Mais acheteur peut négocier partage. À discuter avant signature chez notaire.' },
+    ],
+  },
+  {
+    title: 'DÉLAIS & PROCESSUS',
+    questions: [
+      { q: 'Combien de temps pour audit?', a: 'Appartement: 20-45 min. Duplex: 45 min-1h30. Maison: 1h-2h. Dépend surface et complexité.' },
+      { q: 'Délai pour recevoir certificat?', a: 'Généralement 3-5 jours ouvrables après visite. Urgence possible (2-3 jours) sur demande.' },
+      { q: 'Comment se déroule visite?', a: 'Expert inspecte intérieur/extérieur. Mesure isolations, contrôle chauffage, fenêtres. Vous pouvez rester dans bien.' },
+      { q: 'Visite à quel moment?', a: 'Vous choisissez. Jour, soir, week-end. À convenir avec certificateur. En général 2-3 jours de délai.' },
+      { q: 'Certificat valide combien de temps?', a: '10 ans. Après, vous devez en établir un nouveau pour transaction.' },
+    ],
+  },
+  {
+    title: 'AMÉLIORATION & PRIMES',
+    questions: [
+      { q: 'Comment passer de classe D à C?', a: 'Généralement: isolation toiture (1500€-3000€) + changement fenêtres (3000€-5000€). Primes couvrent 30-40%.' },
+      { q: 'Y a-t-il des aides?', a: 'OUI. RENOLUTION (Bruxelles) offre primes jusqu\'à 50% pour isolation toiture, chauffage, fenêtres. Demande AVANT travaux.' },
+      { q: 'Primes cumulables?', a: 'Oui. Primes RENOLUTION + crédit impôt fédéral (30%) + TVA réduite 6%. Cumul important possible.' },
+      { q: 'Combien apporte une amélioration?', a: 'Isolation toiture: -15-20% consommation. Pompe à chaleur: -30-40%. Fenêtres: -10-15%. Cumulatif.' },
+      { q: 'ROI sur améliorations?', a: 'Généralement 8-15 ans. Dépend travaux. Économies énergétiques + hausse valeur = rentable.' },
+    ],
+  },
+  {
+    title: 'SPÉCIFICITÉS BRUXELLES',
+    questions: [
+      { q: 'PEB différent en Wallonie?', a: 'Oui. Chaque région a ses propres règles et certificateurs agréés. Valide seulement dans région origin.' },
+      { q: 'PEB Flandre valide à Bruxelles?', a: 'NON. Doit être établi par certificateur bruxellois agréé. Accepté pour habiter, mais pas légalement pour vente/location.' },
+      { q: 'RENOLUTION s\'applique partout?', a: 'Oui, à tous Bruxelles. Quelque soit la commune. Montants identiques partout.' },
+      { q: 'Quelle commune Bruxelles?', a: '19 communes. Toutes soumises aux mêmes obligations PEB. PEBify intervient partout.' },
+    ],
+  },
+  {
+    title: 'PROPRIÉTAIRES & BAILLEURS',
+    questions: [
+      { q: 'Je loue mon appart, comment faire?', a: 'Vous (propriétaire) établissez le PEB avant signature bail. Coût à votre charge. Locataire doit avoir copie.' },
+      { q: 'Locataire peut demander PEB?', a: 'Oui, c\'est son droit. Mais propri doit l\'avoir fourni avant signature. Si absent, légalement invalide.' },
+      { q: 'Afficher classe en annonce?', a: 'OUI. Depuis 2021, obligatoire d\'afficher classe PEB (ou consommation énergétique) en annonce immobilière.' },
+      { q: 'Locataire factures énergie?', a: 'Dépend bail. Si \"charges chauffage comprises\", propri paie. Si charges locataire, c\'est pour lui. PEB montre efficient.' },
+      { q: 'Refus signature sans PEB?', a: 'Acheteur/locataire peuvent refuser signer sans PEB valide. C\'est leur droit légal. Obligation pour vous (vendeur/propri).' },
+    ],
+  },
+  {
+    title: 'DIVERS',
+    questions: [
+      { q: 'Puis-je vendre/louer sans PEB?', a: 'Non, c\'est illégal à Bruxelles. Transaction invalide. Amende 1000€-5000€. Très risqué.' },
+      { q: 'PEB influence le prix?', a: 'Oui, fortement. Classe A vaut 5-10% plus cher. Classe G vaut 15-25% moins. Acheteurs paient pour efficacité.' },
+      { q: 'PEB si pas d\'électricité?', a: 'PEB est possible même sans électricité (maison vacante, etc.). Estimation basée sur équipements standards.' },
+      { q: 'Panneaux solaires aident?', a: 'Oui! Réduisent consommation estimée. Meilleure classe. Très bon pour classe PEB et valeur revente.' },
+      { q: 'Ancien PEB, je dois le refaire?', a: 'Si < 10 ans, il est valide. Si > 10 ans, OUI obligatoirement refaire pour transaction. Vérifiez date.' },
+    ],
+  },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqCategories.flatMap(cat =>
+    cat.questions.map(q => ({
+      '@type': 'Question',
+      name: q.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: q.a,
+      },
+    }))
+  ),
+};
+---
+
+<PageLayout
+  title="FAQ PEB : 30 questions réponses | Guide complet | PEBify"
+  description="FAQ certificat PEB : 30 questions complètes couvrant définition, obligations, classes, prix, améliorations, primes RENOLUTION, et spécificités Bruxelles."
+  canonical="https://pebify.be/guide-peb/faq/"
+  breadcrumb={breadcrumb}
+  heroLabel="30 réponses complètes"
+  heroTitle="FAQ PEB : Questions-Réponses Complètes"
+  heroSubtitle="30 questions couvertes : définition, obligations légales, classes énergétiques, prix, améliorations, primes, et spécificités Bruxelles."
+  schemaJson={schemaJson}
+>
+  <!-- Introduction -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6 reveal">
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Vous avez des questions sur le certificat PEB à Bruxelles? Cette FAQ couvre les 30 questions les plus fréquemment posées, groupées par catégorie pour navigation facile.
+        </p>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <p class="font-semibold text-peb-text mb-3">💡 Avant de nous contacter:</p>
+          <p class="text-peb-text2">
+            Cette FAQ contient les réponses à 95% des questions standard. Si votre question n'est pas ici, contactez-nous sans hésiter.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Sections -->
+  {faqCategories.map((category, catIndex) => (
+    <section key={catIndex} class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 reveal">
+          <h2 class="text-3xl sm:text-4xl font-display font-bold text-peb-text mb-2">
+            {category.title}
+          </h2>
+          <div class="w-16 h-1 bg-peb-cyan rounded" />
+        </div>
+
+        <div class="space-y-4 reveal-stagger">
+          {category.questions.map((item, qIndex) => (
+            <div key={qIndex} class="bg-peb-card border border-peb-border rounded-xl overflow-hidden">
+              <details class="group">
+                <summary class="p-6 cursor-pointer hover:bg-peb-bg transition-colors">
+                  <div class="flex items-start justify-between gap-4">
+                    <h3 class="text-lg font-display font-bold text-peb-text flex-1 text-left">
+                      {item.q}
+                    </h3>
+                    <span class="text-peb-cyan flex-shrink-0 group-open:rotate-180 transition-transform">
+                      ▼
+                    </span>
+                  </div>
+                </summary>
+                <div class="px-6 pb-6 pt-0 border-t border-peb-border bg-peb-bg">
+                  <p class="text-peb-text2 leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              </details>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- Related Links -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Pour <span class="gradient-text-cyan">aller plus loin</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+        <a href="/guide-peb/definition/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">📚</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Définition PEB</h3>
+              <p class="text-sm text-peb-text2">
+                Guide complet des fondamentaux.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/obligations/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">⚖️</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Obligations légales</h3>
+              <p class="text-sm text-peb-text2">
+                Responsabilités et sanctions.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/ameliorer-score/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">⚡</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Améliorer votre score</h3>
+              <p class="text-sm text-peb-text2">
+                Top 6 actions recommandées.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/primes/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">💚</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Primes RENOLUTION</h3>
+              <p class="text-sm text-peb-text2">
+                Financer vos rénovations.
+              </p>
+            </div>
+          </Card>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Pas de réponse à votre question?"
+    title="Contactez-nous directement"
+    subtitle="Je suis disponible pour répondre à vos questions spécifiques. Support rapide et transparent."
+    primaryHref="/contact/"
+    primaryText="Envoyer une question"
+    secondaryHref="/tarifs-peb-bruxelles/"
+    secondaryText="Voir nos tarifs"
+  />
+</PageLayout>

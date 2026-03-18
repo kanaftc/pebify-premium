@@ -1,0 +1,227 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+import { communes } from '../../data/communes';
+import { siteConfig } from '../../data/site';
+
+const commune = communes.find(c => c.slug === 'anderlecht');
+const neighbors = ['bruxelles-ville', 'molenbeek', 'forest', 'berchem-sainte-agathe'];
+
+const faqItems = [
+  {
+    question: 'Quel est le délai d\'obtention du certificat PEB à Anderlecht?',
+    answer: 'J\'obtiens votre certificat PEB en 3 à 5 jours après la visite complète de votre bien. Anderlecht étant une grande commune avec beaucoup de transactions immobilières, je m\'adapte aux délais demandés. Pour les ventes urgentes, je peux accélérer le processus.'
+  },
+  {
+    question: 'Les anciens bâtiments d\'Anderlecht sont-ils difficiles à certifier?',
+    answer: 'Non, je certifie régulièrement les bâtiments anciens d\'Anderlecht. Ces constructions, datant souvent du début du XXe siècle, présentent des profils énergétiques variés. Mon expertise me permet d\'évaluer correctement leur performance même sans normes de construction modernes.'
+  },
+  {
+    question: 'Quel est le coût d\'un certificat PEB pour un petit immeuble à Anderlecht?',
+    answer: 'Le prix dépend du type de bien. Pour un petit immeuble résidentiel à Anderlecht, mes tarifs commencent à 189€ pour un appartement et 249€ pour une maison. Je propose également des forfaits pour les multi-propriétaires. Contactez-moi pour un devis personnalisé.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Anderlecht",
+  "description": "Expert en certification PEB agréé à Anderlecht (1070)",
+  "image": "https://pebify.be/og-image.jpg",
+  "url": "https://pebify.be/certificat-peb-anderlecht/",
+  "telephone": "+32 484 63 08 15",
+  "email": "info@pebify.be",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue Emile Wauters 58",
+    "addressLocality": "Bruxelles",
+    "postalCode": "1020",
+    "addressCountry": "BE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Anderlecht",
+    "postalCode": "1070"
+  },
+  "priceRange": "€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Anderlecht (1070) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Anderlecht (1070). Certificats énergétiques agréés pour maisons, appartements et petits immeubles. Intervention rapide, tarifs transparents."
+  breadcrumb={[{ label: 'Certificat PEB Anderlecht', href: '/certificat-peb-anderlecht/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Anderlecht"
+  heroSubtitle="Expert agréé pour votre certification énergétique à Anderlecht (1070). Rapidité, transparence, conformité."
+  canonical="https://pebify.be/certificat-peb-anderlecht/"
+  schemaJson={jsonLd}
+>
+  <!-- Main Content Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Introduction -->
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certification PEB à <span class="gradient-text-cyan">Anderlecht</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Anderlecht, la plus grande commune de Bruxelles avec plus de 121 000 habitants, concentre un parc immobilier extrêmement diversifié. Comme certificateur PEB agréé par la Région bruxelloise, j'interviens régulièrement dans les différents quartiers d'Anderlecht pour évaluer la performance énergétique de tous types de biens : maisons individuelles, petits immeubles résidentiels, logements sociaux et bâtiments commerciaux.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Mon expertise couvre l'ensemble du territoire anderlechnois, de la Rue de la Papeterie au Canal de Bruxelles, en passant par le centre commercial Westland et le Parc de la Colombette. Je certifie aussi bien les propriétés historiques des quartiers anciens que les constructions plus modernes, en respectant scrupuleusement les normes bruxelloises.
+        </p>
+      </div>
+
+      <!-- Property Types Section -->
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Types de propriétés certificables à Anderlecht
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Maisons unifamiliales</p>
+              <p class="text-peb-text2 text-sm">Je certifie les petites maisons mitoyennes ou isolées, très présentes à Anderlecht.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petits immeubles résidentiels</p>
+              <p class="text-peb-text2 text-sm">Immeubles d'habitation de 3 à 5 étages, majoritaires à Anderlecht.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Habitats collectifs et logements sociaux</p>
+              <p class="text-peb-text2 text-sm">Certification complète des grands bâtiments collectifs résidentiels.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Bâtiments commerciaux</p>
+              <p class="text-peb-text2 text-sm">Petits commerces et structures mixtes du secteur commercial anderlechnois.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Energy Profile Section -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Profil énergétique des propriétés d'Anderlecht
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Anderlecht présente une grande diversité en matière de performance énergétique. La majorité des propriétés y obtiennent une classification PEB entre D et F, reflétant une construction urbaine mixte : bâtiments anciens des années 1900-1950 aux côtés de structures rénovées ou construites récemment.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Les opportunités de rénovation énergétique à Anderlecht sont considérables. L'amélioration de l'isolation thermique, le remplacement des anciens systèmes de chauffage, l'installation de vitrages performants et l'optimisation de la ventilation peuvent transformer le profil énergétique de nombreux bâtiments anderlechnois.
+        </p>
+      </div>
+
+      <!-- Services Section -->
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services complètement agréés à Anderlecht
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certificat PEB officiel</h4>
+            <p class="text-peb-text2 text-sm">Certification complète conforme aux normes bruxelloises. Valide légalement pour toute transaction immobilière à Anderlecht.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit énergétique détaillé</h4>
+            <p class="text-peb-text2 text-sm">Analyse approfondie avec recommandations personnalisées pour améliorer votre bâtiment anderlechnois.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport d'amélioration</h4>
+            <p class="text-peb-text2 text-sm">Préconisations détaillées pour atteindre une meilleure classe énergétique et réduire vos consommations.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation stratégique</h4>
+            <p class="text-peb-text2 text-sm">Conseils pour optimiser la valeur immobilière et la conformité réglementaire de votre bien.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Section -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification transparente pour Anderlecht
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Appartement</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Maison</p>
+            <p class="text-3xl font-bold text-peb-cyan">249€</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          Tous mes tarifs incluent la visite complète, l'analyse énergétique, le certificat officiel et un rapport détaillé. Pour les immeubles à plusieurs unités ou les bâtiments commerciaux, je propose des forfaits adaptés. <a href="/tarifs-peb-bruxelles/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">Consultez mes tarifs complets</a> ou <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">contactez-moi</a> pour un devis gratuit.
+        </p>
+      </div>
+
+      <!-- Internal Links -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          En savoir plus sur la certification PEB
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre la certification énergétique complètement.</p>
+          </a>
+          <a href="/guide-peb/obligations/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Obligations PEB à Bruxelles</p>
+            <p class="text-sm text-peb-text2">Quand et pourquoi le certificat est obligatoire.</p>
+          </a>
+          <a href="/guide-peb/echelle-classes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Échelle des classes PEB</p>
+            <p class="text-sm text-peb-text2">Classes A++ à G : comprendre votre classement.</p>
+          </a>
+          <a href="/guide-peb/ameliorer-score/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Améliorer son score PEB</p>
+            <p class="text-sm text-peb-text2">Recommandations pour optimiser votre performance énergétique.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQ items={faqItems} />
+
+  <!-- CTA Section -->
+  <CTA
+    title="Prêt à obtenir votre certificat PEB à Anderlecht?"
+    subtitle="Je vous contacte rapidement pour planifier une visite et vous accompagner dans votre certification énergétique."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <!-- Commune Links -->
+  <CommuneLinks />
+</PageLayout>

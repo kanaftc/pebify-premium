@@ -1,0 +1,287 @@
+---
+import Badge from '../ui/Badge.astro';
+import Button from '../ui/Button.astro';
+
+interface Props {
+  label?: string;
+  title: string;
+  subtitle: string;
+  showCalculator?: boolean;
+  showStats?: boolean;
+}
+
+const {
+  label,
+  title,
+  subtitle,
+  showCalculator = false,
+  showStats = false,
+} = Astro.props;
+---
+
+<section class="relative py-20 md:py-32 lg:py-40 overflow-hidden">
+  <!-- Animated Gradient Background -->
+  <div class="absolute inset-0 -z-10 bg-dot-pattern" />
+
+  <!-- Glow Orbs (Animated) -->
+  <div
+    id="orb-1"
+    class="absolute top-20 right-10 w-72 h-72 bg-peb-cyan/20 rounded-full blur-3xl opacity-30 animate-pulse"
+  />
+  <div
+    id="orb-2"
+    class="absolute bottom-20 left-20 w-96 h-96 bg-peb-blue/15 rounded-full blur-3xl opacity-20 animate-pulse"
+  />
+  <div
+    id="orb-3"
+    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-peb-green/10 rounded-full blur-3xl opacity-20 animate-pulse"
+  />
+
+  <!-- Content -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div class="space-y-8 reveal">
+        {
+          label && (
+            <div class="inline-flex items-center space-x-3">
+              <div class="w-2 h-2 rounded-full bg-peb-cyan animate-pulse-dot" />
+              <span class="text-sm font-medium text-peb-cyan uppercase tracking-wider">
+                {label}
+              </span>
+            </div>
+          )
+        }
+
+        <h1 class="text-5xl sm:text-6xl md:text-7xl font-display font-bold leading-tight">
+          <span class="gradient-text-cyan">{title}</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-peb-text2 leading-relaxed max-w-lg">
+          {subtitle}
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <Button href="/contact/" variant="primary" size="lg" hasArrow>
+            Prendre rendez-vous
+          </Button>
+          <Button href="/guide-peb/" variant="secondary" size="lg" hasArrow>
+            En savoir plus
+          </Button>
+        </div>
+
+        <!-- Trust Signals -->
+        <div class="flex flex-wrap gap-3 pt-8 border-t border-peb-border">
+          <Badge variant="cyan" text="✓ Agréé" />
+          <Badge variant="green" text="⚡ Rapide" />
+          <Badge variant="blue" text="€ Sans frais cachés" />
+        </div>
+      </div>
+
+      <!-- Right Side: Calculator or Stats -->
+      {
+        showCalculator ? (
+          <div class="reveal-right">
+            <div class="bg-peb-card border border-peb-border rounded-2xl p-8 glass-hover">
+              <h3 class="text-2xl font-display font-bold text-peb-text mb-6">
+                Calculatrice <span class="text-peb-cyan">PEB</span>
+              </h3>
+
+              <!-- Calculator Tabs -->
+              <div class="space-y-6">
+                <div>
+                  <label class="text-sm font-semibold text-peb-text mb-4 block">
+                    Type de bien
+                  </label>
+                  <div class="grid grid-cols-3 gap-2" id="calc-tabs">
+                    <button
+                      data-type="apartment"
+                      class="px-4 py-2 rounded-lg bg-peb-cyan text-peb-bg font-medium text-sm transition-all calc-tab active"
+                    >
+                      Appart.
+                    </button>
+                    <button
+                      data-type="house"
+                      class="px-4 py-2 rounded-lg border border-peb-border text-peb-text2 font-medium text-sm hover:border-peb-cyan transition-all calc-tab"
+                    >
+                      Maison
+                    </button>
+                    <button
+                      data-type="duplex"
+                      class="px-4 py-2 rounded-lg border border-peb-border text-peb-text2 font-medium text-sm hover:border-peb-cyan transition-all calc-tab"
+                    >
+                      Duplex
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Surface Range Slider -->
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <label class="text-sm font-semibold text-peb-text">
+                      Surface
+                    </label>
+                    <span
+                      class="text-lg font-bold text-peb-cyan"
+                      id="sqm-display"
+                    >
+                      150 m²
+                    </span>
+                  </div>
+                  <input
+                    type="range"
+                    id="calc-slider"
+                    min="20"
+                    max="300"
+                    value="150"
+                    class="w-full"
+                  />
+                  <div class="flex justify-between text-xs text-peb-text2 mt-2">
+                    <span>20 m²</span>
+                    <span>300 m²</span>
+                  </div>
+                </div>
+
+                <!-- Price Display -->
+                <div class="bg-peb-bg border border-peb-border rounded-lg p-6 text-center space-y-3">
+                  <div class="text-sm text-peb-text2">Estimation</div>
+                  <div
+                    id="price-display"
+                    class="text-4xl font-display font-bold text-peb-cyan"
+                  >
+                    189€
+                  </div>
+                  <div class="text-xs text-peb-text2">
+                    TVA incluse • 3-5 jours de délai
+                  </div>
+                </div>
+
+                <!-- CTA Button -->
+                <Button href="/contact/" variant="primary" size="lg" class="w-full">
+                  Commander maintenant
+                </Button>
+              </div>
+            </div>
+          </div>
+        ) : null
+      }
+
+      {
+        showStats ? (
+          <div class="reveal-right grid grid-cols-2 gap-6">
+            <div class="bg-peb-card border border-peb-border rounded-2xl p-6 text-center">
+              <div class="text-4xl font-display font-bold text-peb-cyan mb-2 counter" data-target="1000">
+                0
+              </div>
+              <p class="text-sm text-peb-text2">Certificats complétés</p>
+            </div>
+
+            <div class="bg-peb-card border border-peb-border rounded-2xl p-6 text-center">
+              <div class="text-4xl font-display font-bold text-peb-green mb-2">
+                98%
+              </div>
+              <p class="text-sm text-peb-text2">Satisfaction client</p>
+            </div>
+
+            <div class="bg-peb-card border border-peb-border rounded-2xl p-6 text-center">
+              <div class="text-4xl font-display font-bold text-peb-blue mb-2">
+                24h
+              </div>
+              <p class="text-sm text-peb-text2">RDV disponibles</p>
+            </div>
+
+            <div class="bg-peb-card border border-peb-border rounded-2xl p-6 text-center">
+              <div class="text-4xl font-display font-bold text-peb-cyan mb-2">
+                4+
+              </div>
+              <p class="text-sm text-peb-text2">Années d'expertise</p>
+            </div>
+          </div>
+        ) : null
+      }
+    </div>
+  </div>
+
+  <!-- Parallax Mouse Move Script -->
+  <script>
+    // Parallax effect on mouse move
+    const orbs = [
+      document.getElementById('orb-1'),
+      document.getElementById('orb-2'),
+      document.getElementById('orb-3'),
+    ];
+
+    let mouseX = 0;
+    let mouseY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX / window.innerWidth;
+      mouseY = e.clientY / window.innerHeight;
+
+      orbs.forEach((orb, index) => {
+        if (orb) {
+          const moveX = (mouseX - 0.5) * (30 + index * 10);
+          const moveY = (mouseY - 0.5) * (30 + index * 10);
+          orb.style.transform = `translate(${moveX}px, ${moveY}px)`;
+        }
+      });
+    });
+
+    // Calculator functionality
+    const calcTabs = document.querySelectorAll('.calc-tab');
+    const calcSlider = document.getElementById('calc-slider');
+    const sqmDisplay = document.getElementById('sqm-display');
+    const priceDisplay = document.getElementById('price-display');
+
+    const prices = {
+      apartment: 189,
+      house: 249,
+      duplex: 219,
+    };
+
+    let selectedType = 'apartment';
+
+    calcTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        // Update active state
+        calcTabs.forEach((t) => {
+          t.classList.remove('bg-peb-cyan', 'text-peb-bg');
+          t.classList.add('border', 'border-peb-border', 'text-peb-text2');
+        });
+        tab.classList.remove('border', 'border-peb-border', 'text-peb-text2');
+        tab.classList.add('bg-peb-cyan', 'text-peb-bg');
+
+        selectedType = tab.dataset.type || 'apartment';
+        updatePrice();
+      });
+    });
+
+    calcSlider?.addEventListener('input', (e) => {
+      const value = e.target.value;
+      sqmDisplay!.textContent = `${value} m²`;
+      updatePrice();
+    });
+
+    function updatePrice() {
+      const basePrice = prices[selectedType as keyof typeof prices] || 189;
+      priceDisplay!.textContent = `${basePrice}€`;
+    }
+
+    // Counter animation
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach((counter) => {
+      const target = parseInt(counter.getAttribute('data-target') || '0');
+      let current = 0;
+      const increment = target / 30;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        counter.textContent = Math.floor(current).toLocaleString();
+      }, 30);
+    });
+  </script>

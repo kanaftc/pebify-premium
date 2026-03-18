@@ -1,0 +1,83 @@
+---
+type Variant = 'primary' | 'secondary' | 'ghost';
+type Size = 'sm' | 'md' | 'lg';
+
+interface Props {
+  href?: string;
+  variant?: Variant;
+  size?: Size;
+  class?: string;
+  type?: string;
+  disabled?: boolean;
+  hasArrow?: boolean;
+  target?: string;
+  rel?: string;
+  [key: string]: any;
+}
+
+const {
+  href,
+  variant = 'primary',
+  size = 'md',
+  class: customClass = '',
+  type = 'button',
+  disabled = false,
+  hasArrow = false,
+  target,
+  rel,
+  ...rest
+} = Astro.props;
+
+// Size classes
+const sizeClasses = {
+  sm: 'px-4 py-2 text-sm',
+  md: 'px-6 py-3 text-base',
+  lg: 'px-8 py-4 text-lg',
+};
+
+// Variant classes
+const variantClasses = {
+  primary:
+    'bg-gradient-to-r from-peb-blue to-peb-cyan text-peb-bg font-semibold hover:shadow-lg hover:glow-cyan active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed',
+  secondary:
+    'border-2 border-peb-cyan text-peb-cyan hover:bg-peb-cyan/10 hover:glow-cyan-subtle active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed',
+  ghost:
+    'bg-peb-cyan/10 text-peb-cyan hover:bg-peb-cyan/20 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed',
+};
+
+const baseClasses =
+  'inline-flex items-center justify-center space-x-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-peb-bg focus:ring-peb-cyan';
+
+const finalClass = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${customClass}`;
+
+const Element = href ? 'a' : 'button';
+---
+
+<Element
+  {...(href && { href })}
+  {...(!href && { type })}
+  {...(disabled && !href && { disabled })}
+  class={finalClass}
+  {...(target && { target })}
+  {...(rel && { rel })}
+  {...rest}
+>
+  <slot />
+  {
+    hasArrow && (
+      <svg
+        class="w-4 h-4 flex-shrink-0"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M13 7l5 5m0 0l-5 5m5-5H6"
+        />
+      </svg>
+    )
+  }
+</Element>

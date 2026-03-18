@@ -1,0 +1,223 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+import { communes } from '../../data/communes';
+
+const faqItems = [
+  {
+    question: 'Comment certifier un immeuble haussmannien du centre-ville?',
+    answer: 'Les immeubles haussmanniens de Bruxelles-Ville présentent des défis spécifiques liés à leur architecture historique. J\'évalue précisément leur performance thermique malgré les contraintes de patrimoine. Mon expertise permet une certification complète et légale.'
+  },
+  {
+    question: 'Les vieux vitrages de ma maison rue de Flandre posent-ils problème?',
+    answer: 'Les vitrages simples sont courants à Bruxelles-Ville et réduisent effectivement la performance énergétique. Cependant, ils ne bloquent pas la certification. Je recommande généralement leur remplacement comme première amélioration.'
+  },
+  {
+    question: 'Quel est le délai pour obtenir le certificat au centre-ville?',
+    answer: 'J\'interviens rapidement à Bruxelles-Ville et obtiens généralement votre certificat en 3 à 5 jours. Le centre-ville est mon secteur privilégié, je maîtrise les spécificités des propriétés historiques.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Bruxelles-Ville",
+  "description": "Expert en certification PEB agréé à Bruxelles-Ville (1000)",
+  "image": "https://pebify.be/og-image.jpg",
+  "url": "https://pebify.be/certificat-peb-bruxelles-ville/",
+  "telephone": "+32 484 63 08 15",
+  "email": "info@pebify.be",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue Emile Wauters 58",
+    "addressLocality": "Bruxelles",
+    "postalCode": "1020",
+    "addressCountry": "BE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Bruxelles-Ville",
+    "postalCode": "1000"
+  },
+  "priceRange": "€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Bruxelles-Ville (1000) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Bruxelles-Ville (1000). Spécialiste des immeubles haussmanniens et propriétés historiques. Certification agréée pour Grand-Place et centre-ville."
+  breadcrumb={[{ label: 'Certificat PEB Bruxelles-Ville', href: '/certificat-peb-bruxelles-ville/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Bruxelles-Ville"
+  heroSubtitle="Expert spécialisé en certification énergétique des immeubles historiques de Bruxelles-Ville (1000). Centre-ville bruxellois."
+  canonical="https://pebify.be/certificat-peb-bruxelles-ville/"
+  schemaJson={jsonLd}
+>
+  <!-- Main Content Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Introduction -->
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certificat PEB à <span class="gradient-text-cyan">Bruxelles-Ville</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Bruxelles-Ville, cœur battant de la capitale belge, rassemble plus de 180 000 habitants et concentre le tissu urbain le plus dense et historique de Belgique. De la Grand-Place emblématique au quartier nord populaire, cette commune offre une extraordinaire diversité immobilière : palais haussmanniens, maisons de maître, petits immeubles de rapport historiques et logements collectifs modernes.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          En tant que certificateur PEB agréé, j'interviens régulièrement à Bruxelles-Ville sur tous les types de propriétés, en tenant compte du contexte historique et architectural unique de chaque immeuble. Ma spécialité concerne la certification des immeubles patrimoniaux tout en respectant les normes énergétiques bruxelloises les plus strictes.
+        </p>
+      </div>
+
+      <!-- Property Types Section -->
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Types de propriétés à Bruxelles-Ville
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Immeubles historiques et patrimoniaux</p>
+              <p class="text-peb-text2 text-sm">Certification spécialisée des bâtiments anciens du centre-ville avec valeur architecturale.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Maisons haussmanniennes</p>
+              <p class="text-peb-text2 text-sm">Certification des élégants immeubles haussmanniens du centre-ville de prestige.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Collectifs modernes et rénovés</p>
+              <p class="text-peb-text2 text-sm">Certification complète des immeubles d'habitation modernes du quartier nord.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Bâtiments commerciaux mixtes</p>
+              <p class="text-peb-text2 text-sm">Certification de structures commerciales et résidentiel-commercial du centre-ville.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Energy Profile Section -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Profil énergétique à Bruxelles-Ville
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Les propriétés de Bruxelles-Ville obtiennent généralement des classifications PEB entre D et F, reflétant l'ancienneté de la construction urbaine du centre historique. Les immeubles haussmanniens anciens avec vitrages simples et isolation minimale sont courants.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Les opportunités de rénovation énergétique au centre-ville offrent des défis intéressants : amélioration des vitrages tout en préservant l'aspect architectural, isolation progressive et modernisation du chauffage. Ces interventions peuvent transformer l'efficacité énergétique tout en préservant le patrimoine.
+        </p>
+      </div>
+
+      <!-- Services Section -->
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services de certification à Bruxelles-Ville
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certificat PEB agréé</h4>
+            <p class="text-peb-text2 text-sm">Certification officielle pour tous les immeubles, des bâtiments historiques aux modernes.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit architectural-énergétique</h4>
+            <p class="text-peb-text2 text-sm">Analyse spécialisée respectant les contraintes de patrimoine historique.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport avec recommandations</h4>
+            <p class="text-peb-text2 text-sm">Préconisations compatibles avec la préservation architecturale.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation centre-ville</h4>
+            <p class="text-peb-text2 text-sm">Expertise spécifique pour les propriétés historiques du centre-ville.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pricing Section -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification à Bruxelles-Ville
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Petit immeuble</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Maison/immeuble</p>
+            <p class="text-3xl font-bold text-peb-cyan">249€</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          Tarifs transparents incluant visite complète et rapport détaillé. <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">Contactez-moi</a> pour un devis pour les immeubles complexes.
+        </p>
+      </div>
+
+      <!-- Internal Links -->
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Ressources PEB
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre la certification énergétique complètement.</p>
+          </a>
+          <a href="/guide-peb/obligations/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Obligations légales</p>
+            <p class="text-sm text-peb-text2">Obligations PEB à Bruxelles-Ville.</p>
+          </a>
+          <a href="/guide-peb/echelle-classes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Classes énergétiques</p>
+            <p class="text-sm text-peb-text2">Comprendre l'échelle A++ à G.</p>
+          </a>
+          <a href="/guide-peb/primes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Aides à la rénovation</p>
+            <p class="text-sm text-peb-text2">Primes et subventions 2026.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <FAQ items={faqItems} />
+
+  <!-- CTA Section -->
+  <CTA
+    title="Votre certificat PEB à Bruxelles-Ville"
+    subtitle="Spécialiste des immeubles historiques du centre-ville. Contactez-moi pour votre certification."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <!-- Commune Links -->
+  <CommuneLinks />
+</PageLayout>

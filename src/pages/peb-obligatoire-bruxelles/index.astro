@@ -1,0 +1,356 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Card from '../../components/ui/Card.astro';
+import Button from '../../components/ui/Button.astro';
+import { siteConfig } from '../../data/site';
+
+const breadcrumb = [
+  { label: 'PEB obligatoire', href: '/peb-obligatoire-bruxelles/' },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Quand le certificat PEB est obligatoire à Bruxelles',
+  description: 'Guide complet des obligations légales concernant le certificat PEB à Bruxelles',
+  url: 'https://pebify.be/peb-obligatoire-bruxelles/',
+};
+---
+
+<PageLayout
+  title="PEB obligatoire Bruxelles | Quand et pourquoi c'est une obligation légale"
+  description="Comprendre les obligations légales du certificat PEB à Bruxelles. Vente, location, rénovation. Amendes et sanctions."
+  canonical="https://pebify.be/peb-obligatoire-bruxelles/"
+  breadcrumb={breadcrumb}
+  heroLabel="Obligation légale"
+  heroTitle="Quand le PEB est obligatoire à Bruxelles?"
+  heroSubtitle="Comprendre vos obligations légales en matière de certificat PEB et les risques de non-conformité"
+  schemaJson={schemaJson}
+>
+  <!-- Main Situations -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          4 situations où le PEB est <span class="gradient-text-cyan">obligatoire</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Le certificat PEB est légalement requis dans ces contextes à Bruxelles.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal-stagger">
+        <Card hover={true}>
+          <div class="space-y-4">
+            <div class="text-5xl">🏠</div>
+            <h3 class="text-xl font-display font-bold text-peb-text">
+              1. Vente immobilière
+            </h3>
+            <p class="text-peb-text2 mb-4">
+              Tout bien immobilier vendu à Bruxelles doit avoir un certificat PEB avant signature.
+            </p>
+
+            <div class="space-y-2 text-sm text-peb-text2">
+              <p>
+                <strong>Qui doit le faire?</strong> Légalement le vendeur
+              </p>
+              <p>
+                <strong>Quand?</strong> Avant mise en vente ou avant signature
+              </p>
+              <p>
+                <strong>Validité?</strong> 10 ans à partir de son émission
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-4">
+            <div class="text-5xl">🔑</div>
+            <h3 class="text-xl font-display font-bold text-peb-text">
+              2. Location longue durée
+            </h3>
+            <p class="text-peb-text2 mb-4">
+              Tout bien loué pour plus de 6 mois doit avoir un PEB agréé.
+            </p>
+
+            <div class="space-y-2 text-sm text-peb-text2">
+              <p>
+                <strong>Qui doit le faire?</strong> Propriétaire/bailleur
+              </p>
+              <p>
+                <strong>Obligation depuis?</strong> 2009 pour ventes, 2013 pour locations
+              </p>
+              <p>
+                <strong>Délai?</strong> Avant signature du contrat de location
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-4">
+            <div class="text-5xl">🏗️</div>
+            <h3 class="text-xl font-display font-bold text-peb-text">
+              3. Rénovation majeure
+            </h3>
+            <p class="text-peb-text2 mb-4">
+              Après travaux de rénovation importante (>25% surface), un PEB est souvent requis.
+            </p>
+
+            <div class="space-y-2 text-sm text-peb-text2">
+              <p>
+                <strong>Type de travaux?</strong> Isolations, fenêtres, chauffage
+              </p>
+              <p>
+                <strong>Quand?</strong> Après achèvement des travaux
+              </p>
+              <p>
+                <strong>Utilité?</strong> Documenter amélioration performance
+              </p>
+            </div>
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-4">
+            <div class="text-5xl">🏢</div>
+            <h3 class="text-xl font-display font-bold text-peb-text">
+              4. Bâtiments commerciaux
+            </h3>
+            <p class="text-peb-text2 mb-4">
+              Locaux commerciaux loués ou vendus doivent avoir certificat PEB.
+            </p>
+
+            <div class="space-y-2 text-sm text-peb-text2">
+              <p>
+                <strong>Depuis quand?</strong> Obligation depuis 2020 pour locations
+              </p>
+              <p>
+                <strong>Tarif?</strong> Sur devis (plus complexe que résidentiel)
+              </p>
+              <p>
+                <strong>Délai?</strong> Avant transaction
+              </p>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Framework -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Cadre légal <span class="gradient-text-cyan">bruxellois</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Ordonnance PEB 2007</h3>
+          <p class="text-peb-text2">
+            L'Ordonnance de la Région de Bruxelles-Capitale du 2 mai 2007 rend le certificat PEB obligatoire pour toute transaction immobilière (vente ou location).
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Décret de 2008</h3>
+          <p class="text-peb-text2">
+            Depuis le 1er janvier 2008, tout bien immobilier doit être accompagné d'un certificat PEB établi par un certificateur agréé. Obligation progressive en fonction du type.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Mise à jour 2013</h3>
+          <p class="text-peb-text2">
+            Extension aux locations de courte et longue durée. Depuis 2013, tout bien loué doit avoir certificat PEB, sauf exceptions très limitées.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Extension 2020</h3>
+          <p class="text-peb-text2">
+            Depuis 2020, les bâtiments commerciaux loués sont également soumis à l'obligation. Bruxelles Environnement contrôle la conformité.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step-by-Step Guide -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Guide étape par étape pour vous <span class="gradient-text-cyan">conformer</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-peb-cyan text-peb-bg flex items-center justify-center font-bold text-lg">
+            1
+          </div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Identifier votre besoin</h3>
+            <p class="text-peb-text2">
+              Vendez, louez ou rénover? Identifiez dans quelle catégorie vous êtes pour savoir si PEB est obligatoire.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-peb-cyan text-peb-bg flex items-center justify-center font-bold text-lg">
+            2
+          </div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Contacter un expert agréé</h3>
+            <p class="text-peb-text2">
+              Cherchez un certificateur PEB agréé par la Région. Vérifiez son agrément dans le registre officiel.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-peb-cyan text-peb-bg flex items-center justify-center font-bold text-lg">
+            3
+          </div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Programmer la visite</h3>
+            <p class="text-peb-text2">
+              La visite dure 1-2h selon votre bien. L'expert examine tous les éléments énergétiques de votre propriété.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-peb-cyan text-peb-bg flex items-center justify-center font-bold text-lg">
+            4
+          </div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Recevoir le certificat</h3>
+            <p class="text-peb-text2">
+              Sous 3-5 jours, vous recevez le certificat PEB officiel avec rapport détaillé et enregistrement legal garantis.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0 w-12 h-12 rounded-full bg-peb-cyan text-peb-bg flex items-center justify-center font-bold text-lg">
+            5
+          </div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Utiliser pour votre transaction</h3>
+            <p class="text-peb-text2">
+              Présentez le certificat à l'acheteur, locataire ou administration. Vous êtes en conformité légale.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consequences Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Conséquences du non-<span class="gradient-text-cyan">respect</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Les risques légaux et financiers si vous ignorez l'obligation
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal-stagger">
+        <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6 space-y-3">
+          <div class="text-4xl font-bold text-red-400">10 000€</div>
+          <h3 class="font-semibold text-peb-text">Amende administrative</h3>
+          <p class="text-peb-text2">
+            Jusqu'à 10 000€ d'amende pour absence ou défaut de certificat PEB lors d'une vente ou location.
+          </p>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6 space-y-3">
+          <div class="text-4xl font-bold text-red-400">📋</div>
+          <h3 class="font-semibold text-peb-text">Transaction annulée</h3>
+          <p class="text-peb-text2">
+            L'acheteur ou locataire peut refuser d'avancer sans certificat. Contrat peut être résolu.
+          </p>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6 space-y-3">
+          <div class="text-4xl font-bold text-red-400">⚖️</div>
+          <h3 class="font-semibold text-peb-text">Responsabilité légale</h3>
+          <p class="text-peb-text2">
+            Vous êtes responsable civilement et pénalement. Actions en justice possibles.
+          </p>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/30 rounded-xl p-6 space-y-3">
+          <div class="text-4xl font-bold text-red-400">⏱️</div>
+          <h3 class="font-semibold text-peb-text">Délais supplémentaires</h3>
+          <p class="text-peb-text2">
+            Obligation d'établir certificat ultérieurement. Retards de transaction et frais supplémentaires.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Questions <span class="gradient-text-cyan">fréquentes</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Qui est responsable de fournir le PEB, vendeur ou acheteur?</h3>
+          <p class="text-peb-text2">
+            Légalement le vendeur. Mais en pratique, si absence, l'acheteur peut le demander et le frais peuvent être négociés.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Combien de temps un certificat PEB est valide?</h3>
+          <p class="text-peb-text2">
+            10 ans à partir de sa date d'émission. Après, vous devez le refaire pour toute nouvelle transaction.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Y a-t-il des exceptions à l'obligation?</h3>
+          <p class="text-peb-text2">
+            Très peu. Seules quelques situationsexceptions légales (petit bâtiments, moins de 50m², certains bâtiments patrimoniaux). Consultez un expert.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Que faire si je vends/loue sans certificat PEB?</h3>
+          <p class="text-peb-text2">
+            Vous êtes en infraction. Établissez le certificat immédiatement. Risque d'amende. L'acheteur peut exiger l'accomplissement de obligation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Besoin d'être conforme?"
+    title="Établissez votre certificat PEB maintenant"
+    subtitle="Agréé, rapide et transparent. Certificat sous 3-5 jours. Amendes évitées, conformité garantie."
+    primaryHref="/contact/"
+    primaryText="Prendre rendez-vous"
+    secondaryHref="/tarifs-peb-bruxelles/"
+    secondaryText="Voir les tarifs"
+  />
+</PageLayout>

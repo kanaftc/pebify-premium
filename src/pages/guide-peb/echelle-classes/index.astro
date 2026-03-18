@@ -1,0 +1,404 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CTA from '../../../components/sections/CTA.astro';
+import Card from '../../../components/ui/Card.astro';
+import Badge from '../../../components/ui/Badge.astro';
+import Button from '../../../components/ui/Button.astro';
+
+const breadcrumb = [
+  { label: 'Guide PEB', href: '/guide-peb/' },
+  { label: 'Échelle de classes', href: '/guide-peb/echelle-classes/' },
+];
+
+const energyClasses = [
+  { class: 'A++', min: 0, max: 40, color: 'bg-emerald-500', label: 'Excellent', description: 'Très performant, énergivore au minimum' },
+  { class: 'A+', min: 40, max: 60, color: 'bg-green-500', label: 'Excellent', description: 'Très efficace énergétiquement' },
+  { class: 'A', min: 60, max: 80, color: 'bg-lime-500', label: 'Très bon', description: 'Bon niveau de performance' },
+  { class: 'B', min: 80, max: 120, color: 'bg-yellow-500', label: 'Bon', description: 'Performance satisfaisante' },
+  { class: 'C', min: 120, max: 160, color: 'bg-orange-400', label: 'Moyen', description: 'Performance moyenne' },
+  { class: 'D', min: 160, max: 200, color: 'bg-orange-500', label: 'Moyen-faible', description: 'Performance en-dessous de la moyenne' },
+  { class: 'E', min: 200, max: 260, color: 'bg-red-400', label: 'Faible', description: 'Performance faible' },
+  { class: 'F', min: 260, max: 340, color: 'bg-red-500', label: 'Très faible', description: 'Performance très faible' },
+  { class: 'G', min: 340, max: 9999, color: 'bg-red-700', label: 'Très mauvaise', description: 'Performance très mauvaise, très énergivore' },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Échelle PEB : classes énergétiques A++ à G expliquées',
+  description: 'Comprendre l\'échelle PEB : 9 classes énergétiques (A++ à G), consommation kWh/m²/an, moyennes bruxelloises et explications.',
+  author: {
+    '@type': 'Organization',
+    name: 'PEBify',
+  },
+};
+---
+
+<PageLayout
+  title="Échelle PEB : classes énergétiques A++ à G | Explications | PEBify"
+  description="Échelle PEB expliquée : 9 classes (A++ à G), consommation d'énergie kWh/m²/an, moyennes Bruxelles. Comparaisons et significations."
+  canonical="https://pebify.be/guide-peb/echelle-classes/"
+  breadcrumb={breadcrumb}
+  heroLabel="Comprendre les classes"
+  heroTitle="Échelle PEB : classes A++ à G"
+  heroSubtitle="Explications détaillées des 9 classes énergétiques, consommation énergétique, et ce que signifie chaque niveau."
+  schemaJson={schemaJson}
+>
+  <!-- Introduction -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6 reveal">
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Le certificat PEB classe chaque bâtiment sur une échelle de 9 niveaux : de A++ (meilleur) à G (pire). Cette classification détermine l'efficacité énergétique du bien et influence directement sa valeur et ses coûts de fonctionnement.
+        </p>
+
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Comprendre cette échelle vous aide à évaluer votre bien, à comparer avec d'autres propriétés, et à identifier les améliorations les plus impactantes.
+        </p>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <p class="font-semibold text-peb-text mb-3">💡 À retenir:</p>
+          <p class="text-peb-text2">
+            La classe PEB est calculée selon la consommation d'énergie primaire en kWh/m²/an. Plus ce chiffre est bas, mieux c'est pour votre portefeuille et l'environnement.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Energy Classes Grid -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Les 9 <span class="gradient-text-cyan">classes énergétiques</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Chaque classe représente un seuil de consommation énergétique annuelle en kWh/m²/an
+        </p>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        {energyClasses.map((item, index) => (
+          <div key={index} class="bg-peb-card border border-peb-border rounded-2xl overflow-hidden">
+            <div class="flex flex-col md:flex-row gap-0">
+              {/* Color bar and class */}
+              <div class={`${item.color} w-full md:w-32 flex items-center justify-center p-8 text-white`}>
+                <div class="text-center">
+                  <div class="text-5xl font-display font-bold">{item.class}</div>
+                  <p class="text-sm mt-2 font-semibold">{item.label}</p>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div class="flex-1 p-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div>
+                    <p class="text-sm text-peb-text2 mb-1">Consommation annuelle</p>
+                    <p class="text-2xl font-display font-bold text-peb-text">
+                      {item.min}-{item.max}
+                      <span class="text-lg font-normal"> kWh/m²/an</span>
+                    </p>
+                  </div>
+                  <div class="md:col-span-2">
+                    <p class="text-sm text-peb-text2 mb-2">Signification</p>
+                    <p class="text-peb-text2 leading-relaxed">{item.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What Each Class Means -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Ce que signifie chaque <span class="gradient-text-cyan">classe</span>?
+        </h2>
+      </div>
+
+      <div class="space-y-8 reveal-stagger">
+        <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-2xl p-8 space-y-4">
+          <h3 class="text-2xl font-display font-bold text-emerald-600">A++ et A+ : Excellent</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Ces bâtiments sont exemplaires en termes d'efficacité énergétique. Ils consomment très peu d'énergie grâce à une isolation optimale, des systèmes de chauffage dernier cri, et souvent des énergies renouvelables.
+          </p>
+          <ul class="space-y-2 text-sm text-peb-text2">
+            <li>✓ Très faibles factures énergétiques</li>
+            <li>✓ Éligibles à de nombreuses aides/primes</li>
+            <li>✓ Valeur de revente plus haute</li>
+            <li>✓ Confort thermique excellent</li>
+          </ul>
+        </div>
+
+        <div class="bg-green-500/10 border border-green-500/20 rounded-2xl p-8 space-y-4">
+          <h3 class="text-2xl font-display font-bold text-green-600">A : Très bon</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Bâtiments modernes avec bonne isolation et systèmes énergétiques efficaces. La majorité des immeubles résidentiels rénovés visent cette classe.
+          </p>
+          <ul class="space-y-2 text-sm text-peb-text2">
+            <li>✓ Consommation énergétique contrôlée</li>
+            <li>✓ Factures énergétiques modérées</li>
+            <li>✓ Bonne accessibilité aux primes</li>
+            <li>✓ Standard actuel de qualité</li>
+          </ul>
+        </div>
+
+        <div class="bg-yellow-500/10 border border-yellow-500/20 rounded-2xl p-8 space-y-4">
+          <h3 class="text-2xl font-display font-bold text-yellow-600">B et C : Bon à moyen</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Performance énergétique acceptable mais des améliorations sont possibles. Ces bâtiments consomment modérément mais pourraient être optimisés.
+          </p>
+          <ul class="space-y-2 text-sm text-peb-text2">
+            <li>✓ Performance convenable</li>
+            <li>✓ Améliorations recommandées (toiture, murs)</li>
+            <li>✓ Certaines aides disponibles</li>
+            <li>⚠️ Factures énergétiques croissantes</li>
+          </ul>
+        </div>
+
+        <div class="bg-orange-500/10 border border-orange-500/20 rounded-2xl p-8 space-y-4">
+          <h3 class="text-2xl font-display font-bold text-orange-600">D, E et F : Faible à très faible</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Bâtiments anciens ou peu rénovés avec mauvaise isolation et systèmes énergétiques dépassés. Les factures énergétiques sont élevées.
+          </p>
+          <ul class="space-y-2 text-sm text-peb-text2">
+            <li>✓ Améliorations très recommandées</li>
+            <li>✓ Nombreuses aides disponibles</li>
+            <li>⚠️ Factures énergétiques importantes</li>
+            <li>⚠️ Confort thermique diminué</li>
+          </ul>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-2xl p-8 space-y-4">
+          <h3 class="text-2xl font-display font-bold text-red-600">G : Très mauvaise (Passoire thermique)</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Bâtiments très anciens ou très peu entretenus. Consommation énergétique catastrophique. À Bruxelles, ces bâtiments courent le risque d'être interdits à la location ou la vente.
+          </p>
+          <ul class="space-y-2 text-sm text-peb-text2">
+            <li>✓ Améliorations urgentes</li>
+            <li>✓ Financement possible via primes</li>
+            <li>⚠️ Factures énergétiques très élevées</li>
+            <li>⚠️ Risque légal et commercial élevé</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brussels Averages -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Moyennes <span class="gradient-text-cyan">bruxelloises</span>
+        </h2>
+      </div>
+
+      <div class="space-y-8 reveal">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Distribution à Bruxelles</h3>
+          <p class="text-peb-text2 leading-relaxed mb-6">
+            À Bruxelles, la majorité des bâtiments se situent entre les classes C et E. Le parc immobilier bruxellois est ancien avec un besoin important de rénovation énergétique.
+          </p>
+
+          <div class="space-y-3">
+            <div class="flex items-center gap-4">
+              <div class="w-20 text-sm font-semibold text-peb-text">A++/A+</div>
+              <div class="flex-1 bg-peb-bg rounded h-8">
+                <div class="bg-emerald-500 h-full w-1 rounded" />
+              </div>
+              <span class="text-sm text-peb-text2">< 2%</span>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-20 text-sm font-semibold text-peb-text">A/B</div>
+              <div class="flex-1 bg-peb-bg rounded h-8">
+                <div class="bg-green-500 h-full w-12 rounded" />
+              </div>
+              <span class="text-sm text-peb-text2">5-8%</span>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-20 text-sm font-semibold text-peb-text">C/D</div>
+              <div class="flex-1 bg-peb-bg rounded h-8">
+                <div class="bg-yellow-500 h-full w-32 rounded" />
+              </div>
+              <span class="text-sm text-peb-text2">25-30%</span>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-20 text-sm font-semibold text-peb-text">E/F</div>
+              <div class="flex-1 bg-peb-bg rounded h-8">
+                <div class="bg-orange-500 h-full w-48 rounded" />
+              </div>
+              <span class="text-sm text-peb-text2">35-40%</span>
+            </div>
+
+            <div class="flex items-center gap-4">
+              <div class="w-20 text-sm font-semibold text-peb-text">G</div>
+              <div class="flex-1 bg-peb-bg rounded h-8">
+                <div class="bg-red-500 h-full w-44 rounded" />
+              </div>
+              <span class="text-sm text-peb-text2">20-25%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Classe moyenne bruxelloise</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            La classe énergétique moyenne à Bruxelles est environ D-E. Cela signifie que votre bien est au niveau moyen si vous êtes en classe D ou E.
+          </p>
+          <p class="text-peb-text2 leading-relaxed">
+            Pour être mieux que la moyenne bruxelloise, visez au minimum une classe C ou mieux (B, A).
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Bâtiments anciens vs. modernes</h3>
+          <ul class="space-y-3 text-peb-text2">
+            <li>
+              <span class="font-semibold">Avant 1990:</span> Généralement classe E-G (très anciens, isolation faible)
+            </li>
+            <li>
+              <span class="font-semibold">1990-2010:</span> Généralement classe C-D (besoin de rénovation)
+            </li>
+            <li>
+              <span class="font-semibold">Après 2010:</span> Généralement classe A-B (normes modernes appliquées)
+            </li>
+            <li>
+              <span class="font-semibold">Après 2020:</span> Généralement classe A+ ou mieux (standards stricts)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Price Impact -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Impact sur la <span class="gradient-text-cyan">valeur</span> et les coûts
+        </h2>
+      </div>
+
+      <div class="space-y-8 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Valeur immobilière</h3>
+          <p class="text-peb-text2 leading-relaxed mb-6">
+            Une meilleure classe PEB augmente la valeur de revente. Les acheteurs paient plus cher pour des bâtiments A ou B que pour des bâtiments D ou E.
+          </p>
+          <div class="space-y-2 text-sm text-peb-text2">
+            <p>📈 Classe A : +10-15% de valeur par rapport à classe C</p>
+            <p>📈 Classe B : +5-8% de valeur par rapport à classe C</p>
+            <p>📉 Classe F/G : -15-25% de valeur par rapport à classe C</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Factures énergétiques annuelles</h3>
+          <p class="text-peb-text2 leading-relaxed mb-6">
+            La classe PEB détermine directement vos dépenses énergétiques. Plus la classe est mauvaise, plus vos factures sont élevées.
+          </p>
+          <div class="space-y-2 text-sm text-peb-text2">
+            <p>💡 Classe A (75 kWh/m²/an) : ~800€/an pour 100m²</p>
+            <p>💡 Classe C (150 kWh/m²/an) : ~1600€/an pour 100m²</p>
+            <p>💡 Classe G (400 kWh/m²/an) : ~4300€/an pour 100m²</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">ROI de l'amélioration</h3>
+          <p class="text-peb-text2 leading-relaxed mb-6">
+            Améliorer votre classe PEB est un investissement rentable : économies énergétiques + augmentation de valeur + accès aux primes.
+          </p>
+          <div class="space-y-2 text-sm text-peb-text2">
+            <p>✓ Passer de E à C : économie ~500€/an + valeur +8-10%</p>
+            <p>✓ Passer de C à B : économie ~300€/an + valeur +5-8%</p>
+            <p>✓ Souvent remboursé en 5-10 ans grâce aux économies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Pour <span class="gradient-text-cyan">aller plus loin</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+        <a href="/guide-peb/ameliorer-score/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">⚡</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Améliorer votre score</h3>
+              <p class="text-sm text-peb-text2">
+                Comment passer à une classe supérieure.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/prix/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">💰</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Prix du PEB</h3>
+              <p class="text-sm text-peb-text2">
+                Coûts d'obtention du certificat.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/primes/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">💚</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Primes rénovation</h3>
+              <p class="text-sm text-peb-text2">
+                Aides pour améliorer votre performance.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/tarifs-peb-bruxelles/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">🏠</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Tarifs PEB</h3>
+              <p class="text-sm text-peb-text2">
+                Prix pour obtenir votre certificat.
+              </p>
+            </div>
+          </Card>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Connaître votre classe PEB?"
+    title="Passez l'audit énergétique complet"
+    subtitle="Découvrez votre classe énergétique actuelle et les meilleures actions d'amélioration. Expert agréé, rapport détaillé."
+    primaryHref="/contact/"
+    primaryText="Demander mon audit"
+    secondaryHref="/guide-peb/ameliorer-score/"
+    secondaryText="Lire les améliorations"
+  />
+</PageLayout>

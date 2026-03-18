@@ -1,0 +1,194 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+
+const faqItems = [
+  {
+    question: 'Comment certifier un logement social à Molenbeek?',
+    answer: 'Je certifie régulièrement les logements sociaux de Molenbeek avec expertise adaptée. Les bâtiments sociaux obtiennent leur certificat PEB comme toute propriété, avec approche appropriée.'
+  },
+  {
+    question: 'Quel profil énergétique pour Molenbeek?',
+    answer: 'Molenbeek présente une grande diversité. Les propriétés anciennes obtiennent D à F, tandis que les bâtiments en rénovation urbaine en cours peuvent atteindre meilleures classes.'
+  },
+  {
+    question: 'Quel tarif pour une multi-propriété à Molenbeek?',
+    answer: 'Pour les petits immeubles et logements sociaux, je propose des forfaits adaptés. Contactez-moi pour un devis basé sur votre situation spécifique.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Molenbeek",
+  "description": "Expert en certification PEB agréé à Molenbeek-Saint-Jean (1080)",
+  "url": "https://pebify.be/certificat-peb-molenbeek/",
+  "areaServed": { "@type": "City", "name": "Molenbeek-Saint-Jean", "postalCode": "1080" },
+  "priceRange": "€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Molenbeek (1080) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Molenbeek-Saint-Jean (1080). Certificats énergétiques agréés pour logements sociaux, petits immeubles et bâtiments commerciaux. Service spécialisé."
+  breadcrumb={[{ label: 'Certificat PEB Molenbeek', href: '/certificat-peb-molenbeek/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Molenbeek"
+  heroSubtitle="Certificateur agréé pour vos propriétés molenbeekoise. Expert en logements sociaux et petits immeubles."
+  canonical="https://pebify.be/certificat-peb-molenbeek/"
+  schemaJson={jsonLd}
+>
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certificat PEB à <span class="gradient-text-cyan">Molenbeek-Saint-Jean</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Molenbeek-Saint-Jean, grande commune du nord-ouest bruxellois, connaît une dynamique de rénovation urbaine remarquable. Avec plus de 96 000 habitants, elle concentre un parc immobilier diversifié : logements sociaux, petits immeubles résidentiels, bâtiments commerciaux et éléments du patrimoine historique. Le Canal de Bruxelles et ses environs constituent un axe dynamique de rénovation.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Je certifie régulièrement les propriétés molenbeekoise avec expertise spécialisée dans les logements sociaux et les petits immeubles. Les projets de rénovation urbaine en cours à Molenbeek offrent de belles opportunités d'amélioration énergétique.
+        </p>
+      </div>
+
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Propriétés à Molenbeek
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Logements sociaux</p>
+              <p class="text-peb-text2 text-sm">Certification spécialisée des habitats sociaux.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petits immeubles résidentiels</p>
+              <p class="text-peb-text2 text-sm">Certification d'immeubles collectifs.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Bâtiments commerciaux</p>
+              <p class="text-peb-text2 text-sm">Certification de structures commerciales.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Habitats mixtes</p>
+              <p class="text-peb-text2 text-sm">Certification de structures résidentiel-commercial.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Profil énergétique
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Molenbeek présente un profil énergétique varié reflétant sa dynamique de rénovation. Les propriétés anciennes obtiennent D à F, tandis que les bâtiments en rénovation offrent meilleures performances.</p>
+      </div>
+
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certificat PEB</h4>
+            <p class="text-peb-text2 text-sm">Certification officielle pour tous types.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit énergétique</h4>
+            <p class="text-peb-text2 text-sm">Analyse détaillée avec recommandations.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport complet</h4>
+            <p class="text-peb-text2 text-sm">Documentation stratégique.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation collectif</h4>
+            <p class="text-peb-text2 text-sm">Expertise pour multi-propriétés.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Petit immeuble</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Maison</p>
+            <p class="text-3xl font-bold text-peb-cyan">249€</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">Demandez un devis</a> pour multi-propriétés.
+        </p>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Ressources
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre.</p>
+          </a>
+          <a href="/guide-peb/ameliorer-score/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Améliorer votre score</p>
+            <p class="text-sm text-peb-text2">Recommandations.</p>
+          </a>
+          <a href="/guide-peb/echelle-classes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Classes énergétiques</p>
+            <p class="text-sm text-peb-text2">A++ à G.</p>
+          </a>
+          <a href="/guide-peb/primes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Aides rénovation</p>
+            <p class="text-sm text-peb-text2">Primes 2026.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <CTA
+    title="Certificat PEB à Molenbeek"
+    subtitle="Contactez-moi pour votre certification énergétique."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <CommuneLinks />
+</PageLayout>

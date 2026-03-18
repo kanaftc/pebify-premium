@@ -1,0 +1,212 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+
+const faqItems = [
+  {
+    question: 'Comment certifier un immeuble près du Cinquantenaire à Etterbeek?',
+    answer: 'La proximité du Parc du Cinquantenaire n\'affecte pas la certification. Je certifie régulièrement des immeubles autour de ce parc remarquable. L\'environnement verdoyant reflète souvent des propriétés bien entretenues à Etterbeek.'
+  },
+  {
+    question: 'Quels sont les défauts énergétiques typiques à Etterbeek?',
+    answer: 'Les villas bourgeoises d\'Etterbeek présentent souvent des isolations anciennes et des systèmes de chauffage à moderniser. Les vitrages et l\'isolation des toits sont généralement les points les plus critiques à améliorer.'
+  },
+  {
+    question: 'Quel est le délai de certification pour une villa etterbeekoise?',
+    answer: 'Je m\'engage sur 3 à 5 jours pour votre certificat. Etterbeek est un secteur que je connais bien, avec nombreuses propriétés variées. Contactez-moi rapidement pour les ventes urgentes.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Etterbeek",
+  "description": "Expert en certification PEB agréé à Etterbeek (1040)",
+  "image": "https://pebify.be/og-image.jpg",
+  "url": "https://pebify.be/certificat-peb-etterbeek/",
+  "telephone": "+32 484 63 08 15",
+  "email": "info@pebify.be",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rue Emile Wauters 58",
+    "addressLocality": "Bruxelles",
+    "postalCode": "1020",
+    "addressCountry": "BE"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Etterbeek",
+    "postalCode": "1040"
+  },
+  "priceRange": "€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Etterbeek (1040) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Etterbeek (1040). Certificats énergétiques agréés pour villas bourgeoises, maisons particulières et petits immeubles. Spécialiste Cinquantenaire."
+  breadcrumb={[{ label: 'Certificat PEB Etterbeek', href: '/certificat-peb-etterbeek/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Etterbeek"
+  heroSubtitle="Expert agréé pour vos propriétés etterbeekoise. Certifications énergétiques pour maisons bourgeoises et villas."
+  canonical="https://pebify.be/certificat-peb-etterbeek/"
+  schemaJson={jsonLd}
+>
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certificat PEB à <span class="gradient-text-cyan">Etterbeek</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Etterbeek, commune du centre-est bruxellois, séduit par son mélange harmonieux de vie urbaine et de verdure. Avec une population de près de 50 000 habitants, elle accueille un parc immobilier varié combinant villas de prestige, maisons particulières et petits immeubles résidentiels. La Chaussée de Wavre et le Parc du Cinquantenaire constituent le cœur dynamique de cette commune attachante.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          En tant que certificateur PEB agréé, j'interviens régulièrement à Etterbeek pour évaluer précisément la performance énergétique de vos propriétés. Mon expertise couvre tous les types de bien : des maisons bourgeoises classiques aux petits immeubles modernes, en passant par les villas contemporaines.
+        </p>
+      </div>
+
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Types de propriétés à Etterbeek
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Villas résidentielles</p>
+              <p class="text-peb-text2 text-sm">Certification de villas spacieuses typiques d'Etterbeek avec jardins.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Maisons bourgeoises</p>
+              <p class="text-peb-text2 text-sm">Demeures de prestige avec caractère architectural particulier.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petits immeubles résidentiels</p>
+              <p class="text-peb-text2 text-sm">Certification d'immeubles d'habitation de 3-5 étages.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Habitats modernes</p>
+              <p class="text-peb-text2 text-sm">Certification de constructions contemporaines et rénovées.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Profil énergétique à Etterbeek
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Etterbeek présente une bonne diversité énergétique. Les maisons bourgeoises anciennes obtiennent généralement des classes D à F, tandis que les constructions rénovées peuvent atteindre C ou mieux. L'amélioration des vitrages et de l'isolation sont les priorités principales.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Les propriétaires etterbeekois investissent volontiers dans des rénovations ciblées. L'isolation des combles, le remplacement des vitrages et la modernisation du chauffage offrent les meilleurs résultats pour améliorer votre performance énergétique.
+        </p>
+      </div>
+
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services de certification
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certificat PEB agréé</h4>
+            <p class="text-peb-text2 text-sm">Certification officielle pour tous les types de propriétés etterbeekoise.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit énergétique</h4>
+            <p class="text-peb-text2 text-sm">Analyse détaillée avec recommandations prioritaires adaptées.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport d'amélioration</h4>
+            <p class="text-peb-text2 text-sm">Guide stratégique pour optimiser votre classe énergétique.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation villas</h4>
+            <p class="text-peb-text2 text-sm">Expertise spécialisée pour les propriétés de prestige.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification à Etterbeek
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Appartement</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Villa/Maison</p>
+            <p class="text-3xl font-bold text-peb-cyan">249€</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          Tous les tarifs incluent visite complète et rapport détaillé. <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">Demandez un devis personnalisé</a> pour votre situation.
+        </p>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Ressources PEB
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre la certification énergétique.</p>
+          </a>
+          <a href="/guide-peb/ameliorer-score/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Améliorer son score</p>
+            <p class="text-sm text-peb-text2">Recommandations d'amélioration.</p>
+          </a>
+          <a href="/guide-peb/echelle-classes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Classes énergétiques</p>
+            <p class="text-sm text-peb-text2">Échelle A++ à G complète.</p>
+          </a>
+          <a href="/guide-peb/primes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Aides rénovation</p>
+            <p class="text-sm text-peb-text2">Primes et subventions 2026.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <CTA
+    title="Certificat PEB à Etterbeek"
+    subtitle="Contactez-moi pour obtenir votre certification énergétique complète."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <CommuneLinks />
+</PageLayout>

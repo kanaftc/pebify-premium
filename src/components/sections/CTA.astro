@@ -1,0 +1,117 @@
+---
+interface Props {
+  label?: string;
+  title: string;
+  subtitle: string;
+  primaryHref: string;
+  primaryText: string;
+  secondaryHref?: string;
+  secondaryText?: string;
+}
+
+const {
+  label,
+  title,
+  subtitle,
+  primaryHref,
+  primaryText,
+  secondaryHref,
+  secondaryText,
+} = Astro.props;
+---
+
+<section class="py-16 sm:py-20 md:py-24 bg-peb-bg relative overflow-hidden">
+  <!-- Background Glow Effect -->
+  <div
+    class="absolute inset-0 bg-gradient-to-br from-peb-cyan/5 via-transparent to-peb-blue/5 -z-10"
+  />
+  <div
+    class="absolute -right-40 -top-40 w-80 h-80 bg-peb-cyan/10 rounded-full blur-3xl -z-10"
+  />
+  <div
+    class="absolute -left-40 -bottom-40 w-96 h-96 bg-peb-blue/10 rounded-full blur-3xl -z-10"
+  />
+
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Card Container -->
+    <div
+      class="relative bg-peb-card border border-peb-border rounded-2xl p-8 sm:p-12 md:p-16 text-center space-y-8 reveal"
+    >
+      <!-- Glow Background -->
+      <div
+        class="absolute inset-0 rounded-2xl bg-gradient-to-br from-peb-cyan/10 via-transparent to-peb-blue/5 -z-10"
+      />
+
+      <!-- Label -->
+      {
+        label && (
+          <div class="inline-flex items-center justify-center space-x-2">
+            <div class="w-2 h-2 rounded-full bg-peb-green animate-pulse-dot" />
+            <span class="text-sm font-medium text-peb-cyan uppercase tracking-wider">
+              {label}
+            </span>
+          </div>
+        )
+      }
+
+      <!-- Title -->
+      <h2 class="text-4xl sm:text-5xl font-display font-bold leading-tight">
+        <span class="gradient-text-cyan">{title}</span>
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="text-lg text-peb-text2 max-w-2xl mx-auto leading-relaxed">
+        {subtitle}
+      </p>
+
+      <!-- CTA Buttons -->
+      <div
+        class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
+      >
+        <a
+          href={primaryHref}
+          class="inline-flex items-center space-x-2 px-8 py-4 rounded-lg bg-gradient-to-r from-peb-blue to-peb-cyan text-peb-bg font-semibold hover:shadow-lg hover:glow-cyan transition-all duration-200 active:scale-95"
+        >
+          <span>{primaryText}</span>
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            />
+          </svg>
+        </a>
+
+        {
+          secondaryHref && secondaryText && (
+            <a
+              href={secondaryHref}
+              class="inline-flex items-center space-x-2 px-8 py-4 rounded-lg border-2 border-peb-cyan text-peb-cyan font-semibold hover:bg-peb-cyan/10 transition-all duration-200"
+            >
+              <span>{secondaryText}</span>
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
+              </svg>
+            </a>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

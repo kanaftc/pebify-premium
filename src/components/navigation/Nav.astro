@@ -1,0 +1,198 @@
+---
+interface Props {}
+
+const navLinks = [
+  { label: 'Tarifs PEB', href: '/tarifs-peb-bruxelles/' },
+  { label: 'Guide PEB', href: '/guide-peb/' },
+  { label: 'Blog', href: '/blog/' },
+  { label: 'FAQ', href: '/faq/' },
+  { label: 'À propos', href: '/a-propos/' },
+];
+---
+
+<nav
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  id="navbar"
+>
+  <!-- Background: glassmorphism on scroll -->
+  <div
+    id="nav-bg"
+    class="absolute inset-0 bg-peb-bg/50 backdrop-blur-0 border-b border-transparent transition-all duration-300"
+  />
+
+  <!-- Nav Content -->
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <a
+        href="/"
+        class="flex items-center space-x-1 font-display font-bold text-xl md:text-2xl transition-all duration-200 hover:opacity-80"
+        aria-label="PEBify - Home"
+      >
+        <span class="text-peb-text">PEB</span>
+        <span class="text-peb-cyan">ify</span>
+        <div
+          class="w-2 h-2 rounded-full bg-peb-green animate-pulse-dot ml-1"
+        />
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center space-x-8">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class="text-peb-text2 hover:text-peb-cyan transition-colors text-sm font-medium relative group"
+            >
+              {link.label}
+              <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-peb-cyan to-peb-blue group-hover:w-full transition-all duration-300" />
+            </a>
+          ))
+        }
+      </div>
+
+      <!-- CTA Button & Mobile Menu Trigger -->
+      <div class="flex items-center space-x-4">
+        <!-- Desktop CTA Button -->
+        <a
+          href="/contact/"
+          class="hidden lg:inline-flex items-center space-x-2 px-6 py-2.5 rounded-lg bg-gradient-to-r from-peb-blue to-peb-cyan text-peb-bg font-semibold transition-all duration-200 hover:shadow-lg hover:glow-cyan active:scale-95"
+        >
+          <span>Prendre RDV</span>
+          <svg
+            class="w-4 h-4"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 7l5 5m0 0l-5 5m5-5H6"
+            />
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          class="lg:hidden p-2 rounded-lg text-peb-cyan hover:bg-peb-card transition-colors"
+          aria-label="Toggle mobile menu"
+          aria-expanded="false"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Panel -->
+  <div
+    id="mobile-menu"
+    class="hidden fixed top-16 left-0 right-0 bg-peb-bg/95 backdrop-blur-lg border-b border-peb-border lg:hidden"
+    role="navigation"
+    aria-label="Mobile navigation"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-4">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="block px-4 py-3 rounded-lg text-peb-text hover:bg-peb-card hover:text-peb-cyan transition-colors"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+
+      <!-- Mobile CTA Button -->
+      <a
+        href="/contact/"
+        class="block px-4 py-3 rounded-lg bg-gradient-to-r from-peb-blue to-peb-cyan text-peb-bg font-semibold text-center transition-all duration-200 hover:shadow-lg mt-4"
+      >
+        Prendre RDV
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Navbar scroll behavior
+  const navbar = document.getElementById('navbar');
+  const navBg = document.getElementById('nav-bg');
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  let lastScrollY = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 50) {
+      // Apply glassmorphism effect
+      navBg?.classList.add('bg-peb-bg/80', 'backdrop-blur-xl', 'border-peb-border');
+      navBg?.classList.remove('bg-peb-bg/50', 'backdrop-blur-0', 'border-transparent');
+    } else {
+      // Remove glassmorphism effect
+      navBg?.classList.remove('bg-peb-bg/80', 'backdrop-blur-xl', 'border-peb-border');
+      navBg?.classList.add('bg-peb-bg/50', 'backdrop-blur-0', 'border-transparent');
+    }
+
+    lastScrollY = currentScrollY;
+  });
+
+  // Mobile menu toggle
+  mobileMenuBtn?.addEventListener('click', () => {
+    const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+    mobileMenuBtn.setAttribute('aria-expanded', String(!isExpanded));
+
+    if (mobileMenu?.classList.contains('hidden')) {
+      mobileMenu.classList.remove('hidden');
+      // Animate menu icon
+      const icon = mobileMenuBtn.querySelector('svg');
+      if (icon) {
+        icon.style.transform = 'rotate(90deg)';
+      }
+    } else {
+      mobileMenu?.classList.add('hidden');
+      const icon = mobileMenuBtn.querySelector('svg');
+      if (icon) {
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  });
+
+  // Close mobile menu when a link is clicked
+  const mobileMenuLinks = mobileMenu?.querySelectorAll('a');
+  mobileMenuLinks?.forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+      const icon = mobileMenuBtn?.querySelector('svg');
+      if (icon) {
+        icon.style.transform = 'rotate(0deg)';
+      }
+    });
+  });
+
+  // Handle active link highlighting
+  const currentPath = window.location.pathname;
+  mobileMenuLinks?.forEach((link) => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('text-peb-cyan', 'bg-peb-card');
+    }
+  });
+</script>

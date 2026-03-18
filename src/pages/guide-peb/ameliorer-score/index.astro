@@ -1,0 +1,451 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CTA from '../../../components/sections/CTA.astro';
+import Card from '../../../components/ui/Card.astro';
+import Badge from '../../../components/ui/Badge.astro';
+
+const breadcrumb = [
+  { label: 'Guide PEB', href: '/guide-peb/' },
+  { label: 'Améliorer votre score', href: '/guide-peb/ameliorer-score/' },
+];
+
+const improvements = [
+  {
+    rank: 1,
+    title: 'Isolation de la toiture',
+    impact: '15-25%',
+    cost: '1500€ - 5000€',
+    roi: '8-12 ans',
+    description: 'Amélioration la plus impactante. La majorité des déperditions thermiques passent par le toit.',
+    details: [
+      'Coût très accessible pour un impact énorme',
+      'Améliore aussi le confort d\'été',
+      'Éligible aux primes bruxelloises complètes',
+      'Travail relativement simple (1-2 jours)',
+    ],
+  },
+  {
+    rank: 2,
+    title: 'Isolation des murs (par intérieur ou extérieur)',
+    impact: '20-30%',
+    cost: '5000€ - 20000€',
+    roi: '12-18 ans',
+    description: 'Très impactante mais coûteuse. L\'isolation par l\'extérieur est plus efficace mais plus onéreuse.',
+    details: [
+      'Impact énorme sur le confort',
+      'Améliore isolation phonique aussi',
+      'Demande travaux importants',
+      'Primes complètes disponibles',
+    ],
+  },
+  {
+    rank: 3,
+    title: 'Changement des fenêtres (châssis double vitrage)',
+    impact: '10-15%',
+    cost: '3000€ - 8000€',
+    roi: '10-15 ans',
+    description: 'Important pour réduire les fuites d\'air et améliorer le confort acoustique.',
+    details: [
+      'Triple vitrage mieux que double vitrage',
+      'Améliore aussi isolement acoustique',
+      'Primes disponibles pour triple vitrage',
+      'Améliore aussi l\'esthétique',
+    ],
+  },
+  {
+    rank: 4,
+    title: 'Isolation du sol / sous-sol',
+    impact: '8-12%',
+    cost: '2000€ - 6000€',
+    roi: '10-15 ans',
+    description: 'Souvent oubliée mais significative. Déperditions importantes par un sous-sol non isolé.',
+    details: [
+      'Améliore aussi le confort des pieds',
+      'Peut être couplée avec étanchéité',
+      'Primes disponibles',
+      'À privilégier si sol non isolé actuellement',
+    ],
+  },
+  {
+    rank: 5,
+    title: 'Changement du système de chauffage',
+    impact: '10-20%',
+    cost: '3000€ - 12000€',
+    roi: '8-12 ans',
+    description: 'Remplacer une vieille chaudière par une pompe à chaleur ou chaudière gaz haute performance.',
+    details: [
+      'Pompe à chaleur : meilleur ROI énergétique',
+      'Réduction factures chauffage jusqu\'à 50%',
+      'Primes très importantes pour pompe à chaleur',
+      'Améliore aussi eau chaude sanitaire',
+    ],
+  },
+  {
+    rank: 6,
+    title: 'Ventilation contrôlée (VMC)',
+    impact: '5-10%',
+    cost: '2000€ - 5000€',
+    roi: '12-18 ans',
+    description: 'VMC avec récupération de chaleur. Essentiellement pour combattre l\'humidité et améliorer efficacité.',
+    details: [
+      'Récupère 75-90% de la chaleur évacuée',
+      'Améliore qualité air intérieur',
+      'Réduit moisissures et humidité',
+      'Primes partielles disponibles',
+    ],
+  },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Améliorer son score PEB : top 6 actions avec impact et coût',
+  description: 'Guide complet : 6 meilleures actions pour améliorer votre score PEB. Impact énergétique, coûts, ROI et primes disponibles.',
+  author: {
+    '@type': 'Organization',
+    name: 'PEBify',
+  },
+};
+---
+
+<PageLayout
+  title="Améliorer son score PEB | Top 6 actions | PEBify"
+  description="Améliorer votre PEB : top 6 actions (isolation toiture, murs, fenêtres, sol, chauffage, ventilation). Coûts, ROI et primes."
+  canonical="https://pebify.be/guide-peb/ameliorer-score/"
+  breadcrumb={breadcrumb}
+  heroLabel="Optimiser votre bien"
+  heroTitle="Améliorer votre score PEB"
+  heroSubtitle="Les 6 meilleures actions énergétiques : impacts énergétiques, coûts réels, ROI, et accès aux primes bruxelloises."
+  schemaJson={schemaJson}
+>
+  <!-- Introduction -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6 reveal">
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Améliorer votre score PEB n'est pas juste bon pour l'environnement. C'est un investissement concret qui réduit vos factures énergétiques, augmente la valeur de votre bien, et vous donne accès à des primes importantes de la Région bruxelloise.
+        </p>
+
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Voici les 6 actions les plus impactantes, classées par rapport impact/coût. Je vous aide à prioriser vos investissements énergétiques.
+        </p>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <p class="font-semibold text-peb-text mb-3">💡 Conseil:</p>
+          <p class="text-peb-text2">
+            Un audit PEB complet (comme PEBify le propose) identifie précisément quelles améliorations vous feront passer à la classe supérieure. C'est plus efficace que de faire tous les travaux.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top 6 Improvements -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Top 6 <span class="gradient-text-cyan">actions prioritaires</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Classées par impact énergétique vs. coût d'investissement
+        </p>
+      </div>
+
+      <div class="space-y-8 reveal-stagger">
+        {improvements.map((item, index) => (
+          <div key={index} class="bg-peb-card border border-peb-border rounded-2xl overflow-hidden">
+            {/* Header */}
+            <div class="bg-gradient-to-r from-peb-cyan/10 to-transparent p-6 border-b border-peb-border">
+              <div class="flex items-start justify-between mb-4">
+                <div>
+                  <div class="inline-block mb-3">
+                    <Badge variant="cyan" text={`#${item.rank}`} />
+                  </div>
+                  <h3 class="text-2xl font-display font-bold text-peb-text">{item.title}</h3>
+                </div>
+                <div class="text-right">
+                  <p class="text-sm text-peb-text2 mb-1">Impact énergétique</p>
+                  <p class="text-3xl font-display font-bold text-peb-cyan">{item.impact}</p>
+                </div>
+              </div>
+              <p class="text-peb-text2">{item.description}</p>
+            </div>
+
+            {/* Content */}
+            <div class="p-6 space-y-6">
+              {/* Key Metrics */}
+              <div class="grid grid-cols-3 gap-4">
+                <div class="bg-peb-bg rounded-lg p-4 text-center">
+                  <p class="text-sm text-peb-text2 mb-2">Coût estimé</p>
+                  <p class="text-xl font-display font-bold text-peb-text">{item.cost}</p>
+                </div>
+                <div class="bg-peb-bg rounded-lg p-4 text-center">
+                  <p class="text-sm text-peb-text2 mb-2">ROI estimé</p>
+                  <p class="text-xl font-display font-bold text-peb-cyan">{item.roi}</p>
+                </div>
+                <div class="bg-peb-bg rounded-lg p-4 text-center">
+                  <p class="text-sm text-peb-text2 mb-2">Priorité</p>
+                  <p class="text-xl font-display font-bold text-orange-500">Rang {item.rank}</p>
+                </div>
+              </div>
+
+              {/* Details */}
+              <div>
+                <p class="font-semibold text-peb-text mb-3">Détails & avantages:</p>
+                <ul class="space-y-2">
+                  {item.details.map((detail, dIndex) => (
+                    <li key={dIndex} class="flex gap-3">
+                      <span class="text-peb-cyan flex-shrink-0">✓</span>
+                      <span class="text-peb-text2">{detail}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Strategy -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Stratégies d'amélioration <span class="gradient-text-cyan">recommandées</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">📌 Stratégie 1 : "Quick Win" (Court terme)</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Si vous avez un budget limité ou une vente prévue rapidement :
+          </p>
+          <div class="bg-peb-bg rounded-lg p-4 space-y-2 text-sm text-peb-text2">
+            <p>1️⃣ Isolation toiture (gain -15% + accès primes) ~1500€-3000€</p>
+            <p>2️⃣ Changement fenêtres (gain -10%) ~3000€-5000€</p>
+            <p>Coût total: ~4500€-8000€ | Gain: -25% consommation | ROI: 8-12 ans</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">📌 Stratégie 2 : "Optimale" (Moyen terme)</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Si vous prévoyez de rester 10+ ans et avez un budget modéré :
+          </p>
+          <div class="bg-peb-bg rounded-lg p-4 space-y-2 text-sm text-peb-text2">
+            <p>1️⃣ Isolation toiture ~2000€</p>
+            <p>2️⃣ Changement chauffage (pompe à chaleur) ~8000€-10000€</p>
+            <p>3️⃣ Changement fenêtres ~5000€</p>
+            <p>Coût total: ~15000€-17000€ | Gain: -35-40% | ROI: 10-12 ans</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">📌 Stratégie 3 : "Complète" (Long terme)</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Si vous avez un budget confortable et voulez atteindre classe A :
+          </p>
+          <div class="bg-peb-bg rounded-lg p-4 space-y-2 text-sm text-peb-text2">
+            <p>1️⃣ Isolation toiture + murs (intérieur) ~7000€</p>
+            <p>2️⃣ Changement fenêtres + murs ~10000€</p>
+            <p>3️⃣ Pompe à chaleur + VMC ~12000€</p>
+            <p>Coût total: ~30000€-35000€ | Gain: -50-60% | Classe A possible</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Primes & Subsidies -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Primes & subventions <span class="gradient-text-cyan">disponibles</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Programme RENOLUTION (Bruxelles)</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            La Région bruxelloise propose des primes importantes pour les rénovations énergétiques. Voici les principales :
+          </p>
+          <div class="space-y-3 text-sm text-peb-text2">
+            <div class="bg-peb-bg rounded-lg p-4">
+              <p class="font-semibold text-peb-text mb-1">🏠 Isolation toiture</p>
+              <p>Prime: 25€-35€/m² (jusqu'à 2500€-3500€ par bien)</p>
+            </div>
+            <div class="bg-peb-bg rounded-lg p-4">
+              <p class="font-semibold text-peb-text mb-1">🧱 Isolation murs</p>
+              <p>Prime: 20€-40€/m² (jusqu'à 5000€-8000€ par bien)</p>
+            </div>
+            <div class="bg-peb-bg rounded-lg p-4">
+              <p class="font-semibold text-peb-text mb-1">❄️ Pompe à chaleur</p>
+              <p>Prime: 30-50% du coût (jusqu'à 6000€-8000€)</p>
+            </div>
+            <div class="bg-peb-bg rounded-lg p-4">
+              <p class="font-semibold text-peb-text mb-1">🪟 Fenêtres triple vitrage</p>
+              <p>Prime: 15€-25€/m² (jusqu'à 2000€-3000€)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Autres aides fédérales & régionales</h3>
+          <ul class="space-y-2 text-sm text-peb-text2">
+            <li>✓ <span class="font-semibold">Crédit d'impôt fédéral</span>: jusqu'à 30% pour travaux énergétiques</li>
+            <li>✓ <span class="font-semibold">TVA réduite</span>: 6% au lieu de 21% pour rénovations énergétiques</li>
+            <li>✓ <span class="font-semibold">Primes de la Wallonie</span>: si vous vivez en région liégeoise</li>
+          </ul>
+        </div>
+
+        <div class="bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-6">
+          <p class="font-semibold text-emerald-600 mb-2">💚 Impact réel des primes</p>
+          <p class="text-peb-text2">
+            Exemple : Isolation toiture 3000€ + pompe à chaleur 10000€ = 13000€. Avec primes RENOLUTION : réduit à ~7500€. Les primes couvrent 40-50% des coûts!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mistakes to Avoid -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Erreurs à <span class="gradient-text-cyan">éviter</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">❌</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Faire tous les travaux d'un coup</h3>
+            <p class="text-peb-text2">
+              Attaquez par les actions qui vous feront passer de classe D à C ou C à B. Cela coûte moins cher et a plus d'impact.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">❌</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Négliger l'audit PEB initial</h3>
+            <p class="text-peb-text2">
+              Un audit détaillé identifie exactement ce qui vous freine. Investir 189€-249€ en audit vous évite de gaspiller 10000€ en mauvais choix.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">❌</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Oublier les primes RENOLUTION</h3>
+            <p class="text-peb-text2">
+              Les primes couvrent 30-50% des coûts et nécessitent une demande AVANT les travaux. Ne les oubliez pas.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">❌</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Mélanger travaux urgents et énergétiques</h3>
+            <p class="text-peb-text2">
+              Si votre toiture fuit, réparez-la. Mais rendre-vous compte que l'isolation de toiture est une priorité énergétique aussi.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">❌</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Ignorer la ventilation</h3>
+            <p class="text-peb-text2">
+              Une bonne ventilation (VMC avec récupération chaleur) augmente l'efficacité des autres travaux de 5-10%.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Pour <span class="gradient-text-cyan">aller plus loin</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+        <a href="/guide-peb/primes/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">💚</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Primes rénovation</h3>
+              <p class="text-sm text-peb-text2">
+                Guide complet des aides RENOLUTION.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/echelle-classes/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">📊</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Échelle PEB</h3>
+              <p class="text-sm text-peb-text2">
+                Comprendre les classes énergétiques.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/contact/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">📋</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Audit complet</h3>
+              <p class="text-sm text-peb-text2">
+                Identifier VOS améliorations prioritaires.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/faq/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">❓</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">FAQ complète</h3>
+              <p class="text-sm text-peb-text2">
+                30 réponses sur le PEB.
+              </p>
+            </div>
+          </Card>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Prêt à améliorer votre bien?"
+    title="Faites un audit énergétique complet"
+    subtitle="Un expert agréé identifiera exactement quelles améliorations vous feront progresser. Rapport détaillé avec ROI pour chaque action."
+    primaryHref="/contact/"
+    primaryText="Demander un audit"
+    secondaryHref="/guide-peb/primes/"
+    secondaryText="En savoir plus sur les primes"
+  />
+</PageLayout>

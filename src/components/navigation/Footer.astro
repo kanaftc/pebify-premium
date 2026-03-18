@@ -1,0 +1,215 @@
+---
+import { siteConfig } from '../../data/site';
+
+interface Props {}
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-peb-surface border-t border-peb-border">
+  <!-- Glow Line Separator -->
+  <div
+    class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-peb-cyan to-transparent opacity-50"
+  />
+
+  <!-- Footer Content -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12">
+      <!-- Column 1: Brand -->
+      <div class="space-y-6">
+        <div>
+          <div class="flex items-center space-x-1 font-display font-bold text-lg mb-4">
+            <span class="text-peb-text">PEB</span>
+            <span class="text-peb-cyan">ify</span>
+            <div
+              class="w-1.5 h-1.5 rounded-full bg-peb-green animate-pulse-dot ml-1"
+            />
+          </div>
+          <p class="text-peb-text2 text-sm leading-relaxed">
+            Expert en certification de performance énergétique des bâtiments (PEB) agréé par la Région bruxelloise.
+          </p>
+        </div>
+
+        <!-- Trust Badges -->
+        <div class="space-y-3">
+          <div class="flex items-center space-x-2 text-sm text-peb-text2">
+            <svg
+              class="w-4 h-4 text-peb-green"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6.267 3.455a3.066 3.066 0 001.745-2.723 3.066 3.066 0 00-3.58 3.58 3.066 3.066 0 002.835-.857zm12.838 12.838l-7.72-7.72a4 4 0 011.088-6.983c2.485-.135 4.888.872 6.986 3.039 3.117 3.116 3.276 5.817 2.422 6.83-.857.969-3.635.215-6.596-3.226zM5.072 12.567l-2.391 2.391a1 1 0 001.415 1.415l2.391-2.391a1 1 0 00-1.415-1.415z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span>Agréé Région bruxelloise</span>
+          </div>
+          <div class="flex items-center space-x-2 text-sm text-peb-text2">
+            <svg
+              class="w-4 h-4 text-peb-cyan"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span>1000+ certifications complétées</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2: Services -->
+      <div>
+        <h3 class="font-display font-bold text-peb-text mb-6">Services</h3>
+        <ul class="space-y-4">
+          <li>
+            <a
+              href="/tarifs-peb-bruxelles/"
+              class="text-peb-text2 hover:text-peb-cyan transition-colors text-sm"
+            >
+              Tarifs PEB
+            </a>
+          </li>
+          <li>
+            <a
+              href="/guide-peb/"
+              class="text-peb-text2 hover:text-peb-cyan transition-colors text-sm"
+            >
+              Guide PEB
+            </a>
+          </li>
+          <li>
+            <a
+              href="/contact/"
+              class="text-peb-text2 hover:text-peb-cyan transition-colors text-sm"
+            >
+              Prendre rendez-vous
+            </a>
+          </li>
+          <li>
+            <a
+              href="/blog/"
+              class="text-peb-text2 hover:text-peb-cyan transition-colors text-sm"
+            >
+              Blog & Ressources
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Ressources -->
+      <div>
+        <h3 class="font-display font-bold text-peb-text mb-6">Ressources</h3>
+        <ul class="space-y-4">
+          <li>
+            <a
+              href="/faq/"
+              class="text-peb-text2 hover:text-peb-cyan transition-colors text-sm"
+            >
+              FAQ
+            </a>
+          </li>
+          <li>
+            <a
+              href="/a-propos/"
+              class="text-peb-text2 hover:text-peb-cyan transition-colors text-sm"
+            >
+              À propos
+            </a>
+          </li>
+          <li>
+            <a
+              href="/contact/"
+              class="text-peb-text2 hover:text-peb-cyan transition-colors text-sm"
+            >
+              Nous contacter
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/32484630815"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-peb-text2 hover:text-peb-green transition-colors text-sm"
+            >
+              WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact Info -->
+      <div>
+        <h3 class="font-display font-bold text-peb-text mb-6">Nous contacter</h3>
+        <ul class="space-y-4 text-sm">
+          <li>
+            <div class="text-peb-text2 mb-1">Téléphone</div>
+            <a
+              href={`tel:${siteConfig.contact.phone}`}
+              class="text-peb-cyan hover:text-peb-green transition-colors font-medium"
+            >
+              {siteConfig.contact.phone}
+            </a>
+          </li>
+          <li>
+            <div class="text-peb-text2 mb-1">Email</div>
+            <a
+              href={`mailto:${siteConfig.contact.email}`}
+              class="text-peb-cyan hover:text-peb-green transition-colors font-medium break-all"
+            >
+              {siteConfig.contact.email}
+            </a>
+          </li>
+          <li>
+            <div class="text-peb-text2 mb-1">Adresse</div>
+            <address class="text-peb-cyan not-italic leading-relaxed">
+              {siteConfig.address.street}<br />
+              {siteConfig.address.postalCode} {siteConfig.address.city}
+            </address>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="h-px bg-gradient-to-r from-peb-border via-peb-border to-transparent my-12" />
+
+    <!-- Bottom Bar -->
+    <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+      <!-- Copyright -->
+      <p class="text-peb-text2 text-sm">
+        © {currentYear} PEBify. Tous droits réservés.
+      </p>
+
+      <!-- Legal Links -->
+      <nav class="flex flex-wrap items-center justify-center gap-6 sm:gap-8">
+        <a
+          href="/conditions-generales-de-vente-pebify"
+          class="text-peb-text2 hover:text-peb-cyan transition-colors text-sm"
+        >
+          CGV
+        </a>
+        <span class="text-peb-border">|</span>
+        <a
+          href="/politique-de-confidentialite"
+          class="text-peb-text2 hover:text-peb-cyan transition-colors text-sm"
+        >
+          Confidentialité
+        </a>
+        <span class="text-peb-border">|</span>
+        <a
+          href="/politique-de-cookies"
+          class="text-peb-text2 hover:text-peb-cyan transition-colors text-sm"
+        >
+          Cookies
+        </a>
+      </nav>
+    </div>
+  </div>
+</footer>

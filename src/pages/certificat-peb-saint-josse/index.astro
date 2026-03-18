@@ -1,0 +1,194 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+
+const faqItems = [
+  {
+    question: 'Comment certifier un petit immeuble collectif à Saint-Josse?',
+    answer: 'Les petits immeubles collectifs de Saint-Josse se certifient sans difficulté. Je maîtrise l\'architecture typique saint-jossienne. Ma spécialité concerne précisément ce type d\'immeuble urbain dense.'
+  },
+  {
+    question: 'Quel profil énergétique pour les propriétés saint-jossiennes?',
+    answer: 'Saint-Josse présente un tissu urbain dense. Les immeubles anciens obtiennent généralement D à F. L\'amélioration progressive offre de bonnes perspectives.'
+  },
+  {
+    question: 'Quel tarif pour mon bien à Saint-Josse?',
+    answer: 'Pour les propriétés saint-jossiennes, mes tarifs débutent à 189€ pour les petits biens et 249€ pour les maisons. Contactez-moi pour un devis personnalisé.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Saint-Josse",
+  "description": "Expert en certification PEB agréé à Saint-Josse-ten-Noode (1210)",
+  "url": "https://pebify.be/certificat-peb-saint-josse/",
+  "areaServed": { "@type": "City", "name": "Saint-Josse-ten-Noode", "postalCode": "1210" },
+  "priceRange": "€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Saint-Josse (1210) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Saint-Josse-ten-Noode (1210). Certificats énergétiques agréés pour petits immeubles collectifs et petits logements. Service rapide."
+  breadcrumb={[{ label: 'Certificat PEB Saint-Josse', href: '/certificat-peb-saint-josse/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Saint-Josse-ten-Noode"
+  heroSubtitle="Certificateur agréé pour vos propriétés saint-jossiennes. Expert en petits immeubles collectifs et habitats urbains."
+  canonical="https://pebify.be/certificat-peb-saint-josse/"
+  schemaJson={jsonLd}
+>
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certificat PEB à <span class="gradient-text-cyan">Saint-Josse-ten-Noode</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Saint-Josse-ten-Noode, petite commune du nord-centre bruxellois, se caractérise par son tissu urbain dense et sa forte mixité résidentielle. Avec environ 31 000 habitants, elle réunit habitat individuel compact et petits immeubles collectifs, avec une signature architecturale typiquement bruxelloise.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Je certifie régulièrement les propriétés saint-jossiennes avec expertise adaptée à ce contexte urbain dense. Les projets de rénovation dans ce quartier historique offrent des défis intéressants pour améliorer les performances énergétiques.
+        </p>
+      </div>
+
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Propriétés à Saint-Josse
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petites maisons</p>
+              <p class="text-peb-text2 text-sm">Certification de maisons compactes saint-jossiennes.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Immeubles collectifs</p>
+              <p class="text-peb-text2 text-sm">Certification d'immeubles urbains denses.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petits logements</p>
+              <p class="text-peb-text2 text-sm">Certification de structures compactes.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petits commerces</p>
+              <p class="text-peb-text2 text-sm">Certification de structures commerciales compactes.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Profil énergétique
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Saint-Josse présente un profil énergétique reflet de son tissu urbain ancien. Les immeubles obtiennent généralement D à F. Les opportunités d\'amélioration sont significatives.</p>
+      </div>
+
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certificat PEB</h4>
+            <p class="text-peb-text2 text-sm">Certification officielle.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit énergétique</h4>
+            <p class="text-peb-text2 text-sm">Analyse avec recommandations.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport complet</h4>
+            <p class="text-peb-text2 text-sm">Documentation stratégique.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation</h4>
+            <p class="text-peb-text2 text-sm">Expertise urbain dense.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Petit bien</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Maison</p>
+            <p class="text-3xl font-bold text-peb-cyan">249€</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">Demandez un devis</a>.
+        </p>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Ressources
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre.</p>
+          </a>
+          <a href="/guide-peb/ameliorer-score/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Améliorer votre score</p>
+            <p class="text-sm text-peb-text2">Recommandations.</p>
+          </a>
+          <a href="/guide-peb/echelle-classes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Classes énergétiques</p>
+            <p class="text-sm text-peb-text2">A++ à G.</p>
+          </a>
+          <a href="/guide-peb/primes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Aides rénovation</p>
+            <p class="text-sm text-peb-text2">Primes 2026.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <CTA
+    title="Certificat PEB à Saint-Josse"
+    subtitle="Contactez-moi pour votre certification énergétique."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <CommuneLinks />
+</PageLayout>

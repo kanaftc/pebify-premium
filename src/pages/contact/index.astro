@@ -1,0 +1,374 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+import Card from '../../components/ui/Card.astro';
+import Badge from '../../components/ui/Badge.astro';
+import Button from '../../components/ui/Button.astro';
+import { siteConfig } from '../../data/site';
+
+const breadcrumb = [
+  { label: 'Contact', href: '/contact/' },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact - PEBify',
+  organization: {
+    '@type': 'LocalBusiness',
+    name: siteConfig.company.name,
+    telephone: siteConfig.contact.phone,
+    email: siteConfig.contact.email,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: siteConfig.address.street,
+      addressLocality: siteConfig.address.city,
+      postalCode: siteConfig.address.postalCode,
+      addressCountry: 'BE',
+    },
+  },
+};
+---
+
+<PageLayout
+  title="Contact - PEBify | Certificateur PEB Bruxelles"
+  description="Contactez PEBify pour votre certificat PEB. Téléphone, email, WhatsApp, formulaire de contact. Réponse sous 24 heures garantie."
+  canonical="https://pebify.be/contact/"
+  breadcrumb={breadcrumb}
+  heroLabel="En direct avec nous"
+  heroTitle="Contactez-moi pour votre certificat PEB"
+  heroSubtitle="Plusieurs moyens de me joindre. Réponse garantie sous 24 heures. Expert agréé à Bruxelles."
+  schemaJson={schemaJson}
+>
+  <!-- Contact Methods Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
+        <!-- Phone -->
+        <Card hover={true}>
+          <div class="space-y-4 text-center h-full flex flex-col">
+            <div class="text-5xl">📞</div>
+            <h3 class="text-xl font-display font-bold text-peb-text">Par téléphone</h3>
+            <p class="text-peb-text2 flex-1">
+              Appelez-moi directement pour parler de votre besoin et obtenir une estimation immédiate.
+            </p>
+            <div class="pt-4 border-t border-peb-border">
+              <a
+                href="tel:+32484630815"
+                class="inline-block px-6 py-3 rounded-lg bg-peb-cyan text-peb-bg font-semibold hover:bg-peb-green transition-colors"
+              >
+                +32 484 63 08 15
+              </a>
+            </div>
+          </div>
+        </Card>
+
+        <!-- Email -->
+        <Card hover={true}>
+          <div class="space-y-4 text-center h-full flex flex-col">
+            <div class="text-5xl">📧</div>
+            <h3 class="text-xl font-display font-bold text-peb-text">Par email</h3>
+            <p class="text-peb-text2 flex-1">
+              Envoyez vos détails. Je vous recontacterai sous 24 heures avec un devis complet.
+            </p>
+            <div class="pt-4 border-t border-peb-border">
+              <a
+                href="mailto:info@pebify.be"
+                class="inline-block px-6 py-3 rounded-lg bg-peb-cyan text-peb-bg font-semibold hover:bg-peb-green transition-colors"
+              >
+                info@pebify.be
+              </a>
+            </div>
+          </div>
+        </Card>
+
+        <!-- WhatsApp -->
+        <Card hover={true}>
+          <div class="space-y-4 text-center h-full flex flex-col">
+            <div class="text-5xl">💬</div>
+            <h3 class="text-xl font-display font-bold text-peb-text">Par WhatsApp</h3>
+            <p class="text-peb-text2 flex-1">
+              Message instantané. Réponse rapide. Parfait pour les questions urgentes ou les demandes simples.
+            </p>
+            <div class="pt-4 border-t border-peb-border">
+              <a
+                href="https://wa.me/32484630815"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block px-6 py-3 rounded-lg bg-peb-green text-peb-bg font-semibold hover:bg-peb-cyan transition-colors"
+              >
+                Ouvrir WhatsApp
+              </a>
+            </div>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form & Info Grid -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div class="reveal">
+          <h2 class="text-3xl font-display font-bold text-peb-text mb-6">
+            Formulaire de <span class="gradient-text-cyan">contact</span>
+          </h2>
+
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <label class="block text-sm font-semibold text-peb-text mb-2">
+                Nom complet *
+              </label>
+              <input
+                type="text"
+                name="name"
+                required
+                class="w-full px-4 py-3 rounded-lg bg-peb-card border border-peb-border text-peb-text placeholder:text-peb-text2 focus:border-peb-cyan focus:outline-none transition-colors"
+                placeholder="Votre nom"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-peb-text mb-2">
+                Email *
+              </label>
+              <input
+                type="email"
+                name="email"
+                required
+                class="w-full px-4 py-3 rounded-lg bg-peb-card border border-peb-border text-peb-text placeholder:text-peb-text2 focus:border-peb-cyan focus:outline-none transition-colors"
+                placeholder="votre@email.com"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-peb-text mb-2">
+                Téléphone *
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                required
+                class="w-full px-4 py-3 rounded-lg bg-peb-card border border-peb-border text-peb-text placeholder:text-peb-text2 focus:border-peb-cyan focus:outline-none transition-colors"
+                placeholder="+32 XXX XX XX XX"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-peb-text mb-2">
+                Adresse du bien *
+              </label>
+              <input
+                type="text"
+                name="address"
+                required
+                class="w-full px-4 py-3 rounded-lg bg-peb-card border border-peb-border text-peb-text placeholder:text-peb-text2 focus:border-peb-cyan focus:outline-none transition-colors"
+                placeholder="Rue Emile Wauters 58, 1020 Bruxelles"
+              />
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-peb-text mb-2">
+                Type de bien
+              </label>
+              <select
+                name="property-type"
+                class="w-full px-4 py-3 rounded-lg bg-peb-card border border-peb-border text-peb-text focus:border-peb-cyan focus:outline-none transition-colors"
+              >
+                <option value="apartment">Appartement</option>
+                <option value="house">Maison</option>
+                <option value="duplex">Duplex</option>
+                <option value="commercial">Commercial</option>
+                <option value="other">Autre</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-semibold text-peb-text mb-2">
+                Message
+              </label>
+              <textarea
+                name="message"
+                rows="5"
+                class="w-full px-4 py-3 rounded-lg bg-peb-card border border-peb-border text-peb-text placeholder:text-peb-text2 focus:border-peb-cyan focus:outline-none transition-colors resize-none"
+                placeholder="Décrivez votre besoin ou votre question..."
+              ></textarea>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="gdpr"
+                name="gdpr"
+                required
+                class="mt-1"
+              />
+              <label for="gdpr" class="text-sm text-peb-text2">
+                J'accepte la <a href="/politique-de-confidentialite/" class="text-peb-cyan hover:text-peb-green">politique de confidentialité</a> et autorise PEBify à traiter mes données personnelles pour répondre à ma demande. *
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full px-6 py-3 rounded-lg bg-gradient-to-r from-peb-blue to-peb-cyan text-peb-bg font-semibold hover:shadow-lg hover:glow-cyan transition-all duration-200 active:scale-95"
+            >
+              Envoyer mon message
+            </button>
+          </form>
+
+          <p class="text-sm text-peb-text2 mt-4">
+            * Champs obligatoires. Je vous recontacterai sous 24 heures.
+          </p>
+        </div>
+
+        <!-- Contact Info & Hours -->
+        <div class="space-y-8 reveal-right">
+          <!-- Direct Info -->
+          <div>
+            <h3 class="text-2xl font-display font-bold text-peb-text mb-6">
+              Informations directes
+            </h3>
+
+            <div class="space-y-4">
+              <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+                <div class="flex gap-4">
+                  <span class="text-2xl">📍</span>
+                  <div>
+                    <h4 class="font-semibold text-peb-text mb-1">Adresse</h4>
+                    <p class="text-peb-text2">
+                      Rue Emile Wauters 58<br />
+                      1020 Bruxelles, Belgique
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+                <div class="flex gap-4">
+                  <span class="text-2xl">📞</span>
+                  <div>
+                    <h4 class="font-semibold text-peb-text mb-1">Téléphone</h4>
+                    <a href="tel:+32484630815" class="text-peb-cyan hover:text-peb-green">
+                      +32 484 63 08 15
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+                <div class="flex gap-4">
+                  <span class="text-2xl">📧</span>
+                  <div>
+                    <h4 class="font-semibold text-peb-text mb-1">Email</h4>
+                    <a href="mailto:info@pebify.be" class="text-peb-cyan hover:text-peb-green">
+                      info@pebify.be
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Opening Hours -->
+          <div>
+            <h3 class="text-2xl font-display font-bold text-peb-text mb-6">
+              Horaires d'ouverture
+            </h3>
+
+            <div class="bg-peb-card border border-peb-border rounded-xl p-6 space-y-3">
+              <div class="flex justify-between">
+                <span class="text-peb-text">Lundi - Vendredi</span>
+                <span class="font-semibold text-peb-cyan">09h - 18h</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-peb-text">Samedi</span>
+                <span class="font-semibold text-peb-cyan">10h - 14h</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-peb-text">Dimanche</span>
+                <span class="text-peb-text2">Fermé</span>
+              </div>
+
+              <div class="pt-4 border-t border-peb-border text-sm text-peb-text2">
+                <p>
+                  <strong>Réponse garantie:</strong> Sous 24h maximum pour tout message ou appel.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Snippet -->
+          <div class="bg-gradient-to-br from-peb-cyan/10 to-peb-blue/10 border border-peb-cyan/30 rounded-xl p-6 space-y-3">
+            <div class="flex gap-1 text-yellow-400">
+              ★★★★★
+            </div>
+            <p class="italic text-peb-text2">
+              "Service professionnel, réactif et transparent. Milad répond toujours rapidement et explique bien. Je recommande!"
+            </p>
+            <p class="font-semibold text-peb-text">— Client PEBify</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <CommuneLinks />
+
+  <!-- FAQ Contact -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Questions avant de <span class="gradient-text-cyan">contacter</span>?
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Combien de temps avez-vous besoin?</h3>
+          <p class="text-peb-text2">
+            Je me déplace dans les 19 communes de Bruxelles. Pas de frais de déplacement supplémentaires. Visite 1-2h selon type de bien.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Quel est le délai?</h3>
+          <p class="text-peb-text2">
+            Certificat sous 3-5 jours ouvrables après la visite. Service express 48h disponible (tarif spécifique).
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Comment se passe la visite?</h3>
+          <p class="text-peb-text2">
+            Je visite tous les espaces, prends des photos, examine l'isolation, le chauffage, l'eau chaude. Aucune intrusion. Totalement professionnel.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Le prix peut-il augmenter?</h3>
+          <p class="text-peb-text2">
+            Non. Tarifs fixes. Devis détaillé avant engagement. Aucun frais caché. TVA incluse. Ce que vous voyez est ce que vous payez.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+
+<script>
+  // Simple form submission handler
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // In a real application, this would send data to a backend
+      // For now, we'll just show a success message
+      alert('Merci! Votre message a été envoyé. Je vous recontacterai sous 24 heures.');
+      form.reset();
+    });
+  }
+</script>

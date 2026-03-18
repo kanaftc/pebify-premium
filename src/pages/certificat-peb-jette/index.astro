@@ -1,0 +1,197 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+
+const faqItems = [
+  {
+    question: 'Comment certifier une maison résidentielle spacieuse à Jette?',
+    answer: 'Les maisons spacieuses de Jette se certifient sans difficulté. Je maîtrise l\'architecture résidentielle typique de Jette. Mon expertise permet une certification rapide et fiable pour vos propriétés.'
+  },
+  {
+    question: 'Quel est le potentiel d\'amélioration énergétique à Jette?',
+    answer: 'Les maisons de Jette offrent un excellent potentiel. L\'amélioration de l\'isolation, des vitrages et du chauffage peut transformer significativement votre performance énergétique et réduire vos charges.'
+  },
+  {
+    question: 'Quel tarif pour ma maison jettoise?',
+    answer: 'Pour une maison résidentielle à Jette, mon tarif est 249€ incluant visite complète et rapport détaillé. Contactez-moi rapidement si vous avez besoin d\'une certification urgente.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Jette",
+  "description": "Expert en certification PEB agréé à Jette (1090)",
+  "url": "https://pebify.be/certificat-peb-jette/",
+  "areaServed": { "@type": "City", "name": "Jette", "postalCode": "1090" },
+  "priceRange": "€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Jette (1090) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Jette (1090). Certificats énergétiques agréés pour maisons résidentielles, villas et petits immeubles. Service rapide et fiable."
+  breadcrumb={[{ label: 'Certificat PEB Jette', href: '/certificat-peb-jette/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Jette"
+  heroSubtitle="Certificateur agréé pour vos propriétés jettoises. Expert en maisons résidentielles et petits immeubles."
+  canonical="https://pebify.be/certificat-peb-jette/"
+  schemaJson={jsonLd}
+>
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certificat PEB à <span class="gradient-text-cyan">Jette</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Jette, commune du nord-ouest bruxellois, se distingue par son caractère résidentiel prononcé et son importante présence d'espaces verts. Avec une population de près de 48 000 habitants, elle offre un habitat dominé par les maisons individuelles spacieuses et les petits immeubles collectifs. Le Parc de Jette et la Chaussée de Louvain constituent les axes dynamiques de la commune.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Je certifie régulièrement les propriétés jettoises avec expertise approfondie. Les maisons individuelles spacieuses et bien entretenues de Jette offrent d'excellentes perspectives pour des rénovations énergétiques efficaces.
+        </p>
+      </div>
+
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Propriétés à Jette
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Maisons résidentielles</p>
+              <p class="text-peb-text2 text-sm">Certification de maisons spacieuses typiques de Jette.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petits immeubles</p>
+              <p class="text-peb-text2 text-sm">Certification d'immeubles collectifs résidentiels.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Villas particulières</p>
+              <p class="text-peb-text2 text-sm">Certification de propriétés de prestige local.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Logements spacieux</p>
+              <p class="text-peb-text2 text-sm">Certification de structures d'habitation variées.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Profil énergétique à Jette
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Jette présente un profil énergétique varié. Les maisons datent souvent du début du XXe siècle et obtiennent généralement D à F. Les petits immeubles plus récents peuvent atteindre C ou mieux.</p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          L'amélioration de l'isolation, des vitrages et du chauffage offre les meilleurs résultats pour améliorer votre performance énergétique à Jette.
+        </p>
+      </div>
+
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certificat PEB agréé</h4>
+            <p class="text-peb-text2 text-sm">Certification officielle pour tous types de biens jettoises.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit énergétique</h4>
+            <p class="text-peb-text2 text-sm">Analyse détaillée avec recommandations adaptées.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport complet</h4>
+            <p class="text-peb-text2 text-sm">Documentation stratégique pour amélioration.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation</h4>
+            <p class="text-peb-text2 text-sm">Expertise pour maisons résidentielles.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Petit bien</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Maison</p>
+            <p class="text-3xl font-bold text-peb-cyan">249€</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">Contactez-moi</a> pour votre devis.
+        </p>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Ressources
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre la certification.</p>
+          </a>
+          <a href="/guide-peb/ameliorer-score/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Améliorer votre score</p>
+            <p class="text-sm text-peb-text2">Recommandations d'amélioration.</p>
+          </a>
+          <a href="/guide-peb/echelle-classes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Classes énergétiques</p>
+            <p class="text-sm text-peb-text2">Échelle A++ à G.</p>
+          </a>
+          <a href="/guide-peb/primes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Aides rénovation</p>
+            <p class="text-sm text-peb-text2">Primes 2026.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <CTA
+    title="Certificat PEB à Jette"
+    subtitle="Contactez-moi pour votre certification énergétique à Jette."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <CommuneLinks />
+</PageLayout>

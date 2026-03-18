@@ -1,0 +1,348 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Card from '../../components/ui/Card.astro';
+import Badge from '../../components/ui/Badge.astro';
+import Button from '../../components/ui/Button.astro';
+import { siteConfig } from '../../data/site';
+
+const breadcrumb = [
+  { label: 'À propos', href: '/a-propos/' },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: siteConfig.company.owner,
+  jobTitle: 'Certificateur PEB Agréé',
+  worksFor: {
+    '@type': 'Organization',
+    name: siteConfig.company.name,
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteConfig.address.street,
+    addressLocality: siteConfig.address.city,
+    postalCode: siteConfig.address.postalCode,
+    addressCountry: 'BE',
+  },
+};
+---
+
+<PageLayout
+  title="À propos - Milad Mollaey Tabriz, expert PEB agréé"
+  description="Milad Mollaey Tabriz - Expert en certification PEB agréé Bruxelles. 14+ ans d'expertise, 500+ certificats, 4.9/5 satisfaction."
+  canonical="https://pebify.be/a-propos/"
+  breadcrumb={breadcrumb}
+  heroLabel="Notre histoire"
+  heroTitle="Qui est derrière PEBify?"
+  heroSubtitle="Milad Mollaey Tabriz, expert en certification PEB agréé par la Région bruxelloise. Passion pour la performance énergétique et la transparence."
+  schemaJson={schemaJson}
+>
+  <!-- Story Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Story -->
+        <div class="space-y-6 reveal">
+          <h2 class="text-4xl sm:text-5xl font-display font-bold">
+            Mon parcours, votre <span class="gradient-text-cyan">garantie</span>
+          </h2>
+
+          <p class="text-lg text-peb-text2 leading-relaxed">
+            Je m'appelle Milad Mollaey Tabriz. Depuis 2020, je suis expert en certification de performance énergétique des bâtiments, agréé par la Région bruxelloise. Mais mon expérience en énergie commence bien avant.
+          </p>
+
+          <p class="text-peb-text2 leading-relaxed">
+            Après plus de 14 ans dans le domaine de la performance énergétique, j'ai décidé de créer PEBify : une structure axée sur la transparence, la qualité et l'accessibilité. Pas de jargon incompréhensible. Pas de frais cachés. Juste de l'expertise, de la fiabilité et du service client à la hauteur de vos attentes.
+          </p>
+
+          <p class="text-peb-text2 leading-relaxed">
+            Chaque jour, j'aide des propriétaires, des agents immobiliers et des locataires à obtenir des certificats PEB légalement conformes et des audits énergétiques qui changent vraiment les choses. C'est un privilège que je ne prends pas à la légère.
+          </p>
+
+          <div class="flex gap-3">
+            <Button href="/contact/" variant="primary" size="lg" hasArrow>
+              Me contacter directement
+            </Button>
+            <Button
+              href="https://wa.me/32484630815"
+              variant="secondary"
+              size="lg"
+              hasArrow
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </Button>
+          </div>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-2 gap-6 reveal-right">
+          <div class="bg-peb-card border border-peb-border rounded-2xl p-6 text-center space-y-3">
+            <div class="text-4xl font-display font-bold text-peb-cyan">14+</div>
+            <p class="text-sm text-peb-text2">Années d'expertise énergétique</p>
+          </div>
+
+          <div class="bg-peb-card border border-peb-border rounded-2xl p-6 text-center space-y-3">
+            <div class="text-4xl font-display font-bold text-peb-cyan">500+</div>
+            <p class="text-sm text-peb-text2">Certificats PEB émis</p>
+          </div>
+
+          <div class="bg-peb-card border border-peb-border rounded-2xl p-6 text-center space-y-3">
+            <div class="text-4xl font-display font-bold text-peb-green">4.9/5</div>
+            <p class="text-sm text-peb-text2">Satisfaction client</p>
+          </div>
+
+          <div class="bg-peb-card border border-peb-border rounded-2xl p-6 text-center space-y-3">
+            <div class="text-4xl font-display font-bold text-peb-blue">19</div>
+            <p class="text-sm text-peb-text2">Communes couvertes</p>
+          </div>
+
+          <div class="bg-peb-card border border-peb-border rounded-2xl p-6 text-center space-y-3 col-span-2">
+            <div class="text-4xl font-display font-bold text-peb-cyan">24h</div>
+            <p class="text-sm text-peb-text2">Délai de réponse maximum</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values/Principles -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-4xl sm:text-5xl font-display font-bold mb-4">
+          Mes 3 <span class="gradient-text-cyan">principes</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Ce qui guide chacune de mes actions et chaque service.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
+        <Card hover={true}>
+          <div class="space-y-4 text-center">
+            <div class="text-6xl">🎯</div>
+            <h3 class="text-2xl font-display font-bold text-peb-text">Exactitude</h3>
+            <p class="text-peb-text2">
+              Chaque audit est rigoureux et conforme aux normes bruxelloises. Pas de raccourcis. Certificats légalement incontestables.
+            </p>
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-4 text-center">
+            <div class="text-6xl">📢</div>
+            <h3 class="text-2xl font-display font-bold text-peb-text">Clarté</h3>
+            <p class="text-peb-text2">
+              Explications simples, tarifs transparents, pas de jargon inutile. Vous comprenez ce que vous payez et ce que vous recevez.
+            </p>
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-4 text-center">
+            <div class="text-6xl">🛡️</div>
+            <h3 class="text-2xl font-display font-bold text-peb-text">Indépendance</h3>
+            <p class="text-peb-text2">
+              Je n'ai pas d'agenda caché. Je travaille pour vous, pas pour des intérêts commerciaux externes. Conseils impartiaux.
+            </p>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Qualifications Grid -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-4xl sm:text-5xl font-display font-bold mb-4">
+          Accréditations et <span class="gradient-text-cyan">qualifications</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Certificateur agréé avec formation continue et normes reconnues.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+        <Card hover={true}>
+          <div class="space-y-3">
+            <Badge variant="cyan" text="CERTIFIÉ" />
+            <h3 class="text-xl font-display font-bold text-peb-text">
+              Certificateur PEB Agréé
+            </h3>
+            <p class="text-peb-text2">
+              Agréement Région bruxelloise depuis 2020. Inscrit au registre officiel de Bruxelles Environnement.
+            </p>
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-3">
+            <Badge variant="blue" text="FORMATION" />
+            <h3 class="text-xl font-display font-bold text-peb-text">
+              Formation Continue
+            </h3>
+            <p class="text-peb-text2">
+              Suivi régulier des évolutions réglementaires bruxelloises. Mise à jour annuelle des normes et protocoles.
+            </p>
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-3">
+            <Badge variant="green" text="EXPERTISE" />
+            <h3 class="text-xl font-display font-bold text-peb-text">
+              14+ Ans d'Expérience
+            </h3>
+            <p class="text-peb-text2">
+              Plus d'une décennie dans les domaines de la performance énergétique et de la certification technique.
+            </p>
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-3">
+            <Badge variant="cyan" text="CONFORMITÉ" />
+            <h3 class="text-xl font-display font-bold text-peb-text">
+              Conformité RGPD
+            </h3>
+            <p class="text-peb-text2">
+              Respect strict de la réglementation de protection des données européenne et belge.
+            </p>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose PEBify -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-4xl sm:text-5xl font-display font-bold mb-4">
+          Pourquoi choisir <span class="gradient-text-cyan">PEBify</span>?
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl">✓</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Approche personnelle</h3>
+            <p class="text-peb-text2">
+              Je ne suis pas une entreprise anonyme. Vous travaillez directement avec moi, pas avec des intermédiaires.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl">✓</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Réactivité maximale</h3>
+            <p class="text-peb-text2">
+              Réponse garantie sous 24 heures. RDV disponibles rapidement. Urgences traitées en priorité.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl">✓</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Tarifs justes et compétitifs</h3>
+            <p class="text-peb-text2">
+              189€ à 549€. TVA incluse. Aucun frais caché. Devis gratuit et détaillé avant engagement.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl">✓</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Conseils d'amélioration</h3>
+            <p class="text-peb-text2">
+              Au-delà du certificat, je vous propose des recommandations concrètes pour améliorer votre bien.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl">✓</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Support dossiers subventions</h3>
+            <p class="text-peb-text2">
+              Je vous aide à monter votre dossier pour les primes bruxelloises de rénovation énergétique.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl">✓</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Couverture 19 communes</h3>
+            <p class="text-peb-text2">
+              J'interviens dans tous les quartiers de Bruxelles-Capitale. Pas de frais de déplacement supplémentaires.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Direct -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-peb-card border border-peb-border rounded-2xl p-8 sm:p-12 space-y-6 text-center reveal">
+        <h2 class="text-3xl font-display font-bold text-peb-text">
+          Me contacter directement
+        </h2>
+
+        <div class="space-y-4">
+          <a href="tel:+32484630815" class="flex items-center justify-center gap-2 text-peb-cyan hover:text-peb-green transition-colors">
+            <span class="text-2xl">📞</span>
+            <span class="text-lg font-semibold">+32 484 63 08 15</span>
+          </a>
+
+          <a href="mailto:info@pebify.be" class="flex items-center justify-center gap-2 text-peb-cyan hover:text-peb-green transition-colors">
+            <span class="text-2xl">📧</span>
+            <span class="text-lg font-semibold">info@pebify.be</span>
+          </a>
+
+          <a
+            href="https://wa.me/32484630815"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center gap-2 text-peb-cyan hover:text-peb-green transition-colors"
+          >
+            <span class="text-2xl">💬</span>
+            <span class="text-lg font-semibold">WhatsApp</span>
+          </a>
+        </div>
+
+        <p class="text-peb-text2">
+          Réponse garantie sous 24 heures. Pour les demandes urgentes, appelez directement.
+        </p>
+
+        <div class="pt-4 border-t border-peb-border">
+          <p class="text-sm text-peb-text2">
+            Rue Emile Wauters 58, 1020 Bruxelles • Lundi-Vendredi 09h-18h • Samedi 10h-14h
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Prêt à commencer?"
+    title="Planifiez votre audit PEB dès maintenant"
+    subtitle="Contactez-moi pour une visite et un certificat agréé. Réponse sous 24 heures."
+    primaryHref="/contact/"
+    primaryText="Prendre rendez-vous"
+    secondaryHref="/tarifs-peb-bruxelles/"
+    secondaryText="Voir les tarifs"
+  />
+</PageLayout>

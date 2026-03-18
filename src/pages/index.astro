@@ -1,0 +1,388 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import StatsStrip from '../components/sections/StatsStrip.astro';
+import ProcessSteps from '../components/sections/ProcessSteps.astro';
+import FAQ from '../components/sections/FAQ.astro';
+import CTA from '../components/sections/CTA.astro';
+import CommuneLinks from '../components/sections/CommuneLinks.astro';
+import Card from '../components/ui/Card.astro';
+import Badge from '../components/ui/Badge.astro';
+import Button from '../components/ui/Button.astro';
+import { faqItems } from '../data/faq';
+import { siteConfig } from '../data/site';
+
+// Get top 5 FAQ items for homepage
+const homepageFaq = faqItems.slice(0, 5);
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'PEBify',
+  description: 'Expert en certification PEB agréé à Bruxelles',
+  url: 'https://pebify.be',
+  telephone: siteConfig.contact.phone,
+  email: siteConfig.contact.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: siteConfig.address.street,
+    addressLocality: siteConfig.address.city,
+    postalCode: siteConfig.address.postalCode,
+    addressCountry: 'BE',
+  },
+  image: 'https://pebify.be/og-image.jpg',
+  priceRange: '189-549',
+  areaServed: siteConfig.serviceAreas,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: '4.9',
+    ratingCount: '500',
+  },
+};
+---
+
+<BaseLayout
+  title="Certificat PEB Bruxelles - Expert Agréé | PEBify"
+  description="Certification PEB agréée à Bruxelles par expert énergétique. Certificats pour appartements, maisons et duplex. Devis gratuit, rapidité garantie."
+  schemaJson={schemaJson}
+>
+  <!-- Hero Section with Calculator -->
+  <Hero
+    label="Certification énergétique"
+    title="Obtenez votre Certificat PEB à Bruxelles"
+    subtitle="Expert certifié agréé par la Région bruxelloise. Audit complet, rapport détaillé, et certification officielle en 3-5 jours."
+    showCalculator={true}
+  />
+
+  <!-- Stats Strip -->
+  <StatsStrip />
+
+  <!-- About Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left: Story -->
+        <div class="space-y-6 reveal">
+          <div class="space-y-2">
+            <h2 class="text-4xl sm:text-5xl font-display font-bold">
+              Mon parcours, votre <span class="gradient-text-cyan">garantie</span>
+            </h2>
+            <p class="text-lg text-peb-text2">
+              Plus de 14 ans d'expertise en performance énergétique.
+            </p>
+          </div>
+
+          <p class="text-peb-text2 leading-relaxed">
+            Je suis Milad Mollaey Tabriz, expert en certification PEB agréé par la Région bruxelloise depuis 2020. Chaque jour, j'aide des propriétaires et des agents immobiliers à obtenir des certificats fiables, rapides et légalement conformes.
+          </p>
+
+          <p class="text-peb-text2 leading-relaxed">
+            Mon approche : transparence absolue, expertise technique rigoureuse, et service client orienté vers votre réussite. Pas de frais cachés. Juste des résultats précis et reconnus légalement.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4 pt-4">
+            <div class="bg-peb-card border border-peb-border rounded-lg p-4">
+              <div class="text-2xl font-display font-bold text-peb-cyan mb-1">14+</div>
+              <p class="text-sm text-peb-text2">Ans d'expertise</p>
+            </div>
+            <div class="bg-peb-card border border-peb-border rounded-lg p-4">
+              <div class="text-2xl font-display font-bold text-peb-cyan mb-1">500+</div>
+              <p class="text-sm text-peb-text2">Certificats émis</p>
+            </div>
+            <div class="bg-peb-card border border-peb-border rounded-lg p-4">
+              <div class="text-2xl font-display font-bold text-peb-green mb-1">4.9/5</div>
+              <p class="text-sm text-peb-text2">Satisfaction client</p>
+            </div>
+            <div class="bg-peb-card border border-peb-border rounded-lg p-4">
+              <div class="text-2xl font-display font-bold text-peb-blue mb-1">19</div>
+              <p class="text-sm text-peb-text2">Communes couvertes</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Trust Signals -->
+        <div class="space-y-6 reveal-right">
+          <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-6">
+            <h3 class="text-2xl font-display font-bold text-peb-text">Pourquoi m'envoyer votre bien?</h3>
+
+            <div class="space-y-4">
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 text-2xl">✓</div>
+                <div>
+                  <h4 class="font-semibold text-peb-text mb-1">Formation continue</h4>
+                  <p class="text-sm text-peb-text2">
+                    Accréditation régionale maintenue et formation annuelle en règles énergétiques.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 text-2xl">⚡</div>
+                <div>
+                  <h4 class="font-semibold text-peb-text mb-1">Expertise vérifiée</h4>
+                  <p class="text-sm text-peb-text2">
+                    Inscrit au registre officiel des certificateurs agréés Bruxelles Environnement.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 text-2xl">€</div>
+                <div>
+                  <h4 class="font-semibold text-peb-text mb-1">Transparence garantie</h4>
+                  <p class="text-sm text-peb-text2">
+                    Prix fixes, aucun frais caché. Devis détaillé avant engagement.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="flex-shrink-0 text-2xl">📋</div>
+                <div>
+                  <h4 class="font-semibold text-peb-text mb-1">Conformité légale</h4>
+                  <p class="text-sm text-peb-text2">
+                    Certificats 100% conformes aux normes bruxelloises, valides 10 ans.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Steps -->
+  <ProcessSteps />
+
+  <!-- Why Certified Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl sm:text-5xl font-display font-bold mb-4">
+          Pourquoi avoir un certificat PEB <span class="gradient-text-cyan">agréé</span>?
+        </h2>
+        <p class="text-lg text-peb-text2 max-w-2xl mx-auto">
+          C'est obligatoire, c'est protecteur, c'est fiable.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
+        <Card hover={true}>
+          <div class="space-y-4">
+            <div class="text-5xl">⚖️</div>
+            <h3 class="text-xl font-display font-bold text-peb-text">Obligation légale</h3>
+            <p class="text-peb-text2">
+              Le certificat PEB est obligatoire pour toute vente ou location à Bruxelles. Son absence entraîne des amendes jusqu'à 10 000 €.
+            </p>
+            <Badge variant="cyan" text="Obligatoire" />
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-4">
+            <div class="text-5xl">🎓</div>
+            <h3 class="text-xl font-display font-bold text-peb-text">Formation spécialisée</h3>
+            <p class="text-peb-text2">
+              Seuls les certificateurs agréés formés aux normes bruxelloises peuvent émettre des certificats légalement valides.
+            </p>
+            <Badge variant="blue" text="Expert certifié" />
+          </div>
+        </Card>
+
+        <Card hover={true}>
+          <div class="space-y-4">
+            <div class="text-5xl">🛡️</div>
+            <h3 class="text-xl font-display font-bold text-peb-text">Fiabilité garantie</h3>
+            <p class="text-peb-text2">
+              Certification incontestable, reconnaissance légale, et protection contre tout contentieux futur.
+            </p>
+            <Badge variant="green" text="10 ans de validité" />
+          </div>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide PEB Teaser -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6 reveal">
+          <h2 class="text-4xl sm:text-5xl font-display font-bold">
+            Tout ce que vous devez savoir sur le <span class="gradient-text-cyan">PEB</span>
+          </h2>
+
+          <div class="space-y-4">
+            <div class="flex gap-3">
+              <div class="text-peb-cyan">✓</div>
+              <div>
+                <h3 class="font-semibold text-peb-text">Validité 10 ans</h3>
+                <p class="text-sm text-peb-text2">Le certificat reste valide pour toute transaction durant cette période.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="text-peb-cyan">✓</div>
+              <div>
+                <h3 class="font-semibold text-peb-text">Obligation légale</h3>
+                <p class="text-sm text-peb-text2">Indispensable pour vendre, louer ou rénover votre bien à Bruxelles.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="text-peb-cyan">✓</div>
+              <div>
+                <h3 class="font-semibold text-peb-text">100+ critères analysés</h3>
+                <p class="text-sm text-peb-text2">Audit complet de tous les éléments énergétiques de votre bien.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-3">
+              <div class="text-peb-cyan">✓</div>
+              <div>
+                <h3 class="font-semibold text-peb-text">Amende jusqu'à 5 000 €</h3>
+                <p class="text-sm text-peb-text2">Risque légal majeur si vous ne respectez pas cette obligation.</p>
+              </div>
+            </div>
+          </div>
+
+          <Button href="/guide-peb/" variant="primary" size="lg" hasArrow>
+            Lire le guide complet
+          </Button>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 reveal-right">
+          <h3 class="text-2xl font-display font-bold text-peb-text mb-6">Aperçu du guide</h3>
+          <div class="space-y-4">
+            <a href="/guide-peb/" class="block p-4 rounded-lg bg-peb-bg hover:bg-peb-surface border border-peb-border hover:border-peb-cyan transition-all">
+              <div class="font-semibold text-peb-cyan mb-1">Qu'est-ce que le PEB?</div>
+              <p class="text-sm text-peb-text2">Définition et principes fondamentaux</p>
+            </a>
+            <a href="/guide-peb/" class="block p-4 rounded-lg bg-peb-bg hover:bg-peb-surface border border-peb-border hover:border-peb-cyan transition-all">
+              <div class="font-semibold text-peb-cyan mb-1">Obligations légales</div>
+              <p class="text-sm text-peb-text2">Quand avez-vous besoin d'un certificat?</p>
+            </a>
+            <a href="/guide-peb/" class="block p-4 rounded-lg bg-peb-bg hover:bg-peb-surface border border-peb-border hover:border-peb-cyan transition-all">
+              <div class="font-semibold text-peb-cyan mb-1">Améliorations énergétiques</div>
+              <p class="text-sm text-peb-text2">Comment optimiser votre classement?</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  {homepageFaq.length > 0 && (
+    <FAQ
+      items={homepageFaq.map((item) => ({
+        question: item.question,
+        answer: item.answer,
+      }))}
+      limit={5}
+    />
+  )}
+
+  <!-- Blog Preview -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-4xl sm:text-5xl font-display font-bold mb-4">
+          Derniers <span class="gradient-text-cyan">articles</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Restez informé sur les évolutions du PEB et la performance énergétique.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-stagger">
+        <a href="/blog/reforme-peb-2026/" class="group">
+          <Card hover={true}>
+            <div class="space-y-4">
+              <div class="h-48 bg-gradient-to-br from-peb-cyan/20 to-peb-blue/20 rounded-lg flex items-center justify-center">
+                <span class="text-5xl">📋</span>
+              </div>
+              <div class="space-y-2">
+                <div class="text-sm text-peb-cyan">19 mars 2026</div>
+                <h3 class="text-xl font-display font-bold text-peb-text group-hover:text-peb-cyan transition-colors">
+                  Réforme PEB 2026: Nouveautés à connaître
+                </h3>
+                <p class="text-peb-text2">
+                  Les changements réguliers en matière de performance énergétique affectent votre bien...
+                </p>
+              </div>
+              <Button variant="secondary" size="sm" hasArrow>
+                Lire l'article
+              </Button>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/blog/directive-peb-2026/" class="group">
+          <Card hover={true}>
+            <div class="space-y-4">
+              <div class="h-48 bg-gradient-to-br from-peb-blue/20 to-peb-green/20 rounded-lg flex items-center justify-center">
+                <span class="text-5xl">🌍</span>
+              </div>
+              <div class="space-y-2">
+                <div class="text-sm text-peb-cyan">12 mars 2026</div>
+                <h3 class="text-xl font-display font-bold text-peb-text group-hover:text-peb-cyan transition-colors">
+                  Directive PEB Européenne 2026
+                </h3>
+                <p class="text-peb-text2">
+                  La nouvelle directive européenne sur la performance énergétique renforce les exigences...
+                </p>
+              </div>
+              <Button variant="secondary" size="sm" hasArrow>
+                Lire l'article
+              </Button>
+            </a>
+          </Card>
+        </a>
+
+        <a href="/blog/calcul-devis-peb/" class="group">
+          <Card hover={true}>
+            <div class="space-y-4">
+              <div class="h-48 bg-gradient-to-br from-peb-green/20 to-peb-cyan/20 rounded-lg flex items-center justify-center">
+                <span class="text-5xl">💰</span>
+              </div>
+              <div class="space-y-2">
+                <div class="text-sm text-peb-cyan">5 mars 2026</div>
+                <h3 class="text-xl font-display font-bold text-peb-text group-hover:text-peb-cyan transition-colors">
+                  Comment est calculé un devis PEB?
+                </h3>
+                <p class="text-peb-text2">
+                  Comprendre les facteurs qui influencent le prix de votre certificat énergétique...
+                </p>
+              </div>
+              <Button variant="secondary" size="sm" hasArrow>
+                Lire l'article
+              </Button>
+            </div>
+          </Card>
+        </a>
+      </div>
+
+      <div class="mt-12 text-center reveal">
+        <Button href="/blog/" variant="secondary" size="lg" hasArrow>
+          Voir tous les articles
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <CTA
+    label="Prêt à commencer?"
+    title="Obtenez votre certificat PEB maintenant"
+    subtitle="Contactez-moi pour une visite et un audit complet. Réponse sous 24 heures."
+    primaryHref="/contact/"
+    primaryText="Prendre rendez-vous"
+    secondaryHref="/tarifs-peb-bruxelles/"
+    secondaryText="Voir les tarifs"
+  />
+
+  <!-- Commune Links -->
+  <CommuneLinks />
+</BaseLayout>

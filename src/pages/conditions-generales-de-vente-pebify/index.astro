@@ -1,0 +1,115 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { siteConfig } from '../../data/site';
+
+const breadcrumb = [
+  { label: 'CGV', href: '/conditions-generales-de-vente-pebify/' },
+];
+---
+
+<PageLayout
+  title="Conditions Générales de Vente - PEBify"
+  description="Conditions générales de vente pour les services de certification PEB de PEBify."
+  canonical="https://pebify.be/conditions-generales-de-vente-pebify/"
+  breadcrumb={breadcrumb}
+  noindex={false}
+  heroLabel="Informations légales"
+  heroTitle="Conditions Générales de Vente"
+  heroSubtitle="Conditions d'utilisation des services PEBify"
+>
+  <!-- Content -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <article class="prose prose-invert max-w-none space-y-8">
+        <h2 class="text-3xl font-display font-bold text-peb-text">1. Objet et définitions</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          PEBify, représentée par Milad Mollaey Tabriz, propose des services de certificat PEB (Performance Énergétique du Bâtiment) et d'audit énergétique agréés par la Région bruxelloise.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">2. Prestation de services</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          PEBify s'engage à fournir un certificat PEB conforme aux normes bruxelloises, basé sur une visite complète du bien et une analyse technique rigoureuse. La visite dure généralement 1-2 heures selon le type et la taille du bien.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">3. Tarification et paiement</h2>
+        <div class="space-y-3 text-peb-text2">
+          <p>
+            Les tarifs sont affichés sur le site PEBify.be et communiqués par devis :
+          </p>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Apartement: 189€ TTC</li>
+            <li>Duplex: 219€ TTC</li>
+            <li>Maison: 249€ TTC</li>
+            <li>Services complémentaires: selon devis</li>
+          </ul>
+          <p>
+            Tous les tarifs incluent la TVA belge. Aucun frais supplémentaire n'est facturé sauf accord préalable écrit du client.
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">4. Modalités de paiement</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Le paiement est dû avant ou après la visite selon accord. Modes acceptés : virement bancaire, espèces, chèque. Une facture sera émise pour chaque intervention.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">5. Calendrier et délais</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Le certificat PEB est généralement émis sous 3-5 jours ouvrables après la visite. Un service express 48h est disponible moyennant supplément. Délais non contractuels.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">6. Responsabilités du client</h2>
+        <div class="space-y-3 text-peb-text2">
+          <p>Le client s'engage à :</p>
+          <ul class="list-disc list-inside space-y-2">
+            <li>Fournir accès à tous les espaces du bien</li>
+            <li>Fournir informations exactes sur le bien (surface, système chauffage, etc.)</li>
+            <li>Payer les frais convenus</li>
+            <li>Respecter le RGPD et législation</li>
+          </ul>
+        </div>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">7. Limitation de responsabilité</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          PEBify fournit un certificat PEB conforme aux normes bruxelloises basé sur les informations et données observées. Le client reconnaît que le certificat reflète une estimation de performance énergétique, pas une consommation réelle garantie.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">8. Propriété intellectuelle</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Le rapport PEB établi par PEBify reste conforme aux droits d'auteur. Le client reçoit copie pour ses besoins légaux et administratifs.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">9. Données personnelles</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Les données personnelles sont traitées conformément à la politique de confidentialité. PEBify respecte le RGPD belge et européen.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">10. Résiliation et annulation</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Le client peut annuler jusqu'à 48h avant la visite programmée. Annulation après ce délai : 50% du prix sont dus. Absence à RDV : 100% facturé.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">11. Droit applicable et litiges</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Ces conditions sont régies par la loi belge et les réglementations bruxelloises. Tout litige sera soumis aux tribunaux belges compétents.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">12. Contact</h2>
+        <div class="space-y-2 text-peb-text2">
+          <p>
+            <strong>PEBify - Milad Mollaey Tabriz</strong><br />
+            Rue Emile Wauters 58, 1020 Bruxelles<br />
+            Téléphone: +32 484 63 08 15<br />
+            Email: info@pebify.be<br />
+            TVA: BE0541771724
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 text-peb-text2 text-sm mt-12">
+          <p>
+            <strong>Dernière mise à jour :</strong> 18 mars 2026
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+</PageLayout>

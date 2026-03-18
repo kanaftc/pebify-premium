@@ -1,0 +1,366 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import Card from '../../components/ui/Card.astro';
+import Badge from '../../components/ui/Badge.astro';
+import Button from '../../components/ui/Button.astro';
+import { siteConfig } from '../../data/site';
+
+const breadcrumb = [
+  { label: 'Guide PEB', href: '/guide-peb/' },
+];
+
+const guideTopics = [
+  {
+    id: 'definition',
+    title: 'Qu\'est-ce que le certificat PEB?',
+    description: 'Comprendre la définition, les principes et le rôle du certificat de performance énergétique.',
+    icon: '📚',
+    href: '/guide-peb/definition-peb/',
+  },
+  {
+    id: 'obligations',
+    title: 'Obligations légales',
+    description: 'Quand le PEB est obligatoire, qui en est responsable, et les sanctions en cas de non-conformité.',
+    icon: '⚖️',
+    href: '/guide-peb/obligations-peb/',
+  },
+  {
+    id: 'echelle',
+    title: 'Échelle de classification A-G',
+    description: 'Comprendre les 7 classes énergétiques et ce qu\'elles signifient pour votre bien.',
+    icon: '📊',
+    href: '/guide-peb/echelle-peb/',
+  },
+  {
+    id: 'prix',
+    title: 'Tarifs et pricing',
+    description: 'Tarifs transparents pour appartements, maisons et duplex à Bruxelles.',
+    icon: '💰',
+    href: '/tarifs-peb-bruxelles/',
+  },
+  {
+    id: 'amelioration',
+    title: 'Comment améliorer votre score',
+    description: 'Les meilleures actions pour optimiser la performance énergétique de votre bien.',
+    icon: '⚡',
+    href: '/guide-peb/ameliorer-peb/',
+  },
+  {
+    id: 'primes',
+    title: 'Primes et subventions',
+    description: 'Explorer les aides financières bruxelloises pour travaux énergétiques.',
+    icon: '💚',
+    href: '/guide-peb/primes-subventions/',
+  },
+  {
+    id: 'faq',
+    title: 'FAQ complète - 30 questions',
+    description: 'Réponses détaillées à toutes les questions fréquemment posées sur le PEB.',
+    icon: '❓',
+    href: '/faq/',
+  },
+  {
+    id: 'simulateur',
+    title: 'Simulateur d\'amendes',
+    description: 'Calculez les risques financiers d\'absence de certificat PEB.',
+    icon: '⚠️',
+    href: '/guide-peb/simulateur-amendes/',
+  },
+];
+---
+
+<PageLayout
+  title="Guide complet du certificat PEB | PEBify"
+  description="Guide complet sur le certificat PEB à Bruxelles. Définition, obligations, amélioration énergétique, tarifs et primes. Expert agréé."
+  canonical="https://pebify.be/guide-peb/"
+  breadcrumb={breadcrumb}
+  heroLabel="Guide énergétique"
+  heroTitle="Guide complet du certificat PEB"
+  heroSubtitle="Tout ce que vous devez savoir sur la performance énergétique des bâtiments à Bruxelles. Définitions, obligations, améliorations et finances."
+>
+  <!-- Introduction -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6 reveal">
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Le certificat PEB (Performance Énergétique du Bâtiment) est devenu obligatoire à Bruxelles pour toute transaction immobilière. Ce guide détaillé vous explique tout ce que vous devez savoir sur ce document crucial.
+        </p>
+
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Que vous vendiez, achetiez, louiez ou rénotiez votre bien, ce guide vous aidera à naviguer les exigences légales, à comprendre votre classification énergétique, et à identifier les meilleures actions pour améliorer la performance de votre propriété.
+        </p>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <p class="font-semibold text-peb-text mb-3">📌 Point important:</p>
+          <p class="text-peb-text2">
+            Depuis 2020, tout propriétaire qui loue ou vend sans certificat PEB risque des amendes jusqu'à 10 000 €. Le certificat est valide 10 ans et doit être établi par un certificateur agréé comme PEBify.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics Grid -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Explorer par <span class="gradient-text-cyan">sujet</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Cliquez sur un sujet pour lire le guide détaillé.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal-stagger">
+        {guideTopics.map((topic) => (
+          <a href={topic.href} class="group">
+            <Card hover={true}>
+              <div class="space-y-4">
+                <div class="text-5xl">{topic.icon}</div>
+                <h3 class="text-xl font-display font-bold text-peb-text group-hover:text-peb-cyan transition-colors">
+                  {topic.title}
+                </h3>
+                <p class="text-peb-text2">
+                  {topic.description}
+                </p>
+                <div class="flex items-center text-peb-cyan font-medium">
+                  <span>Lire le guide</span>
+                  <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform">
+                    <path
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      d="M5 12h14M12 5l7 7-7 7"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </Card>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Takeaways -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          5 points clés à <span class="gradient-text-cyan">retenir</span>
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0">
+            <Badge variant="cyan" text="Point 1" />
+          </div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">C'est obligatoire</h3>
+            <p class="text-peb-text2">
+              Tout bien vendu ou loué à Bruxelles doit avoir un certificat PEB valide. C'est une exigence légale non négociable.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0">
+            <Badge variant="blue" text="Point 2" />
+          </div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Seul un expert agréé peut le faire</h3>
+            <p class="text-peb-text2">
+              Seuls les certificateurs agréés par la Région bruxelloise sont habilités à émettre des certificats légalement reconnus.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0">
+            <Badge variant="green" text="Point 3" />
+          </div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Validité 10 ans</h3>
+            <p class="text-peb-text2">
+              Une fois établi, le certificat reste valide 10 ans pour toute transaction. Après, il faut le refaire.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0">
+            <Badge variant="cyan" text="Point 4" />
+          </div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Les risques sont sérieux</h3>
+            <p class="text-peb-text2">
+              Amendes jusqu'à 10 000 €, transaction annulée, responsabilité légale. Mieux vaut être en règle.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <div class="flex-shrink-0">
+            <Badge variant="blue" text="Point 5" />
+          </div>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">C'est une opportunité d'amélioration</h3>
+            <p class="text-peb-text2">
+              Au-delà de l'obligation, le PEB identifie les améliorations énergétiques qui augmentent la valeur de votre bien.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Links -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Accès rapide par <span class="gradient-text-cyan">besoin</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger">
+        <a href="/guide-peb/definition-peb/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3 text-center">
+              <div class="text-3xl">🤔</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">
+                Je veux comprendre
+              </h3>
+              <p class="text-sm text-peb-text2">
+                Définition et bases du PEB
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/obligations-peb/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3 text-center">
+              <div class="text-3xl">⚖️</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">
+                Je dois vendre/louer
+              </h3>
+              <p class="text-sm text-peb-text2">
+                Obligations légales
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/ameliorer-peb/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3 text-center">
+              <div class="text-3xl">⬆️</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">
+                Je veux améliorer
+              </h3>
+              <p class="text-sm text-peb-text2">
+                Augmenter mon score
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/tarifs-peb-bruxelles/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3 text-center">
+              <div class="text-3xl">💰</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">
+                Je veux connaître le prix
+              </h3>
+              <p class="text-sm text-peb-text2">
+                Tarifs transparents
+              </p>
+            </div>
+          </Card>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Trust PEBify -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Pourquoi faire confiance à <span class="gradient-text-cyan">PEBify</span>?
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <div class="flex gap-4">
+            <span class="text-2xl">✓</span>
+            <div>
+              <h3 class="font-semibold text-peb-text mb-1">Expert agréé et formé</h3>
+              <p class="text-peb-text2">
+                Agréement Région bruxelloise, formation continue, et 4+ ans d'expérience.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <div class="flex gap-4">
+            <span class="text-2xl">✓</span>
+            <div>
+              <h3 class="font-semibold text-peb-text mb-1">Tarifs compétitifs et transparents</h3>
+              <p class="text-peb-text2">
+                189€ à 549€. TVA incluse. Aucun frais caché. Devis détaillé avant engagement.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <div class="flex gap-4">
+            <span class="text-2xl">✓</span>
+            <div>
+              <h3 class="font-semibold text-peb-text mb-1">Service complet et rapide</h3>
+              <p class="text-peb-text2">
+                Visite sur site, audit complet, rapport détaillé, certificat officiel sous 3-5 jours.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <div class="flex gap-4">
+            <span class="text-2xl">✓</span>
+            <div>
+              <h3 class="font-semibold text-peb-text mb-1">Support et conseils personnalisés</h3>
+              <p class="text-peb-text2">
+                Réponses à vos questions, recommandations d'amélioration, assistance dossier subventions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center reveal">
+        <Button href="/contact/" variant="primary" size="lg" hasArrow>
+          Prendre rendez-vous maintenant
+        </Button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Besoin d'un certificat PEB?"
+    title="Commencez dès maintenant"
+    subtitle="Contactez-moi pour un audit complet et un certificat agréé. Réponse sous 24 heures."
+    primaryHref="/contact/"
+    primaryText="Demander un audit"
+    secondaryHref="/tarifs-peb-bruxelles/"
+    secondaryText="Voir les tarifs"
+  />
+</PageLayout>

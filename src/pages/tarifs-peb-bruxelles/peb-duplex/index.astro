@@ -1,0 +1,352 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CTA from '../../../components/sections/CTA.astro';
+import Card from '../../../components/ui/Card.astro';
+import Badge from '../../../components/ui/Badge.astro';
+
+const breadcrumb = [
+  { label: 'Tarifs', href: '/tarifs-peb-bruxelles/' },
+  { label: 'PEB Duplex', href: '/tarifs-peb-bruxelles/peb-duplex/' },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Certificat PEB Duplex/Triplex Bruxelles',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'PEBify',
+    url: 'https://pebify.be',
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Bruxelles',
+  },
+  offers: {
+    '@type': 'Offer',
+    name: 'Certificat PEB Duplex',
+    price: '225',
+    priceCurrency: 'EUR',
+    url: 'https://pebify.be/tarifs-peb-bruxelles/peb-duplex/',
+  },
+};
+---
+
+<PageLayout
+  title="PEB Duplex/Triplex Bruxelles | Prix 225€ TTC | PEBify"
+  description="Certificat PEB duplex/triplex Bruxelles : 225€ TTC. Audit multi-niveaux, 45 min-1h30. Maison mitoyenne et triplex."
+  canonical="https://pebify.be/tarifs-peb-bruxelles/peb-duplex/"
+  breadcrumb={breadcrumb}
+  heroLabel="Audit énergétique multi-niveaux"
+  heroTitle="PEB Duplex & Triplex"
+  heroSubtitle="Certificat PEB pour duplex et triplex à Bruxelles. À partir de 225€ TTC. Audit complet 45 min - 1h30."
+  schemaJson={schemaJson}
+>
+  <!-- Price Section -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <div class="inline-flex items-center space-x-2 mb-6">
+          <div class="w-2 h-2 rounded-full bg-peb-cyan animate-pulse-dot" />
+          <span class="text-sm font-medium text-peb-cyan uppercase tracking-wider">Tarif transparente</span>
+        </div>
+        <div class="text-6xl md:text-7xl font-display font-bold text-peb-cyan mb-4">225€</div>
+        <p class="text-xl text-peb-text2">TTC, tout compris, sans surprise</p>
+      </div>
+
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 space-y-6 reveal">
+        <h3 class="text-xl font-display font-bold text-peb-text">Ce qui est inclus :</h3>
+
+        <div class="space-y-4">
+          <div class="flex gap-4">
+            <span class="text-2xl flex-shrink-0">✓</span>
+            <div>
+              <p class="font-semibold text-peb-text mb-1">Visite multi-niveaux complète</p>
+              <p class="text-peb-text2">45 min - 1h30. Inspection de tous les niveaux et éléments énergétiques.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="text-2xl flex-shrink-0">✓</span>
+            <div>
+              <p class="font-semibold text-peb-text mb-1">Audit énergétique multi-zones</p>
+              <p class="text-peb-text2">Analyse différentiée par niveau (rez-de-chaussée, étage, etc.).</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="text-2xl flex-shrink-0">✓</span>
+            <div>
+              <p class="font-semibold text-peb-text mb-1">Certificat officiel PEB</p>
+              <p class="text-peb-text2">Enregistré légalement, valide 10 ans, reconnu partout.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="text-2xl flex-shrink-0">✓</span>
+            <div>
+              <p class="font-semibold text-peb-text mb-1">Rapport détaillé par niveau</p>
+              <p class="text-peb-text2">Classe PEB, consommation, points forts et faiblesses par étage.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <span class="text-2xl flex-shrink-0">✓</span>
+            <div>
+              <p class="font-semibold text-peb-text mb-1">Support post-audit</p>
+              <p class="text-peb-text2">Questions sur le rapport et recommandations d'amélioration.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-bg border border-peb-border rounded-lg p-4 text-center mt-6">
+          <p class="text-sm text-peb-text2 mb-2">Aucun frais caché. TVA 21% incluse.</p>
+          <p class="font-semibold text-peb-text">Prix final = 225€ exactement</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Duplex Types -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Types de <span class="gradient-text-cyan">duplex & triplex</span>
+        </h2>
+        <p class="text-lg text-peb-text2">
+          Ce tarif s'applique à tous les duplex et triplex
+        </p>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="text-5xl">🏘️</div>
+            <div class="flex-1">
+              <h3 class="text-xl font-display font-bold text-peb-text mb-2">Duplex classique</h3>
+              <p class="text-peb-text2 mb-4">
+                Maison mitoyenne répartie sur 2 niveaux (rez + étage). Très courants à Bruxelles dans les quartiers résidentiels.
+              </p>
+              <div class="space-y-2 text-sm text-peb-text2">
+                <p>• Surface type : 100-200m²</p>
+                <p>• Durée audit : 45 min - 1h</p>
+                <p>• Complexité : analyse 2 niveaux séparés</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="text-5xl">🏛️</div>
+            <div class="flex-1">
+              <h3 class="text-xl font-display font-bold text-peb-text mb-2">Triplex</h3>
+              <p class="text-peb-text2 mb-4">
+                Maison répartie sur 3 niveaux (cave/rez + étage + grenier) ou 3 étages complets. Configuration plus complexe.
+              </p>
+              <div class="space-y-2 text-sm text-peb-text2">
+                <p>• Surface type : 150-300m²</p>
+                <p>• Durée audit : 1h - 1h30</p>
+                <p>• Complexité : analyse 3 zones + transition thermique</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="text-5xl">🏠</div>
+            <div class="flex-1">
+              <h3 class="text-xl font-display font-bold text-peb-text mb-2">Maison mitoyenne avec extensions</h3>
+              <p class="text-peb-text2 mb-4">
+                Duplex avec garage, cave, ou véranda. Extensions complexifient l'analyse thermique (zones multiples).
+              </p>
+              <div class="space-y-2 text-sm text-peb-text2">
+                <p>• Surface type : 120-250m²</p>
+                <p>• Durée audit : 50 min - 1h15</p>
+                <p>• Complexité : zones de transition, chauffage par zones</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Multi-Level -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Pourquoi l'audit duplex est <span class="gradient-text-cyan">différent</span>?
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">🔥</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Déperditions thermiques par niveaux</h3>
+            <p class="text-peb-text2">
+              L'étage supérieur perd plus de chaleur (toit). Le rez perd via murs mitoyens. Analyse complexe nécessaire.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">🎯</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Zones thermiques différentes</h3>
+            <p class="text-peb-text2">
+              Cave, rez, étage, grenier : chacun a des caractéristiques énergétiques distinctes. Nécessite une inspection très détaillée.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">💨</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Circulation d'air & humidité</h3>
+            <p class="text-peb-text2">
+              Dans un duplex, l'air chaud monte (condensation au grenier). L'humidité s'accumule en cave. Analyse thermodynamique requise.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">🔌</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Systèmes de chauffage complexes</h3>
+            <p class="text-peb-text2">
+              Duplex peuvent avoir radiateurs centraux ou chauffage par zone. Nécessite une expertise plus avancée pour correctement évaluer.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">📊</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Rapport par niveau</h3>
+            <p class="text-peb-text2">
+              Je vous fournissez un rapport détaillé montrant où exactement les déperditions se produisent. Utile pour cibler améliorations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Improvements Specific -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Améliorations <span class="gradient-text-cyan">prioritaires pour duplex</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <Badge variant="cyan" text="Priorité 1" />
+            <div class="flex-1">
+              <h3 class="font-semibold text-peb-text mb-2">Isolation toiture (grenier)</h3>
+              <p class="text-peb-text2 text-sm">
+                Perte importante par le toit. 1500€-3000€. Impact -15-20%. Primes complètes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <Badge variant="blue" text="Priorité 2" />
+            <div class="flex-1">
+              <h3 class="font-semibold text-peb-text mb-2">Murs mitoyens (isolation intérieure)</h3>
+              <p class="text-peb-text2 text-sm">
+                Mitoyenneté = perte modérée. Isolation intérieure coûteuse mais efficace. 5000€-10000€.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <Badge variant="green" text="Priorité 3" />
+            <div class="flex-1">
+              <h3 class="font-semibold text-peb-text mb-2">Fenêtres triple vitrage</h3>
+              <p class="text-peb-text2 text-sm">
+                Duplex ont plus de façades. Fenêtres impact modéré. 3000€-6000€. Primes partielles.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <Badge variant="cyan" text="Bonus" />
+            <div class="flex-1">
+              <h3 class="font-semibold text-peb-text mb-2">Pompe à chaleur air-air</h3>
+              <p class="text-peb-text2 text-sm">
+                Remplace chauffage central/radiateurs. 8000€-12000€. Primes 40-50%. Meilleur ROI.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Questions <span class="gradient-text-cyan">fréquentes</span>
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Mon duplex est très ancien. Et la classe énergétique?</h3>
+          <p class="text-peb-text2 text-sm">
+            Ancien ne signifie pas obligatoirement classe G. Duplex bien entretenus peuvent être classe D-E. L'audit le montrera.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Combien de temps pour l'audit exactement?</h3>
+          <p class="text-peb-text2 text-sm">
+            Duplex simple : 45 min. Triplex ou très grand : 1h-1h30. Dépend surface et complexité systèmes.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Et si j'ai cave non utilisée, c'est inclus?</h3>
+          <p class="text-peb-text2 text-sm">
+            Oui. La cave compte énergétiquement. Je l'inspecte même si elle n'est pas chauffée (isolation, humidité).
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <h3 class="font-semibold text-peb-text mb-2">Les murs mitoyens influencent mon score?</h3>
+          <p class="text-peb-text2 text-sm">
+            Oui, mais moins que murs sur l'extérieur. Mitoyenneté est un avantage thermique. Moins déperdition que maison 4 façades.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Prêt pour l'audit multi-niveaux?"
+    title="Prenez rendez-vous maintenant"
+    subtitle="225€, tout compris. Audit 45 min - 1h30. Certificat en 3-5 jours. Support post-audit inclus."
+    primaryHref="/contact/"
+    primaryText="Prendre rendez-vous"
+    secondaryHref="/tarifs-peb-bruxelles/"
+    secondaryText="Voir tous les tarifs"
+  />
+</PageLayout>

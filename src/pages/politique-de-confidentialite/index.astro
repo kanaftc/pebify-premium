@@ -1,0 +1,176 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import { siteConfig } from '../../data/site';
+
+const breadcrumb = [
+  { label: 'Politique de confidentialité', href: '/politique-de-confidentialite/' },
+];
+---
+
+<PageLayout
+  title="Politique de Confidentialité - PEBify"
+  description="Politique de confidentialité et protection des données personnelles pour PEBify."
+  canonical="https://pebify.be/politique-de-confidentialite/"
+  breadcrumb={breadcrumb}
+  noindex={false}
+  heroLabel="Vos droits"
+  heroTitle="Politique de Confidentialité"
+  heroSubtitle="Comment vos données sont protégées et traitées conformément au RGPD"
+>
+  <!-- Content -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <article class="prose prose-invert max-w-none space-y-8">
+        <h2 class="text-3xl font-display font-bold text-peb-text">Introduction</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          PEBify (Milad Mollaey Tabriz) s'engage à respecter votre vie privée et la confidentialité de vos données personnelles. Cette politique explique comment nous collectons, utilisons et protégeons vos informations conformément au Règlement Général sur la Protection des Données (RGPD).
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">1. Responsable des données</h2>
+        <div class="space-y-2 text-peb-text2">
+          <p>
+            <strong>PEBify</strong><br />
+            Responsable: Milad Mollaey Tabriz<br />
+            Rue Emile Wauters 58, 1020 Bruxelles<br />
+            Email: info@pebify.be<br />
+            TVA: BE0541771724
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">2. Données collectées</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Nous collectons uniquement les données nécessaires pour :
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-peb-text2">
+          <li>Exécuter nos services (certificat PEB, audit énergétique)</li>
+          <li>Communiquer avec vous</li>
+          <li>Facturer et gérer les paiements</li>
+          <li>Améliorer nos services</li>
+        </ul>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">3. Types de données personnelles</h2>
+        <div class="space-y-3 text-peb-text2">
+          <p>Données d'identification :</p>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Nom, prénom, email, téléphone</li>
+            <li>Adresse du bien à certifier</li>
+          </ul>
+          <p>Données techniques :</p>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Caractéristiques du bâtiment</li>
+            <li>Photos et mesures du bien</li>
+            <li>Données de chauffage et consommation</li>
+          </ul>
+          <p>Données financières :</p>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Coordonnées bancaires pour paiement</li>
+            <li>Historique de facturation</li>
+          </ul>
+        </div>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">4. Base légale du traitement</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Nous traitons vos données sur les bases légales suivantes :
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-peb-text2">
+          <li><strong>Contrat :</strong> Fourniture des services PEB</li>
+          <li><strong>Obligation légale :</strong> Enregistrement certificat auprès Bruxelles Environnement</li>
+          <li><strong>Intérêt légitime :</strong> Amélioration services, sécurité, fraude</li>
+          <li><strong>Consentement :</strong> Newsletter, marketing (avec opt-in)</li>
+        </ul>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">5. Durée de conservation</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Vos données sont conservées :
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-peb-text2">
+          <li><strong>Pendant la prestation :</strong> Pour établir le certificat</li>
+          <li><strong>7 ans après :</strong> Pour respect obligations comptables belgse</li>
+          <li><strong>Données audit :</strong> Durée du certificat PEB (10 ans)</li>
+          <li><strong>Marketing :</strong> Jusqu'à désinscription</li>
+        </ul>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">6. Destinataires de vos données</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Vos données peuvent être partagées avec :
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-peb-text2">
+          <li>Bruxelles Environnement (enregistrement certificat)</li>
+          <li>Prestataires de paiement</li>
+          <li>Comptable/experts-comptables (conformité)</li>
+          <li>Services publics légalement autorisés</li>
+        </ul>
+        <p class="text-peb-text2 leading-relaxed mt-3">
+          Nous ne partageons jamais vos données avec des tiers à but commercial sans votre accord.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">7. Vos droits RGPD</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Vous avez le droit de :
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-peb-text2">
+          <li><strong>Accès :</strong> Obtenir copie de vos données</li>
+          <li><strong>Rectification :</strong> Corriger les erreurs</li>
+          <li><strong>Effacement :</strong> Demander suppression (sauf obligations légales)</li>
+          <li><strong>Limitation :</strong> Restreindre le traitement</li>
+          <li><strong>Portabilité :</strong> Recevoir vos données dans format standard</li>
+          <li><strong>Opposition :</strong> Vous opposer au traitement</li>
+        </ul>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">8. Sécurité des données</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          PEBify met en place des mesures de sécurité appropriées :
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-peb-text2">
+          <li>Chiffrement des données sensibles</li>
+          <li>Accès limité au personnel autorisé</li>
+          <li>Sauvegardes régulières</li>
+          <li>Confidentialité contrats avec partenaires</li>
+        </ul>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">9. Cookies et suivi</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Notre site utilise des cookies essentiels pour fonctionner. Consultez notre <a href="/politique-de-cookies/" class="text-peb-cyan hover:text-peb-green">Politique de Cookies</a> pour plus d'informations.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">10. Exercer vos droits</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Pour exercer vos droits RGPD, contactez-nous :
+        </p>
+        <div class="space-y-2 text-peb-text2">
+          <p>
+            Email: info@pebify.be<br />
+            Téléphone: +32 484 63 08 15<br />
+            Courrier: Rue Emile Wauters 58, 1020 Bruxelles
+          </p>
+        </div>
+        <p class="text-peb-text2 leading-relaxed mt-3">
+          Nous répondons aux demandes dans un délai de 30 jours.
+        </p>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">11. Plainte CNIL</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Si vous considérez que vos droits RGPD ne sont pas respectés, vous pouvez déposer plainte auprès de l'autorité de protection des données belge :
+        </p>
+        <div class="space-y-2 text-peb-text2">
+          <p>
+            <strong>Autorité de Protection des Données (APD)</strong><br />
+            Rue de Trèves, 61, 1040 Bruxelles<br />
+            www.autoriteprotectiondonnees.be
+          </p>
+        </div>
+
+        <h2 class="text-3xl font-display font-bold text-peb-text">12. Modifications</h2>
+        <p class="text-peb-text2 leading-relaxed">
+          Nous pouvons mettre à jour cette politique. Les modifications seront communiquées par email ou affichées sur le site.
+        </p>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 text-peb-text2 text-sm mt-12">
+          <p>
+            <strong>Dernière mise à jour :</strong> 18 mars 2026
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,415 @@
+---
+import PageLayout from '../../../layouts/PageLayout.astro';
+import CTA from '../../../components/sections/CTA.astro';
+import Card from '../../../components/ui/Card.astro';
+import Badge from '../../../components/ui/Badge.astro';
+
+const breadcrumb = [
+  { label: 'Guide PEB', href: '/guide-peb/' },
+  { label: 'Prix du PEB', href: '/guide-peb/prix/' },
+];
+
+const schemaJson = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Prix certificat PEB Bruxelles 2026 : facteurs et comparaisons',
+  description: 'Guide complet des prix certificat PEB à Bruxelles 2026. Facteurs influençant le coût, comparaison marché et tarification PEBify.',
+  author: {
+    '@type': 'Organization',
+    name: 'PEBify',
+  },
+};
+---
+
+<PageLayout
+  title="Prix certificat PEB Bruxelles 2026 | Facteurs et comparaisons | PEBify"
+  description="Prix certificat PEB à Bruxelles 2026 : 189€ à 549€. Facteurs influençant le coût, comparaison marché, et tarification transparent."
+  canonical="https://pebify.be/guide-peb/prix/"
+  breadcrumb={breadcrumb}
+  heroLabel="Comprendre la tarification"
+  heroTitle="Prix certificat PEB à Bruxelles"
+  heroSubtitle="Guide des coûts : facteurs influençant le prix, comparaisons marché, et tarification transparente pour 2026."
+  schemaJson={schemaJson}
+>
+  <!-- Introduction -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="space-y-6 reveal">
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          Le prix d'un certificat PEB varie selon plusieurs facteurs : type de bien, surface, complexité énergétique, et services additionnels. Cette section vous explique la tarification transparente et ce qui influence le coût réel.
+        </p>
+
+        <p class="text-lg text-peb-text2 leading-relaxed">
+          À Bruxelles en 2026, les prix oscillent entre 189€ pour un petit appartement et 549€ pour un audit complet. Comprendre la tarification vous aide à budgéter correctement et à comparer entre experts.
+        </p>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6">
+          <p class="font-semibold text-peb-text mb-3">📌 Important:</p>
+          <p class="text-peb-text2">
+            Cette page traite de la compréhension générale des prix PEB. Pour voir mes tarifs spécifiques et détaillés, consultez la page Tarifs PEB Bruxelles.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Price Factors -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Facteurs influençant le <span class="gradient-text-cyan">prix</span>
+        </h2>
+      </div>
+
+      <div class="space-y-8 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">1. Type de bien</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            C'est le facteur principal. Un certificateur doit inspectionner physiquement le bien, et la complexité varie fortement selon le type.
+          </p>
+          <div class="space-y-2 text-sm text-peb-text2 bg-peb-bg rounded-lg p-4">
+            <div class="flex justify-between">
+              <span>Appartement (studio à T3)</span>
+              <span class="font-semibold">189€ - 220€</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Duplex / Maison mitoyenne</span>
+              <span class="font-semibold">220€ - 280€</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Maison unifamiliale (3-4 façades)</span>
+              <span class="font-semibold">240€ - 320€</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Immeubles commerciaux</span>
+              <span class="font-semibold">300€ - 549€+</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">2. Surface habitable</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Plus la surface est grande, plus le temps d'inspection augmente. Certains certificateurs appliquent une tarification progressive.
+          </p>
+          <div class="space-y-2 text-sm text-peb-text2">
+            <p>✓ 50-80m² : tarif standard (base)</p>
+            <p>✓ 80-150m² : tarif standard à légèrement augmenté</p>
+            <p>✓ 150-300m² : tarif augmenté de 10-20%</p>
+            <p>✓ > 300m² : tarification spéciale sur devis</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">3. Complexité énergétique</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Certains biens sont plus complexes à évaluer énergétiquement. Cela peut justifier une hausse de prix.
+          </p>
+          <div class="space-y-2 text-sm text-peb-text2">
+            <p>✓ Bien standard (chauffage gaz, isolation commune)</p>
+            <p>✓ Bien complexe (plusieurs systèmes, zones différentes, énergies mixtes)</p>
+            <p>✓ Bien très complexe (multiple bâtiments, systèmes sophistiqués) = audit premium</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">4. Services additionnels</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            Des services optionnels peuvent augmenter significativement le coût :
+          </p>
+          <div class="space-y-2 text-sm text-peb-text2">
+            <p>• Thermographie IR (caméra thermique) : +120€ à 180€</p>
+            <p>• Test d'infiltrométrie (blower door) : +150€ à 250€</p>
+            <p>• Audit complet avec recommandations détaillées : +50€ à 100€</p>
+            <p>• Support dossier primes/subventions : +50€ à 75€</p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">5. Localisation à Bruxelles</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Certains certificateurs appliquent une surcharge pour déplacements en communes excentrées (Auderghem, Watermael-Boitsfort, Evere). Généralement, cela peut ajouter 20€ à 50€.
+          </p>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">6. Urgence et délais</h3>
+          <p class="text-peb-text2 leading-relaxed">
+            Une demande urgente (résultat en 24-48h) peut justifier un surcoût de 30€ à 100€. Les délais standard (3-5 jours) sont inclus.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Comparison -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Comparaison <span class="gradient-text-cyan">marché</span> Bruxelles
+        </h2>
+      </div>
+
+      <div class="space-y-8 reveal">
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-6">
+          <h3 class="text-xl font-display font-bold text-peb-text mb-6">Prix moyens par type de bien (2026)</h3>
+
+          <div class="space-y-4">
+            <div class="bg-peb-bg rounded-lg p-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold text-peb-text">Appartement (petit)</span>
+                <span class="text-peb-cyan font-bold">189€ - 210€</span>
+              </div>
+              <p class="text-sm text-peb-text2">Studio à T2, 50-100m²</p>
+            </div>
+
+            <div class="bg-peb-bg rounded-lg p-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold text-peb-text">Appartement (grand)</span>
+                <span class="text-peb-cyan font-bold">210€ - 250€</span>
+              </div>
+              <p class="text-sm text-peb-text2">T3 à T4, 100-150m²</p>
+            </div>
+
+            <div class="bg-peb-bg rounded-lg p-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold text-peb-text">Duplex / Maison mitoyenne</span>
+                <span class="text-peb-cyan font-bold">220€ - 280€</span>
+              </div>
+              <p class="text-sm text-peb-text2">2-3 niveaux, 150-250m²</p>
+            </div>
+
+            <div class="bg-peb-bg rounded-lg p-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold text-peb-text">Maison unifamiliale</span>
+                <span class="text-peb-cyan font-bold">240€ - 320€</span>
+              </div>
+              <p class="text-sm text-peb-text2">3-4 façades, 200-400m²</p>
+            </div>
+
+            <div class="bg-peb-bg rounded-lg p-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="font-semibold text-peb-text">Audit complet premium</span>
+                <span class="text-peb-cyan font-bold">400€ - 549€</span>
+              </div>
+              <p class="text-sm text-peb-text2">Avec services additionnels (thermographie, infiltrométrie)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-2xl p-8 space-y-4">
+          <h3 class="text-xl font-display font-bold text-peb-text">Gamme Bruxelles</h3>
+          <p class="text-peb-text2 leading-relaxed mb-4">
+            À Bruxelles, les prix varient selon le segment d'expertise :
+          </p>
+          <div class="space-y-2 text-sm text-peb-text2">
+            <p>💰 <span class="font-semibold">Budget (basique):</span> 150€ - 200€ | Service minimal, PEB uniquement</p>
+            <p>💰 <span class="font-semibold">Standard:</span> 200€ - 300€ | Audit complet + rapport détaillé</p>
+            <p>💰 <span class="font-semibold">Premium:</span> 300€ - 450€ | Services additionnels (thermographie, etc.)</p>
+            <p>💰 <span class="font-semibold">Complet:</span> 450€ - 600€+ | Audit exhaustif + support dossiers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Qu'est-ce qui est <span class="gradient-text-cyan">généralement inclus</span>?
+        </h2>
+      </div>
+
+      <div class="space-y-6 reveal-stagger">
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">✓</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Visite sur site</h3>
+            <p class="text-peb-text2">
+              Inspection complète du bien (1-2 heures selon taille). Évaluation de l'isolation, systèmes énergétiques, fenêtres, etc.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">✓</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Certificat officiel PEB</h3>
+            <p class="text-peb-text2">
+              Document légal enregistré auprès de la Région bruxelloise. Valide 10 ans. Généralement livré en 3-5 jours.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">✓</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Rapport énergétique</h3>
+            <p class="text-peb-text2">
+              Document détaillant votre classe PEB, consommation estimée, et informations énergétiques du bien.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">✓</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">TVA incluse</h3>
+            <p class="text-peb-text2">
+              Le prix affiché est TTC (TVA 21% incluse). Aucun frais supplémentaire attendu.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-peb-card border border-peb-border rounded-xl p-6 flex gap-4">
+          <span class="text-3xl flex-shrink-0">?</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Services additionnels (optionnels)</h3>
+            <p class="text-peb-text2">
+              Thermographie, infiltrométrie, recommandations détaillées d'amélioration. À négocier et facturer séparément.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hidden Costs -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Frais <span class="gradient-text-cyan">cachés</span> à éviter
+        </h2>
+      </div>
+
+      <div class="space-y-4 reveal-stagger">
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">⚠️</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Frais de déplacement</h3>
+            <p class="text-peb-text2">
+              Certains certificateurs facturent 50€-100€ de frais de déplacement. Vérifiez si c'est inclus dans le devis.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">⚠️</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Frais d'enregistrement</h3>
+            <p class="text-peb-text2">
+              Ne payez JAMAIS de frais d'enregistrement à part. C'est inclus dans le tarif officiel.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">⚠️</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Frais administratifs</h3>
+            <p class="text-peb-text2">
+              Certains demandent des "frais administratifs" ou de "traitement". Méfiez-vous : c'est généralement inclus.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-red-500/10 border border-red-500/20 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">⚠️</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">Frais de rapport supplémentaires</h3>
+            <p class="text-peb-text2">
+              Le rapport énergétique doit être inclus. Ne payez pas extra pour "rapport détaillé" ou "recommandations".
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-green-500/10 border border-green-500/20 rounded-xl p-6 flex gap-4">
+          <span class="text-2xl flex-shrink-0">✓</span>
+          <div>
+            <h3 class="font-semibold text-peb-text mb-2">À demander avant de signer</h3>
+            <p class="text-peb-text2">
+              "Votre devis inclut-il tous les frais? Aucun supplément ne sera facturé?" Une réponse claire est essentielle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-surface border-b border-peb-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-4">
+          Pour <span class="gradient-text-cyan">aller plus loin</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 reveal-stagger">
+        <a href="/tarifs-peb-bruxelles/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">💰</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Tarifs PEBify</h3>
+              <p class="text-sm text-peb-text2">
+                Mes prix précis et détaillés.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/definition/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">📚</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Définition PEB</h3>
+              <p class="text-sm text-peb-text2">
+                Qu'est-ce que le certificat PEB?
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/guide-peb/ameliorer-score/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">⚡</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Améliorer votre score</h3>
+              <p class="text-sm text-peb-text2">
+                Investissement vs bénéfices.
+              </p>
+            </div>
+          </Card>
+        </a>
+
+        <a href="/contact/" class="group">
+          <Card hover={true}>
+            <div class="space-y-3">
+              <div class="text-4xl">📞</div>
+              <h3 class="font-display font-bold text-peb-text group-hover:text-peb-cyan">Devis gratuit</h3>
+              <p class="text-sm text-peb-text2">
+                Tarif pour votre bien spécifique.
+              </p>
+            </div>
+          </Card>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTA
+    label="Besoin d'une estimation précise?"
+    title="Demandez votre devis gratuit"
+    subtitle="Je vous fournirai un devis transparent et détaillé sans aucun engagement. Réponse sous 24 heures."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/tarifs-peb-bruxelles/"
+    secondaryText="Voir mes tarifs"
+  />
+</PageLayout>

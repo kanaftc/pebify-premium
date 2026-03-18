@@ -1,0 +1,194 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import CTA from '../../components/sections/CTA.astro';
+import FAQ from '../../components/sections/FAQ.astro';
+import CommuneLinks from '../../components/sections/CommuneLinks.astro';
+
+const faqItems = [
+  {
+    question: 'Comment certifier un immeuble de rapport à Saint-Gilles?',
+    answer: 'Les immeubles de rapport de Saint-Gilles se certifient complètement. Je maîtrise l\'architecture typique saint-gilloise. Ma spécialité concerne précisément ce type d\'immeuble locatif.'
+  },
+  {
+    question: 'Quel profil énergétique pour les propriétés saint-gilloises?',
+    answer: 'Saint-Gilles présente un portefeuille énergétique varié. Les immeubles anciens obtiennent généralement D à F. L\'amélioration des vitrages et du chauffage est prioritaire.'
+  },
+  {
+    question: 'Quel tarif pour un petit immeuble à Saint-Gilles?',
+    answer: 'Pour un petit immeuble à Saint-Gilles, je propose des forfaits adaptés au nombre d\'unités. Contactez-moi pour un devis personnalisé.'
+  }
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PEBify - Certificat PEB Saint-Gilles",
+  "description": "Expert en certification PEB agréé à Saint-Gilles (1060)",
+  "url": "https://pebify.be/certificat-peb-saint-gilles/",
+  "areaServed": { "@type": "City", "name": "Saint-Gilles", "postalCode": "1060" },
+  "priceRange": "€€"
+};
+---
+
+<PageLayout
+  title="Certificat PEB Saint-Gilles (1060) — Dès 189€ | Certificateur Agréé"
+  description="Expert en certification PEB à Saint-Gilles (1060). Certificats énergétiques agréés pour immeubles de rapport, maisons mitoyennes et collectifs modernes. Service spécialisé."
+  breadcrumb={[{ label: 'Certificat PEB Saint-Gilles', href: '/certificat-peb-saint-gilles/' }]}
+  heroLabel="Certification PEB"
+  heroTitle="Certificat PEB à Saint-Gilles"
+  heroSubtitle="Certificateur agréé pour vos propriétés saint-gilloises. Expert en immeubles de rapport et petits collectifs."
+  canonical="https://pebify.be/certificat-peb-saint-gilles/"
+  schemaJson={jsonLd}
+>
+  <section class="py-16 sm:py-20 md:py-24 bg-peb-bg">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-12 reveal">
+        <h2 class="text-3xl sm:text-4xl font-display font-bold mb-6 text-peb-text">
+          Certificat PEB à <span class="gradient-text-cyan">Saint-Gilles</span>
+        </h2>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Saint-Gilles, commune du sud-centre bruxellois, respire l'authenticité urbaine et l'histoire architecturale. Avec près de 50 000 habitants, elle offre un habitat varié combinant élégants immeubles de rapport, petites maisons mitoyennes et logements collectifs contemporains. Le Palais de la Chambre et les rues commerçantes constituent le pôle urbain dynamique.
+        </p>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Je suis spécialisé dans la certification des propriétés saint-gilloises, notamment les immeubles de rapport. Mon expertise approfondie me permet d'évaluer précisément ces biens complexes avec exactitude.
+        </p>
+      </div>
+
+      <div class="bg-peb-surface border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Propriétés à Saint-Gilles
+        </h3>
+        <ul class="space-y-4">
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Immeubles de rapport</p>
+              <p class="text-peb-text2 text-sm">Certification spécialisée d'immeubles locatifs.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Maisons mitoyennes</p>
+              <p class="text-peb-text2 text-sm">Certification de petites maisons saint-gilloises.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Collectifs modernes</p>
+              <p class="text-peb-text2 text-sm">Certification d'immeubles contemporains.</p>
+            </div>
+          </li>
+          <li class="flex items-start space-x-4">
+            <svg class="w-6 h-6 text-peb-cyan flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <p class="font-semibold text-peb-text">Petits commerces</p>
+              <p class="text-peb-text2 text-sm">Certification de structures commerciales.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Profil énergétique
+        </h3>
+        <p class="text-lg text-peb-text2 mb-4 leading-relaxed">
+          Saint-Gilles présente un portefeuille énergétique varié. Les immeubles anciens obtiennent généralement D à F. Les améliorations progressives peuvent améliorer significativement la performance.</p>
+      </div>
+
+      <div class="bg-peb-card border border-peb-border rounded-xl p-8 mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Services
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Certificat PEB</h4>
+            <p class="text-peb-text2 text-sm">Certification officielle pour tous types.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Audit énergétique</h4>
+            <p class="text-peb-text2 text-sm">Analyse détaillée avec recommandations.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Rapport complet</h4>
+            <p class="text-peb-text2 text-sm">Documentation stratégique.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-peb-cyan mb-2">Consultation immeuble</h4>
+            <p class="text-peb-text2 text-sm">Expertise pour propriétés locatives.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Tarification
+        </h3>
+        <div class="grid sm:grid-cols-3 gap-4 mb-6">
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Petit immeuble</p>
+            <p class="text-3xl font-bold text-peb-cyan">189€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Duplex</p>
+            <p class="text-3xl font-bold text-peb-cyan">219€</p>
+          </div>
+          <div class="bg-peb-surface border border-peb-border rounded-lg p-6">
+            <p class="text-sm text-peb-text2 mb-2">Maison</p>
+            <p class="text-3xl font-bold text-peb-cyan">249€</p>
+          </div>
+        </div>
+        <p class="text-peb-text2 mb-4">
+          <a href="/contact/" class="text-peb-cyan hover:text-peb-green font-medium transition-colors">Demandez un devis</a> pour propriétés locatives.
+        </p>
+      </div>
+
+      <div class="mb-12 reveal">
+        <h3 class="text-2xl font-display font-bold mb-6 text-peb-text">
+          Ressources
+        </h3>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <a href="/guide-peb/definition/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Qu'est-ce que le PEB?</p>
+            <p class="text-sm text-peb-text2">Comprendre.</p>
+          </a>
+          <a href="/guide-peb/ameliorer-score/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Améliorer votre score</p>
+            <p class="text-sm text-peb-text2">Recommandations.</p>
+          </a>
+          <a href="/guide-peb/echelle-classes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Classes énergétiques</p>
+            <p class="text-sm text-peb-text2">A++ à G.</p>
+          </a>
+          <a href="/guide-peb/primes/" class="bg-peb-surface border border-peb-border rounded-lg p-4 hover:border-peb-cyan transition-colors">
+            <p class="font-semibold text-peb-text mb-2">Aides rénovation</p>
+            <p class="text-sm text-peb-text2">Primes 2026.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FAQ items={faqItems} />
+
+  <CTA
+    title="Certificat PEB à Saint-Gilles"
+    subtitle="Contactez-moi pour votre certification énergétique."
+    primaryHref="/contact/"
+    primaryText="Demander un devis"
+    secondaryHref="/guide-peb/"
+    secondaryText="En savoir plus"
+  />
+
+  <CommuneLinks />
+</PageLayout>

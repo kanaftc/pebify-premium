@@ -1,0 +1,37 @@
+---
+import { siteConfig } from '../../data/site';
+
+interface Props {}
+---
+
+<a
+  href={`https://wa.me/${siteConfig.contact.whatsapp}?text=Bonjour%20PEBify%2C%20j'aimerais%20en%20savoir%20plus%20sur%20vos%20services.`}
+  target="_blank"
+  rel="noopener noreferrer"
+  class="fixed bottom-8 right-8 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-peb-green text-white shadow-lg hover:shadow-2xl hover:scale-110 transition-all duration-200 hover:glow-green"
+  aria-label="Chat with us on WhatsApp"
+  title="Chat with us on WhatsApp"
+>
+  <svg
+    class="w-6 h-6"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M17.6915026,2.50159313 C14.4744748,-.972510851 9.41037736,-.972510851 6.19334975,2.50159313 C3.60982407,5.28324421 3.06788321,9.44147469 4.71505376,12.96940299 L2.25573136,20.5048484 C1.75165821,21.8369899 3.37837966,23.4505172 4.71051073,22.9464441 L12.3051808,20.4851155 C15.8340722,22.1272231 20.0288347,21.5833833 22.8104858,18.9998675 C26.0275137,15.5259265 26.0275137,10.4618278 22.8104858,7.00788226 C21.2571027,5.37248671 19.2030474,4.28771349 17.6915026,2.50159313 Z M12.6563168,17.1788385 C10.2959405,17.1788385 8.37297944,15.2558576 8.37297944,12.8954813 C8.37297944,10.5351049 10.2959405,8.61214382 12.6563168,8.61214382 C15.0166932,8.61214382 16.9396741,10.5351049 16.9396741,12.8954813 C16.9396741,15.2558576 15.0166932,17.1788385 12.6563168,17.1788385 Z"
+    />
+  </svg>
+</a>
+
+<style is:global>
+  @media (max-width: 768px) {
+    a[aria-label="Chat with us on WhatsApp"] {
+      @apply bottom-6 right-6 w-12 h-12;
+    }
+
+    a[aria-label="Chat with us on WhatsApp"] svg {
+      @apply w-5 h-5;
+    }
+  }
+</style>
