@@ -3,6 +3,7 @@ import Nav from '../components/navigation/Nav.astro';
 import Footer from '../components/navigation/Footer.astro';
 import WhatsApp from '../components/ui/WhatsApp.astro';
 import { siteConfig } from '../data/site';
+import '../styles/global.css';
 
 interface Props {
   title?: string;
@@ -73,8 +74,7 @@ const finalTitle = title.includes('|')
       rel="stylesheet"
     />
 
-    <!-- Global Styles -->
-    <link rel="stylesheet" href="/styles/global.css" />
+    <!-- Global Styles are imported in frontmatter -->
 
     <!-- Favicon (SVG Emoji ⚡) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
