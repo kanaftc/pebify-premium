@@ -41,6 +41,9 @@ body { @apply antialiased font-body; background-color:var(--dark); color:#E8EFF8
 
 /* Hero: dark with video */
 .hero-section { position:relative; background:#0B1D3A; }
+.hero-section h1,.hero-section h2,.hero-section h3 { text-shadow:0 2px 12px rgba(0,0,0,0.5); }
+.hero-section p { text-shadow:0 1px 8px rgba(0,0,0,0.4); }
+.hero-section .glass-hover { background:rgba(11,29,58,0.6); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); }
 
 /* === GLOWS === */
 .glow-cyan { box-shadow:0 0 40px rgba(0,184,212,0.25),0 0 80px rgba(0,184,212,0.1); }
