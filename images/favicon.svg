@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <clipPath id="counter">
+      <circle cx="512.0" cy="368" r="112"/>
+    </clipPath>
+  </defs>
+
+  <!-- Pebify monogram 'P' — flat vector logo / centered composition / white or transparent background / no mockup / no shadow / high resolution -->
+  <g shape-rendering="geometricPrecision">
+    <rect x="272.0" y="128" width="128" height="768" fill="#1A2332"/>
+    <path d="M 752.0 368 A 240 240 0 1 1 272.0 368 A 240 240 0 1 1 752.0 368 Z M 624.0 368 A 112 112 0 1 1 400.0 368 A 112 112 0 1 1 624.0 368 Z" fill="#1A2332" fill-rule="evenodd"/>
+    <g clip-path="url(#counter)">
+      <rect x="400.0" y="384.0" width="32" height="32" fill="#1D5F3A" opacity="0.9"/>
+      <rect x="432.0" y="384.0" width="32" height="32" fill="#3E8A4D" opacity="0.9"/>
+      <rect x="464.0" y="384.0" width="32" height="32" fill="#8DAA4E" opacity="0.9"/>
+      <rect x="496.0" y="384.0" width="32" height="32" fill="#C9B44C" opacity="0.9"/>
+      <rect x="528.0" y="384.0" width="32" height="32" fill="#D59A55" opacity="0.9"/>
+      <rect x="560.0" y="384.0" width="32" height="32" fill="#C6753A" opacity="0.9"/>
+      <rect x="592.0" y="384.0" width="32" height="32" fill="#9C3A34" opacity="0.9"/>
+    </g>
+  </g>
+</svg>
