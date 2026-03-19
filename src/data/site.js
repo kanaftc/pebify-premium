@@ -8,7 +8,7 @@ export const siteConfig = {
   siteName: 'PEBify',
   siteUrl: 'https://pebify.be',
   siteDescription:
-    'Certification PEB agréée à Bruxelles - Expert énergétique pour appartements, maisons et duplex',
+    'Je suis votre certificateur PEB agréé à Bruxelles. Expert énergétique pour appartements, maisons et duplex. Certificats rapides et fiables.',
   language: 'fr',
   locale: 'fr-BE',
 
@@ -19,7 +19,7 @@ export const siteConfig = {
     owner: 'Milad Mollaey Tabriz',
     type: 'Entreprise unipersonnelle',
     description:
-      'Expert en certification de performance énergétique des bâtiments (PEB) agréé par la Région bruxelloise',
+      'Je suis expert en certification de performance énergétique des bâtiments (PEB), agréé par la Région bruxelloise',
   },
 
   // Contact Information
@@ -71,7 +71,7 @@ export const siteConfig = {
     defaultTitle: 'PEBify - Certification PEB agréée à Bruxelles',
     titleTemplate: '%s | PEBify',
     defaultDescription:
-      'Expert en certification PEB agréé à Bruxelles. Certificats énergétiques pour appartements, maisons et duplex. Audit complet et rapport d\'amélioration énergétique.',
+      'Je suis votre expert en certification PEB agréé à Bruxelles. Certificats énergétiques pour appartements, maisons et duplex. Audit complet et rapport d\'amélioration énergétique.',
     keywords: [
       'certificat PEB Bruxelles',
       'certification énergétique',

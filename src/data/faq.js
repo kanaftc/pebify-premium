@@ -40,7 +40,7 @@ export const faqItems = [
   {
     category: 'definition',
     question: 'Qui est autorisé à délivrer un certificat PEB?',
-    answer: `Seuls les certificateurs PEB agréés par la Région bruxelloise sont habilités à délivrer des certificats. Chez PEBify, notre expert est pleinement agréé par les autorités régionales et inscrit au registre officiel des certificateurs. Vous bénéficiez ainsi d'une certification reconnue légalement et incontestable.`,
+    answer: `Seuls les certificateurs PEB agréés par la Région bruxelloise sont habilités à délivrer des certificats. Je suis pleinement agréé par les autorités régionales et inscrit au registre officiel des certificateurs. Vous bénéficiez ainsi d'une certification reconnue légalement et incontestable.`,
   },
   {
     category: 'definition',
@@ -77,7 +77,7 @@ export const faqItems = [
   {
     category: 'process',
     question: 'Quel est le délai pour obtenir un certificat PEB?',
-    answer: `Normalement, nous établissons un certificat PEB sous 3 à 5 jours ouvrables après la visite du bien. Pour les cas urgents, nous proposons un service express sous 48 heures (tarif spécifique). Le délai dépend également de la complexité du bâtiment et de la disponibilité du calendrier.`,
+    answer: `Généralement, j'établis un certificat PEB sous 3 à 5 jours ouvrables après la visite du bien. Pour les cas urgents, je propose un service express sous 48 heures (tarif spécifique). Le délai dépend également de la complexité du bâtiment et de la disponibilité de mon calendrier.`,
   },
   {
     category: 'process',
@@ -92,13 +92,13 @@ export const faqItems = [
   {
     category: 'process',
     question: 'Comment se déroule concrètement la visite PEB?',
-    answer: `L'expert visite tous les espaces du bâtiment, prend des photos, examine l'isolation des murs, des toits et des sol, inspecte les systèmes de chauffage et d'eau chaude, évalue l'étanchéité à l'air, examine les vitrages, et collecte les données techniques. Ensuite, il rentre ces données dans le logiciel officiel qui calcule la classe énergétique et génère le rapport.`,
+    answer: `Je visite tous les espaces du bâtiment, je prends des photos, j'examine l'isolation des murs, des toits et des sols, j'inspecte les systèmes de chauffage et d'eau chaude, j'évalue l'étanchéité à l'air, j'examine les vitrages, et je collecte les données techniques. Ensuite, j'encode ces données dans le logiciel officiel qui calcule la classe énergétique et génère le rapport.`,
   },
 
   {
     category: 'pricing',
     question: 'Quel est le prix d\'un certificat PEB simple?',
-    answer: `Le prix d'un certificat PEB dépend du type de bien : 189€ pour un appartement, 249€ pour une maison, 219€ pour un duplex. Ces prix incluent la visite complète, le rapport d'audit et l'enregistrement légal officiel. Tous les tarifs sont TTC (TVA comprise).`,
+    answer: `Le prix d'un certificat PEB dépend du type de bien : 189€ pour un appartement, 249€ pour une maison, 219€ pour un duplex. Ces prix incluent ma visite complète, le rapport d'audit et l'enregistrement légal officiel. Tous les tarifs sont TTC (TVA comprise).`,
   },
   {
     category: 'pricing',
@@ -108,7 +108,7 @@ export const faqItems = [
   {
     category: 'pricing',
     question: 'Proposez-vous des forfaits groupés ou réductions?',
-    answer: `Oui, nous offrons des réductions pour les propriétaires ayant plusieurs biens à certifier. Contactez-nous pour un devis personnalisé. Nous proposons également des forfaits incluant audit complet et services complémentaires à tarifs avantageux.`,
+    answer: `Oui, j'offre des réductions pour les propriétaires ayant plusieurs biens à certifier. Contactez-moi pour un devis personnalisé. Je propose également des forfaits incluant audit complet et services complémentaires à tarifs avantageux.`,
   },
 
   {
@@ -124,23 +124,23 @@ export const faqItems = [
   {
     category: 'improvement',
     question: 'Combien coûte une rénovation énergétique?',
-    answer: `Les coûts varient énormément selon les mesures : remplacement fenêtres (100-300€/m²), isolation murs (20-50€/m²), chauffage performant (3000-8000€). Un audit complet vous proposera un plan d'action priorisé. De plus, des subventions et primes bruxelloises peuvent couvrir 25-50% des coûts.`,
+    answer: `Les coûts varient énormément selon les mesures : remplacement fenêtres (100-300€/m²), isolation murs (20-50€/m²), chauffage performant (3000-8000€). Un audit complet vous proposera un plan d'action priorisé. De plus, des subventions et primes bruxelloises peuvent couvrir 25-50% des coûts. Je peux vous aider à préparer votre dossier.`,
   },
   {
     category: 'improvement',
     question: 'Existe-t-il des subventions pour améliorer la performance énergétique?',
-    answer: `Oui! La Région bruxelloise propose des primes substantielles pour l'isolation, le chauffage, les panneaux solaires et d'autres travaux. Ces aides peuvent couvrir 25 à 50% des coûts. PEBify vous aide à préparer votre dossier de subvention et peut recommander les actions les plus subventionnées.`,
+    answer: `Oui! La Région bruxelloise propose des primes substantielles pour l'isolation, le chauffage, les panneaux solaires et d'autres travaux. Ces aides peuvent couvrir 25 à 50% des coûts. Je vous aide à préparer votre dossier de subvention et je peux recommander les actions les plus subventionnées.`,
   },
 
   {
     category: 'technical',
     question: 'Qu\'est-ce que la thermographie infrarouge?',
-    answer: `La thermographie infrarouge est une technique utilisant une caméra thermique pour identifier les déperditions de chaleur dans un bâtiment. Les zones froides apparaissent en bleu/rouge et les chaudes en jaune/blanc. Cet outil détecte les défauts d'isolation, les ponts thermiques et les fuites d'air. PEBify propose ce service en option pour un diagnostic plus détaillé.`,
+    answer: `La thermographie infrarouge est une technique utilisant une caméra thermique pour identifier les déperditions de chaleur dans un bâtiment. Les zones froides apparaissent en bleu/rouge et les chaudes en jaune/blanc. Cet outil détecte les défauts d'isolation, les ponts thermiques et les fuites d'air. Je propose ce service en option pour un diagnostic plus détaillé.`,
   },
   {
     category: 'technical',
     question: 'Qu\'est-ce que le test d\'infiltrométrie?',
-    answer: `L'infiltrométrie (test Blower Door) mesure l'étanchéité à l'air du bâtiment. Un ventilateur crée une différence de pression pour quantifier les fuites d'air. Les résultats (en ACH ou n50) indiquent la qualité de construction. Une maison étanche consomme moins d'énergie. PEBify propose ce test en complément du PEB standard.`,
+    answer: `L'infiltrométrie (test Blower Door) mesure l'étanchéité à l'air du bâtiment. Un ventilateur crée une différence de pression pour quantifier les fuites d'air. Les résultats (en ACH ou n50) indiquent la qualité de construction. Une maison étanche consomme moins d'énergie. Je propose ce test en complément du PEB standard.`,
   },
   {
     category: 'technical',
@@ -150,7 +150,7 @@ export const faqItems = [
   {
     category: 'technical',
     question: 'Peut-on faire un PEB sur un bâtiment très ancien?',
-    answer: `Oui, même les bâtiments très anciens doivent avoir un certificat PEB s'ils sont vendus ou loués. L'algorithme s'adapte aux bâtiments anciens. Souvent, les bâtiments anciens sans isolation reçoivent des classes F ou G, ce qui justifie des rénovations. PEBify a l'expérience pour certifier correctement les bâtiments patrimoniaux.`,
+    answer: `Oui, même les bâtiments très anciens doivent avoir un certificat PEB s'ils sont vendus ou loués. L'algorithme s'adapte aux bâtiments anciens. Souvent, les bâtiments anciens sans isolation reçoivent des classes F ou G, ce qui justifie des rénovations. J'ai l'expérience pour certifier correctement les bâtiments patrimoniaux.`,
   },
 ];
 

@@ -11,9 +11,9 @@ interface Props {
 }
 
 const {
-  label,
-  title,
-  subtitle,
+  label = 'Certificateur PEB agréé — Bruxelles',
+  title = 'Je m\'occupe de votre certificat PEB à Bruxelles',
+  subtitle = 'Certificateur agréé depuis plus de 14 ans. Je me déplace chez vous, j\'analyse votre bien et vous recevez votre certificat officiel sous 24 à 48h.',
   showCalculator = false,
   showStats = false,
 } = Astro.props;
@@ -163,7 +163,7 @@ const {
 
                 <!-- Price Display -->
                 <div class="bg-peb-bg border border-peb-border rounded-lg p-6 text-center space-y-3">
-                  <div class="text-sm text-peb-text2">Estimation</div>
+                  <div class="text-sm text-peb-text2">Votre prix fixe</div>
                   <div
                     id="price-display"
                     class="text-4xl font-display font-bold text-peb-cyan"
@@ -171,13 +171,13 @@ const {
                     189€
                   </div>
                   <div class="text-xs text-peb-text2">
-                    TVA incluse • 3-5 jours de délai
+                    TTC — Tout compris, sans surprise
                   </div>
                 </div>
 
                 <!-- CTA Button -->
                 <Button href="/contact/" variant="primary" size="lg" class="w-full">
-                  Commander maintenant
+                  Prendre rendez-vous
                 </Button>
               </div>
             </div>

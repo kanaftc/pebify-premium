@@ -5,34 +5,29 @@ export default {
     extend: {
       colors: {
         'peb': {
-          // Dark backgrounds (navy from logo deep blue)
-          'bg': '#0B1D3A',
-          'bg2': '#0E2345',
-          'surface': '#F2F6FC',
-          'surface2': '#E8EFF8',
-          // Cards
-          'card': '#122850',
+          'bg': '#0F1419',
+          'bg2': '#161C22',
+          'surface': '#F5F7FA',
+          'surface2': '#EDF0F5',
+          'card': '#1A2028',
           'card-light': '#FFFFFF',
-          'card-hover': '#163060',
-          'card-light-hover': '#F5F8FD',
-          // Logo colors
+          'card-hover': '#222A34',
+          'card-light-hover': '#F5F7FA',
           'blue-deep': '#003DA6',
           'blue': '#0055CC',
           'cyan': '#00B8D4',
           'cyan-light': '#4DD9F0',
           'green': '#2ECC71',
           'green-light': '#7BE495',
-          // Text
-          'text': '#E8EFF8',
-          'text-dark': '#1A2744',
-          'text2': '#8AA0C0',
-          'text2-dark': '#5A6F8A',
-          'muted': '#6480A0',
-          // Borders
-          'border': 'rgba(255,255,255,0.08)',
-          'border2': 'rgba(255,255,255,0.14)',
-          'border-light': 'rgba(11,29,58,0.08)',
-          'border-light2': 'rgba(11,29,58,0.14)',
+          'text': '#E2E8F0',
+          'text-dark': '#1E293B',
+          'text2': '#94A3B8',
+          'text2-dark': '#64748B',
+          'muted': '#64748B',
+          'border': 'rgba(255,255,255,0.06)',
+          'border2': 'rgba(255,255,255,0.12)',
+          'border-light': 'rgba(15,20,25,0.06)',
+          'border-light2': 'rgba(15,20,25,0.12)',
         },
       },
       fontFamily: {
