@@ -84,34 +84,46 @@ const {
         showCalculator ? (
           <div class="reveal-right">
             <div class="bg-peb-card border border-peb-border rounded-2xl p-8 glass-hover">
-              <h3 class="text-2xl font-display font-bold text-peb-text mb-6">
-                Calculatrice <span class="text-peb-cyan">PEB</span>
-              </h3>
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-2xl font-display font-bold text-peb-text">
+                  Devis <span class="text-peb-cyan">instantané</span>
+                </h3>
+                <Badge variant="green" text="Sans engagement" />
+              </div>
 
               <!-- Calculator Tabs -->
               <div class="space-y-6">
                 <div>
-                  <label class="text-sm font-semibold text-peb-text mb-4 block">
+                  <label class="text-sm font-semibold text-peb-text mb-4 block uppercase tracking-wider">
                     Type de bien
                   </label>
                   <div class="grid grid-cols-3 gap-2" id="calc-tabs">
                     <button
-                      data-type="apartment"
-                      class="px-4 py-2 rounded-lg bg-peb-cyan text-peb-bg font-medium text-sm transition-all calc-tab active"
+                      data-type="appartement"
+                      data-min="18"
+                      data-max="450"
+                      data-default="50"
+                      class="px-4 py-2.5 rounded-lg bg-gradient-to-r from-peb-blue to-peb-cyan text-peb-bg font-semibold text-sm transition-all calc-tab active"
                     >
-                      Appart.
-                    </button>
-                    <button
-                      data-type="house"
-                      class="px-4 py-2 rounded-lg border border-peb-border text-peb-text2 font-medium text-sm hover:border-peb-cyan transition-all calc-tab"
-                    >
-                      Maison
+                      Appartement
                     </button>
                     <button
                       data-type="duplex"
-                      class="px-4 py-2 rounded-lg border border-peb-border text-peb-text2 font-medium text-sm hover:border-peb-cyan transition-all calc-tab"
+                      data-min="50"
+                      data-max="450"
+                      data-default="100"
+                      class="px-4 py-2.5 rounded-lg border border-peb-border text-peb-text2 font-medium text-sm hover:border-peb-cyan transition-all calc-tab"
                     >
-                      Duplex
+                      Duplex+
+                    </button>
+                    <button
+                      data-type="maison"
+                      data-min="60"
+                      data-max="450"
+                      data-default="120"
+                      class="px-4 py-2.5 rounded-lg border border-peb-border text-peb-text2 font-medium text-sm hover:border-peb-cyan transition-all calc-tab"
+                    >
+                      Maison
                     </button>
                   </div>
                 </div>
@@ -119,48 +131,58 @@ const {
                 <!-- Surface Range Slider -->
                 <div>
                   <div class="flex items-center justify-between mb-3">
-                    <label class="text-sm font-semibold text-peb-text">
-                      Surface
+                    <label class="text-sm font-semibold text-peb-text uppercase tracking-wider">
+                      Superficie
                     </label>
                     <span
-                      class="text-lg font-bold text-peb-cyan"
+                      class="text-lg font-bold text-peb-cyan font-mono"
                       id="sqm-display"
                     >
-                      150 m²
+                      50 m²
                     </span>
                   </div>
                   <input
                     type="range"
                     id="calc-slider"
-                    min="20"
-                    max="300"
-                    value="150"
+                    min="18"
+                    max="450"
+                    value="50"
                     class="w-full"
+                    aria-label="Superficie en mètres carrés"
                   />
                   <div class="flex justify-between text-xs text-peb-text2 mt-2">
-                    <span>20 m²</span>
-                    <span>300 m²</span>
+                    <span>18 m²</span>
+                    <span>450 m²</span>
                   </div>
                 </div>
 
                 <!-- Price Display -->
-                <div class="bg-peb-bg border border-peb-border rounded-lg p-6 text-center space-y-3">
-                  <div class="text-sm text-peb-text2">Estimation</div>
-                  <div
-                    id="price-display"
-                    class="text-4xl font-display font-bold text-peb-cyan"
-                  >
-                    189€
+                <div class="bg-peb-bg border border-peb-border rounded-xl p-6 text-center space-y-2">
+                  <div class="text-xs text-peb-text2 uppercase tracking-wider">Votre prix fixe</div>
+                  <div class="flex items-baseline justify-center gap-1">
+                    <span
+                      id="price-display"
+                      class="text-5xl font-display font-extrabold text-white"
+                      style="transition: all 0.3s ease"
+                    >
+                      105
+                    </span>
+                    <span class="text-xl text-peb-text2 font-medium">€</span>
                   </div>
                   <div class="text-xs text-peb-text2">
-                    TVA incluse • 3-5 jours de délai
+                    TTC — Tout compris
                   </div>
                 </div>
 
                 <!-- CTA Button -->
-                <Button href="/contact/" variant="primary" size="lg" class="w-full">
-                  Commander maintenant
-                </Button>
+                <a href="/contact/" class="flex items-center justify-center gap-2 w-full px-8 py-4 rounded-lg bg-gradient-to-r from-peb-blue to-peb-cyan text-peb-bg font-semibold text-lg transition-all hover:shadow-lg hover:shadow-peb-cyan/20 active:scale-95">
+                  Prendre rendez-vous
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </a>
+
+                <p class="text-center text-xs text-peb-muted mt-2">
+                  Disponible sous 24h · Déplacement gratuit · Agréé n°001862747
+                </p>
               </div>
             </div>
           </div>
@@ -203,84 +225,121 @@ const {
     </div>
   </div>
 
-  <!-- Parallax Mouse Move Script -->
+  <!-- Calculator + Parallax Script -->
   <script>
-    // Parallax effect on mouse move
-    const orbs = [
+    // === Parallax effect on glow orbs ===
+    var orbs = [
       document.getElementById('orb-1'),
       document.getElementById('orb-2'),
-      document.getElementById('orb-3'),
+      document.getElementById('orb-3')
     ];
-
-    let mouseX = 0;
-    let mouseY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX / window.innerWidth;
-      mouseY = e.clientY / window.innerHeight;
-
-      orbs.forEach((orb, index) => {
-        if (orb) {
-          const moveX = (mouseX - 0.5) * (30 + index * 10);
-          const moveY = (mouseY - 0.5) * (30 + index * 10);
-          orb.style.transform = `translate(${moveX}px, ${moveY}px)`;
-        }
-      });
-    });
-
-    // Calculator functionality
-    const calcTabs = document.querySelectorAll('.calc-tab');
-    const calcSlider = document.getElementById('calc-slider');
-    const sqmDisplay = document.getElementById('sqm-display');
-    const priceDisplay = document.getElementById('price-display');
-
-    const prices = {
-      apartment: 189,
-      house: 249,
-      duplex: 219,
-    };
-
-    let selectedType = 'apartment';
-
-    calcTabs.forEach((tab) => {
-      tab.addEventListener('click', () => {
-        // Update active state
-        calcTabs.forEach((t) => {
-          t.classList.remove('bg-peb-cyan', 'text-peb-bg');
-          t.classList.add('border', 'border-peb-border', 'text-peb-text2');
+    if (window.innerWidth > 768) {
+      document.addEventListener('mousemove', function(e) {
+        var mx = e.clientX / window.innerWidth - 0.5;
+        var my = e.clientY / window.innerHeight - 0.5;
+        orbs.forEach(function(orb, i) {
+          if (orb) {
+            var f = (i === 0) ? 1 : (i === 1) ? -0.6 : 0.4;
+            orb.style.transform = 'translate(' + (mx * 30 * f) + 'px,' + (my * 30 * f) + 'px)';
+          }
         });
-        tab.classList.remove('border', 'border-peb-border', 'text-peb-text2');
-        tab.classList.add('bg-peb-cyan', 'text-peb-bg');
-
-        selectedType = tab.dataset.type || 'apartment';
-        updatePrice();
       });
-    });
-
-    calcSlider?.addEventListener('input', (e) => {
-      const value = e.target.value;
-      sqmDisplay!.textContent = `${value} m²`;
-      updatePrice();
-    });
-
-    function updatePrice() {
-      const basePrice = prices[selectedType as keyof typeof prices] || 189;
-      priceDisplay!.textContent = `${basePrice}€`;
     }
 
-    // Counter animation
-    const counters = document.querySelectorAll('.counter');
-    counters.forEach((counter) => {
-      const target = parseInt(counter.getAttribute('data-target') || '0');
-      let current = 0;
-      const increment = target / 30;
+    // === Calculator with real PEBify pricing tiers ===
+    var pricing = {
+      appartement: [
+        { max: 50, price: 105 },
+        { max: 85, price: 125 },
+        { max: 120, price: 145 },
+        { max: 175, price: 165 },
+        { max: 250, price: 185 },
+        { max: 450, price: 215 }
+      ],
+      duplex: [
+        { max: 80, price: 225 },
+        { max: 120, price: 245 },
+        { max: 175, price: 265 },
+        { max: 250, price: 295 },
+        { max: 450, price: 325 }
+      ],
+      maison: [
+        { max: 100, price: 235 },
+        { max: 150, price: 265 },
+        { max: 200, price: 295 },
+        { max: 300, price: 325 },
+        { max: 450, price: 355 }
+      ]
+    };
 
-      const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-          current = target;
-          clearInterval(timer);
+    var currentType = 'appartement';
+    var calcSlider = document.getElementById('calc-slider');
+    var sqmDisplay = document.getElementById('sqm-display');
+    var priceDisplay = document.getElementById('price-display');
+    var calcTabs = document.querySelectorAll('.calc-tab');
+
+    function getPrice(type, sqm) {
+      var tiers = pricing[type] || pricing.appartement;
+      for (var i = 0; i < tiers.length; i++) {
+        if (sqm <= tiers[i].max) return tiers[i].price;
+      }
+      return tiers[tiers.length - 1].price;
+    }
+
+    function updateCalc() {
+      if (!calcSlider || !priceDisplay || !sqmDisplay) return;
+      var val = parseInt(calcSlider.value);
+      sqmDisplay.textContent = val + ' m\u00B2';
+      var price = getPrice(currentType, val);
+      priceDisplay.textContent = price;
+
+      // Update slider track gradient fill
+      var min = parseInt(calcSlider.min);
+      var max = parseInt(calcSlider.max);
+      var pct = ((val - min) / (max - min)) * 100;
+      calcSlider.style.background = 'linear-gradient(to right, #0066FF 0%, #00D4FF ' + pct + '%, #111620 ' + pct + '%)';
+    }
+
+    // Tab click handlers
+    calcTabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        // Reset all tabs
+        calcTabs.forEach(function(t) {
+          t.classList.remove('bg-gradient-to-r', 'from-peb-blue', 'to-peb-cyan', 'text-peb-bg', 'font-semibold');
+          t.classList.add('border', 'border-peb-border', 'text-peb-text2', 'font-medium');
+        });
+        // Activate clicked tab
+        tab.classList.remove('border', 'border-peb-border', 'text-peb-text2', 'font-medium');
+        tab.classList.add('bg-gradient-to-r', 'from-peb-blue', 'to-peb-cyan', 'text-peb-bg', 'font-semibold');
+
+        currentType = tab.dataset.type || 'appartement';
+
+        // Adjust slider range per type
+        if (calcSlider) {
+          calcSlider.min = tab.dataset.min || '18';
+          calcSlider.max = tab.dataset.max || '450';
+          calcSlider.value = tab.dataset.default || '50';
         }
+        updateCalc();
+      });
+    });
+
+    // Slider input handler
+    if (calcSlider) {
+      calcSlider.addEventListener('input', updateCalc);
+      // Initial update
+      updateCalc();
+    }
+
+    // === Counter animation ===
+    var counters = document.querySelectorAll('.counter');
+    counters.forEach(function(counter) {
+      var target = parseInt(counter.getAttribute('data-target') || '0');
+      var current = 0;
+      var increment = target / 30;
+      var timer = setInterval(function() {
+        current += increment;
+        if (current >= target) { current = target; clearInterval(timer); }
         counter.textContent = Math.floor(current).toLocaleString();
       }, 30);
     });
