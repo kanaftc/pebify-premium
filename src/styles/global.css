@@ -127,6 +127,15 @@ input:focus,textarea:focus,select:focus { @apply outline-none; border-color:rgba
 .section-light input:focus,.section-light textarea:focus,.section-light select:focus { border-color:var(--blue); box-shadow:0 0 0 3px rgba(0,85,204,0.08); }
 textarea { resize:vertical; }
 
+/* === GREEN REASSURANCE ELEMENTS === */
+.check-green { color:#2ECC71; }
+.check-green::before { content:'✓ '; font-weight:700; }
+.trust-card { border-left:3px solid #2ECC71; }
+.trust-card:hover { border-left-color:#7BE495; }
+.section-light .trust-card { border-left-color:#2ECC71; }
+.guarantee-badge { background:rgba(46,204,113,0.1); border:1px solid rgba(46,204,113,0.2); color:#2ECC71; @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold; }
+.section-light .guarantee-badge { background:rgba(46,204,113,0.08); border-color:rgba(46,204,113,0.15); color:#1B9C50; }
+
 /* === LINKS === */
 a { color:var(--cyan); transition:color 0.3s; }
 a:hover { color:var(--green); }

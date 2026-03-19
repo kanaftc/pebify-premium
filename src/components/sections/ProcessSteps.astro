@@ -87,7 +87,7 @@ const steps: ProcessStep[] = [
                 <div class="text-center space-y-2">
                   <h3 class="font-display font-bold text-peb-text">{step.title}</h3>
                   <p class="text-sm text-peb-text2">{step.description}</p>
-                  <Badge variant="cyan" text={step.duration} />
+                  <Badge variant={step.number === 5 ? 'green' : 'cyan'} text={step.duration} />
                 </div>
               </div>
             ))

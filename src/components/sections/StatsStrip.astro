@@ -8,42 +8,24 @@ interface Stat {
 interface Props {}
 
 const stats: Stat[] = [
-  {
-    icon: '⚡',
-    number: '24h',
-    label: 'RDV disponibles',
-  },
-  {
-    icon: '✓',
-    number: '100%',
-    label: 'Agréé région',
-  },
-  {
-    icon: '€',
-    number: '0€',
-    label: 'Frais cachés',
-  },
-  {
-    icon: '📅',
-    number: '10 ans',
-    label: 'Validité cert.',
-  },
+  { icon: '⚡', number: '24h', label: 'Rendez-vous rapide' },
+  { icon: '✓', number: '100%', label: 'Agréé Bruxelles Env.' },
+  { icon: '€', number: '0€', label: 'Frais cachés' },
+  { icon: '📋', number: '10 ans', label: 'Validité garantie' },
 ];
 ---
 
 <section class="py-12 sm:py-16 md:py-20 section-dark">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 reveal-stagger">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 reveal-stagger">
       {
         stats.map((stat) => (
-          <div
-            class="bg-peb-card border border-peb-border rounded-xl p-6 text-center hover:bg-peb-card-hover hover:border-peb-cyan/20 transition-all duration-200 reveal"
-          >
-            <div class="text-4xl mb-3">{stat.icon}</div>
-            <div class="text-3xl sm:text-4xl font-display font-bold text-peb-cyan mb-2">
+          <div class="bg-peb-card border border-peb-green/10 rounded-xl p-5 sm:p-6 text-center hover:border-peb-green/25 transition-all duration-300 reveal group">
+            <div class="text-3xl mb-2">{stat.icon}</div>
+            <div class="text-2xl sm:text-3xl font-display font-bold text-peb-green mb-1 group-hover:text-peb-green-light transition-colors">
               {stat.number}
             </div>
-            <p class="text-sm text-peb-text2">{stat.label}</p>
+            <p class="text-xs sm:text-sm text-peb-text2">{stat.label}</p>
           </div>
         ))
       }
