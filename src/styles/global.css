@@ -3,483 +3,354 @@
 @tailwind utilities;
 
 /* ============================================================
-   CUSTOM PROPERTIES & ROOT STYLES
+   PEBify Ultra Premium v3 — Calqué sur pebify.be
+   Bleu marine foncé / clair alternant + dot pattern continu
    ============================================================ */
 :root {
-  --color-bg: #06070a;
-  --color-bg2: #0b0e14;
-  --color-surface: #111620;
-  --color-card: #151c28;
-  --color-card-hover: #1a2332;
+  --color-dark: #0a1628;
+  --color-dark2: #0d1b2a;
+  --color-light: #101e33;
+  --color-light2: #132340;
+  --color-card: #0f1a2e;
+  --color-card-hover: #152240;
   --color-cyan: #00d4ff;
   --color-blue: #0066ff;
   --color-green: #00ffb2;
   --color-text: #e6edf3;
-  --color-text2: #8b949e;
-  --color-muted: #5a6370;
-  --color-border: rgba(255, 255, 255, 0.06);
-  --color-border2: rgba(255, 255, 255, 0.1);
-
-  --transition-fast: 150ms ease-out;
-  --transition-base: 300ms ease-out;
-  --transition-slow: 500ms ease-out;
+  --color-text2: #8b9ab5;
+  --color-muted: #5a6f8a;
+  --color-border: rgba(255, 255, 255, 0.07);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-* {
-  @apply transition-colors;
-  transition-duration: var(--transition-base);
-}
+html { scroll-behavior: smooth; }
 
-html {
-  @apply scroll-smooth;
-}
-
+/* === Body with continuous dot pattern === */
 body {
-  @apply bg-peb-bg text-peb-text antialiased;
+  @apply text-peb-text antialiased font-body;
+  background-color: var(--color-dark);
+  background-image: radial-gradient(circle, rgba(0,180,255,0.08) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-attachment: fixed;
 }
 
-/* ============================================================
-   DOT PATTERN BACKGROUND
-   ============================================================ */
-.bg-dot-pattern {
+/* === Alternating section backgrounds === */
+.section-dark {
+  background-color: rgba(10, 22, 40, 0.85);
+  backdrop-filter: blur(1px);
+}
+.section-light {
+  background-color: rgba(16, 30, 51, 0.9);
+  backdrop-filter: blur(1px);
+}
+
+/* Hero: NO dot pattern, image/video background instead */
+.hero-section {
+  background-image: none !important;
   position: relative;
-  background-image: radial-gradient(
-    circle,
-    rgba(0, 212, 255, 0.15) 1px,
-    transparent 1px
-  );
-  background-size: 40px 40px;
-  background-position: 0 0, 20px 20px;
 }
-
-.bg-dot-pattern::before {
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: url('https://pebify.be/wp-content/uploads/2025/10/certificat-peb-bruxelles-pebify-hero-video-opt-desktop.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.hero-bg-image::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    600px circle at var(--mouse-x, 0%) var(--mouse-y, 0%),
-    rgba(0, 212, 255, 0.08),
-    transparent 80%
+  background: linear-gradient(180deg,
+    rgba(10,22,40,0.92) 0%,
+    rgba(10,22,40,0.85) 40%,
+    rgba(10,22,40,0.95) 100%
   );
-  pointer-events: none;
 }
 
 /* ============================================================
    GLOW EFFECTS
    ============================================================ */
-.glow-cyan {
-  box-shadow: 0 0 40px rgba(0, 212, 255, 0.3),
-    0 0 80px rgba(0, 212, 255, 0.15);
-}
-
-.glow-blue {
-  box-shadow: 0 0 40px rgba(0, 102, 255, 0.3),
-    0 0 80px rgba(0, 102, 255, 0.15);
-}
-
-.glow-green {
-  box-shadow: 0 0 40px rgba(0, 255, 178, 0.3),
-    0 0 80px rgba(0, 255, 178, 0.15);
-}
-
-.glow-cyan-subtle {
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
-}
+.glow-cyan { box-shadow: 0 0 40px rgba(0,212,255,0.3), 0 0 80px rgba(0,212,255,0.15); }
+.glow-blue { box-shadow: 0 0 40px rgba(0,102,255,0.3), 0 0 80px rgba(0,102,255,0.15); }
+.glow-green { box-shadow: 0 0 40px rgba(0,255,178,0.3), 0 0 80px rgba(0,255,178,0.15); }
+.glow-cyan-subtle { box-shadow: 0 0 20px rgba(0,212,255,0.15); }
 
 /* ============================================================
    GLASS MORPHISM
    ============================================================ */
 .glass {
-  @apply bg-white/5 backdrop-blur-md border border-peb-border;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
 }
-
 .glass-lg {
-  @apply bg-white/5 backdrop-blur-xl border border-peb-border2;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255,255,255,0.1);
 }
-
 .glass-hover {
-  @apply glass hover:bg-white/10 hover:border-peb-cyan/30 cursor-pointer;
+  background: rgba(255,255,255,0.04);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+  transition: all 0.4s var(--ease);
+  cursor: pointer;
+}
+.glass-hover:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(0,212,255,0.25);
+  box-shadow: 0 8px 40px rgba(0,212,255,0.08);
 }
 
 /* ============================================================
-   GRADIENT TEXT & BACKGROUNDS
+   GRADIENT TEXT
    ============================================================ */
-.gradient-text-cyan {
-  @apply bg-gradient-to-r from-peb-cyan to-peb-blue bg-clip-text text-transparent;
-}
+.gradient-text-cyan { @apply bg-gradient-to-r from-peb-cyan to-peb-blue bg-clip-text text-transparent; }
+.gradient-text-multi { @apply bg-gradient-to-r from-peb-cyan via-peb-blue to-peb-green bg-clip-text text-transparent; }
 
-.gradient-text-multi {
-  @apply bg-gradient-to-r from-peb-cyan via-peb-blue to-peb-green bg-clip-text text-transparent;
-}
-
-.gradient-bg-cyan {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 212, 255, 0.1) 0%,
-    rgba(0, 102, 255, 0.05) 100%
-  );
-}
-
-.gradient-bg-multi {
-  background: linear-gradient(
-    135deg,
-    rgba(0, 212, 255, 0.08) 0%,
-    rgba(0, 102, 255, 0.05) 50%,
-    rgba(0, 255, 178, 0.05) 100%
-  );
-}
+.gradient-bg-cyan { background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(0,102,255,0.05)); }
+.gradient-bg-multi { background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(0,102,255,0.05), rgba(0,255,178,0.05)); }
 
 /* ============================================================
-   SCROLL REVEAL ANIMATIONS
+   SCROLL REVEAL — Premium blur-in
    ============================================================ */
-@keyframes reveal {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes revealUp {
+  0% { opacity: 0; transform: translateY(35px); filter: blur(3px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+@keyframes revealLeft {
+  0% { opacity: 0; transform: translateX(-40px); filter: blur(3px); }
+  100% { opacity: 1; transform: translateX(0); filter: blur(0); }
+}
+@keyframes revealRight {
+  0% { opacity: 0; transform: translateX(40px); filter: blur(3px); }
+  100% { opacity: 1; transform: translateX(0); filter: blur(0); }
 }
 
-@keyframes reveal-left {
-  0% {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+.reveal { animation: revealUp 0.7s var(--ease) forwards; opacity: 0; }
+.reveal-left { animation: revealLeft 0.7s var(--ease) forwards; opacity: 0; }
+.reveal-right { animation: revealRight 0.7s var(--ease) forwards; opacity: 0; }
 
-@keyframes reveal-right {
-  0% {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
+.reveal-stagger > * { animation: revealUp 0.7s var(--ease) forwards; opacity: 0; }
+.reveal-stagger > :nth-child(1) { animation-delay: 0s; }
+.reveal-stagger > :nth-child(2) { animation-delay: 0.08s; }
+.reveal-stagger > :nth-child(3) { animation-delay: 0.16s; }
+.reveal-stagger > :nth-child(4) { animation-delay: 0.24s; }
+.reveal-stagger > :nth-child(5) { animation-delay: 0.32s; }
+.reveal-stagger > :nth-child(n+6) { animation-delay: 0.4s; }
 
-.reveal {
-  animation: reveal 0.6s ease-out forwards;
-  opacity: 0;
+/* ============================================================
+   CARDS — Gradient border on hover
+   ============================================================ */
+.card {
+  @apply rounded-xl p-6;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  transition: all 0.5s var(--ease);
+  position: relative;
 }
+.card::before {
+  content: '';
+  position: absolute; inset: 0;
+  border-radius: inherit; padding: 1px;
+  background: linear-gradient(135deg, transparent 40%, rgba(0,212,255,0.2) 100%);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude; -webkit-mask-composite: xor;
+  opacity: 0; transition: opacity 0.5s var(--ease);
+  pointer-events: none;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.25), 0 0 20px rgba(0,212,255,0.06);
+  border-color: rgba(0,212,255,0.12);
+}
+.card:hover::before { opacity: 1; }
 
-.reveal-left {
-  animation: reveal-left 0.6s ease-out forwards;
-  opacity: 0;
+.card-interactive {
+  @apply rounded-xl p-6 cursor-pointer;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  transition: all 0.4s var(--ease);
 }
-
-.reveal-right {
-  animation: reveal-right 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-/* Stagger effect */
-.reveal-stagger > * {
-  animation: reveal 0.6s ease-out forwards;
-  opacity: 0;
-}
-
-.reveal-stagger > :nth-child(1) {
-  animation-delay: 0s;
-}
-.reveal-stagger > :nth-child(2) {
-  animation-delay: 0.1s;
-}
-.reveal-stagger > :nth-child(3) {
-  animation-delay: 0.2s;
-}
-.reveal-stagger > :nth-child(4) {
-  animation-delay: 0.3s;
-}
-.reveal-stagger > :nth-child(5) {
-  animation-delay: 0.4s;
-}
-.reveal-stagger > :nth-child(n + 6) {
-  animation-delay: 0.5s;
+.card-interactive:hover {
+  background: var(--color-card-hover);
+  border-color: rgba(0,212,255,0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.2), 0 0 16px rgba(0,212,255,0.06);
 }
 
 /* ============================================================
-   FAQ ACCORDION STYLES
+   BUTTONS — Shine sweep
+   ============================================================ */
+.btn {
+  @apply px-6 py-3 rounded-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed;
+  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-peb-bg;
+  transition: all 0.4s var(--ease);
+  position: relative; overflow: hidden;
+}
+.btn::after {
+  content: '';
+  position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,0.12) 50%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.6s var(--ease);
+  pointer-events: none;
+}
+.btn:hover::after { transform: translateX(50%); }
+
+.btn-primary {
+  @apply bg-gradient-to-r from-peb-blue to-peb-cyan text-white font-semibold;
+  @apply focus:ring-peb-cyan active:scale-95;
+}
+.btn-primary:hover {
+  box-shadow: 0 8px 30px rgba(0,102,255,0.35), 0 0 16px rgba(0,212,255,0.15);
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  @apply border-2 border-peb-cyan text-peb-cyan;
+  @apply focus:ring-peb-cyan active:scale-95;
+}
+.btn-secondary:hover {
+  background: rgba(0,212,255,0.08);
+  box-shadow: 0 4px 20px rgba(0,212,255,0.12);
+  transform: translateY(-2px);
+}
+.btn-outline { @apply border-2 border-peb-cyan text-peb-cyan hover:bg-peb-cyan/10; @apply focus:ring-peb-cyan; }
+.btn-ghost { @apply text-peb-cyan hover:bg-peb-cyan/10; @apply focus:ring-peb-cyan; }
+
+/* ============================================================
+   FAQ ACCORDION
    ============================================================ */
 .faq-accordion {
-  @apply border border-peb-border rounded-xl overflow-hidden;
+  border: 1px solid var(--color-border);
+  @apply rounded-xl overflow-hidden;
 }
-
-.faq-item {
-  @apply border-b border-peb-border last:border-b-0;
-}
-
+.faq-item { border-bottom: 1px solid var(--color-border); }
+.faq-item:last-child { border-bottom: 0; }
 .faq-button {
-  @apply w-full px-6 py-4 flex items-center justify-between hover:bg-peb-card-hover transition-colors text-left;
+  @apply w-full px-6 py-5 flex items-center justify-between text-left;
+  transition: background 0.3s ease;
 }
-
-.faq-button:focus-visible {
-  @apply outline-none ring-2 ring-peb-cyan ring-offset-2 ring-offset-peb-bg;
-}
-
-.faq-button[aria-expanded='true'] .faq-icon {
-  @apply rotate-180;
-}
-
-.faq-icon {
-  @apply flex-shrink-0 w-5 h-5 text-peb-cyan transition-transform duration-300;
-}
-
-.faq-content {
-  @apply px-6 py-4 bg-peb-bg2 text-peb-text2;
-}
+.faq-button:hover { background: var(--color-card-hover); }
+.faq-button:focus-visible { @apply outline-none ring-2 ring-peb-cyan ring-offset-2 ring-offset-peb-bg; }
+.faq-button[aria-expanded='true'] .faq-icon { @apply rotate-180; }
+.faq-icon { @apply flex-shrink-0 w-5 h-5 text-peb-cyan; transition: transform 0.4s var(--ease); }
+.faq-content { @apply px-6 py-4 text-peb-text2 leading-relaxed; background: var(--color-dark2); }
 
 /* ============================================================
-   SLIDER / RANGE INPUT STYLES
+   RANGE SLIDER
    ============================================================ */
 input[type='range'] {
-  @apply w-full h-2 rounded-lg appearance-none cursor-pointer accent-peb-cyan;
-  background: linear-gradient(
-    to right,
-    rgba(0, 212, 255, 0.5),
-    rgba(0, 102, 255, 0.5)
-  );
+  @apply w-full h-2 rounded-full appearance-none cursor-pointer;
+  background: rgba(255,255,255,0.06);
 }
-
 input[type='range']::-webkit-slider-thumb {
-  @apply appearance-none w-6 h-6 rounded-full cursor-pointer shadow-lg;
+  -webkit-appearance: none;
+  width: 24px; height: 24px; border-radius: 50%;
   background: linear-gradient(135deg, #00d4ff, #0066ff);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 16px rgba(0,212,255,0.5), 0 2px 8px rgba(0,0,0,0.3);
+  cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
 }
-
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 24px rgba(0,212,255,0.7);
+}
 input[type='range']::-moz-range-thumb {
-  @apply w-6 h-6 rounded-full cursor-pointer border-0 shadow-lg;
+  width: 24px; height: 24px; border-radius: 50%; border: 0;
   background: linear-gradient(135deg, #00d4ff, #0066ff);
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+  box-shadow: 0 0 16px rgba(0,212,255,0.5); cursor: pointer;
 }
-
-input[type='range']::-webkit-slider-runnable-track {
-  @apply h-2 rounded-lg;
-  background: linear-gradient(
-    to right,
-    rgba(0, 212, 255, 0.3),
-    rgba(0, 102, 255, 0.3)
-  );
-}
-
-input[type='range']::-moz-range-track {
-  @apply h-2 rounded-lg bg-transparent;
-  background: linear-gradient(
-    to right,
-    rgba(0, 212, 255, 0.3),
-    rgba(0, 102, 255, 0.3)
-  );
-}
+input[type='range']::-webkit-slider-runnable-track { @apply h-2 rounded-full; }
+input[type='range']::-moz-range-track { @apply h-2 rounded-full; background: rgba(255,255,255,0.06); }
 
 /* ============================================================
    FORM ELEMENTS
    ============================================================ */
-input[type='text'],
-input[type='email'],
-input[type='phone'],
-input[type='number'],
-textarea,
-select {
-  @apply w-full px-4 py-3 rounded-lg bg-peb-card border border-peb-border text-peb-text placeholder-peb-text2;
-  @apply focus:outline-none focus:border-peb-cyan focus:ring-2 focus:ring-peb-cyan/30;
-  @apply transition-all duration-200;
+input[type='text'], input[type='email'], input[type='phone'],
+input[type='number'], input[type='tel'], textarea, select {
+  @apply w-full px-4 py-3 rounded-lg text-peb-text placeholder-peb-text2;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  transition: all 0.3s var(--ease);
 }
+input:focus, textarea:focus, select:focus {
+  @apply outline-none;
+  border-color: rgba(0,212,255,0.5);
+  box-shadow: 0 0 0 3px rgba(0,212,255,0.1);
+}
+textarea { resize: vertical; }
 
-textarea {
-  @apply resize-vertical;
+/* ============================================================
+   LINKS
+   ============================================================ */
+a { @apply text-peb-cyan; transition: color 0.3s; }
+a:hover { color: var(--color-green); }
+
+/* ============================================================
+   SECTION GLOW LINE
+   ============================================================ */
+.glow-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0,212,255,0.35), transparent);
 }
 
 /* ============================================================
-   BUTTONS
+   UTILITIES
    ============================================================ */
-.btn {
-  @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
-  @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-peb-bg;
+.py-section { @apply py-16 sm:py-20 md:py-24; }
+.bg-dot-pattern { /* kept for backward compat, body has the pattern now */ }
+.bg-grid {
+  background-image: linear-gradient(rgba(0,180,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,180,255,0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
-.btn-primary {
-  @apply bg-peb-cyan text-peb-bg hover:shadow-lg hover:glow-cyan active:scale-95;
-  @apply focus:ring-peb-cyan;
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
 }
-
-.btn-secondary {
-  @apply bg-peb-blue text-white hover:shadow-lg hover:glow-blue active:scale-95;
-  @apply focus:ring-peb-blue;
+.skip-link {
+  @apply absolute top-0 left-0 px-4 py-2 bg-peb-cyan text-peb-bg font-medium rounded-b-lg;
+  transform: translateY(-100%); transition: transform 0.3s;
 }
+.skip-link:focus { transform: translateY(0); }
 
-.btn-outline {
-  @apply border-2 border-peb-cyan text-peb-cyan hover:bg-peb-cyan/10;
-  @apply focus:ring-peb-cyan;
+/* ============================================================
+   SELECTION + SCROLLBAR
+   ============================================================ */
+::selection { background: rgba(0,212,255,0.25); color: #fff; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-dark); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(0,212,255,0.3), rgba(0,102,255,0.3));
+  border-radius: 3px;
 }
-
-.btn-ghost {
-  @apply text-peb-cyan hover:bg-peb-cyan/10;
-  @apply focus:ring-peb-cyan;
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, rgba(0,212,255,0.5), rgba(0,102,255,0.5));
 }
 
 /* ============================================================
    RESPONSIVE TYPOGRAPHY
    ============================================================ */
-@screen sm {
-  .text-display-sm {
-    @apply text-2xl;
-  }
-  .text-display-md {
-    @apply text-3xl;
-  }
-  .text-display-lg {
-    @apply text-4xl;
-  }
-  .text-display-xl {
-    @apply text-5xl;
-  }
-}
-
-@screen md {
-  .text-display-sm {
-    @apply text-3xl;
-  }
-  .text-display-md {
-    @apply text-4xl;
-  }
-  .text-display-lg {
-    @apply text-5xl;
-  }
-  .text-display-xl {
-    @apply text-6xl;
-  }
-}
-
-@screen lg {
-  .text-display-sm {
-    @apply text-4xl;
-  }
-  .text-display-md {
-    @apply text-5xl;
-  }
-  .text-display-lg {
-    @apply text-6xl;
-  }
-  .text-display-xl {
-    @apply text-7xl;
-  }
-}
+@screen sm { .text-display-lg { @apply text-4xl; } .text-display-xl { @apply text-5xl; } }
+@screen md { .text-display-lg { @apply text-5xl; } .text-display-xl { @apply text-6xl; } }
+@screen lg { .text-display-lg { @apply text-6xl; } .text-display-xl { @apply text-7xl; } }
 
 /* ============================================================
-   REDUCED MOTION SUPPORT
+   REDUCED MOTION
    ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    @apply !transition-none !animate-none;
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
-  html {
-    @apply !scroll-auto;
+  html { scroll-behavior: auto; }
+  .reveal, .reveal-left, .reveal-right, .reveal-stagger > * {
+    opacity: 1 !important; transform: none !important; filter: none !important;
   }
-
-  .reveal,
-  .reveal-left,
-  .reveal-right,
-  .reveal-stagger > * {
-    @apply !opacity-100 !transform-none;
-  }
-}
-
-/* ============================================================
-   ACCESSIBILITY & UTILITIES
-   ============================================================ */
-.sr-only {
-  @apply absolute w-1 h-1 p-0 -m-1 overflow-hidden clip-rect-0 whitespace-nowrap border-0;
-}
-
-.skip-link {
-  @apply absolute top-0 left-0 px-4 py-2 -translate-y-full bg-peb-cyan text-peb-bg font-medium rounded-b-lg;
-  @apply focus:translate-y-0 transition-transform;
-}
-
-/* Smooth scroll behavior for navigation */
-html {
-  scroll-behavior: smooth;
-}
-
-/* ============================================================
-   CARD STYLES
-   ============================================================ */
-.card {
-  @apply bg-peb-card border border-peb-border rounded-xl p-6;
-  @apply hover:bg-peb-card-hover hover:border-peb-cyan/20 transition-all duration-200;
-}
-
-.card-interactive {
-  @apply card cursor-pointer hover:shadow-lg hover:glow-cyan-subtle;
-}
-
-/* ============================================================
-   LINKS & TEXT UTILITIES
-   ============================================================ */
-a {
-  @apply text-peb-cyan hover:text-peb-green transition-colors;
-}
-
-.text-muted {
-  @apply text-peb-text2;
-}
-
-.text-subtle {
-  @apply text-peb-muted;
-}
-
-/* ============================================================
-   LAYOUT UTILITIES
-   ============================================================ */
-.container-tight {
-  @apply max-w-3xl;
-}
-
-.container-wide {
-  @apply max-w-7xl;
-}
-
-.bg-grid {
-  background-image:
-    linear-gradient(
-      rgba(0, 212, 255, 0.03) 1px,
-      transparent 1px
-    ),
-    linear-gradient(
-      90deg,
-      rgba(0, 212, 255, 0.03) 1px,
-      transparent 1px
-    );
-  background-size: 50px 50px;
-}
-
-/* ============================================================
-   RESPONSIVE PADDING & MARGINS
-   ============================================================ */
-.px-safe {
-  @apply px-4 sm:px-6 md:px-8 lg:px-10;
-}
-
-.py-section {
-  @apply py-12 sm:py-16 md:py-20 lg:py-24;
-}
-
-/* ============================================================
-   SECTION DIVIDERS
-   ============================================================ */
-.section-divider {
-  @apply border-t border-peb-border my-12 sm:my-16 md:my-20;
 }

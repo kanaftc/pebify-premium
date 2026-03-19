@@ -19,22 +19,22 @@ const {
 } = Astro.props;
 ---
 
-<section class="relative py-20 md:py-32 lg:py-40 overflow-hidden">
-  <!-- Animated Gradient Background -->
-  <div class="absolute inset-0 -z-10 bg-dot-pattern" />
+<section class="hero-section relative py-24 md:py-36 lg:py-44 overflow-hidden">
+  <!-- Brussels panoramic background image -->
+  <div class="hero-bg-image" aria-hidden="true"></div>
 
-  <!-- Glow Orbs (Animated) -->
+  <!-- Glow Orbs on top of image -->
   <div
     id="orb-1"
-    class="absolute top-20 right-10 w-72 h-72 bg-peb-cyan/20 rounded-full blur-3xl opacity-30 animate-pulse"
+    class="absolute top-20 right-10 w-72 h-72 bg-peb-cyan/15 rounded-full blur-3xl opacity-25 animate-pulse z-[1]"
   />
   <div
     id="orb-2"
-    class="absolute bottom-20 left-20 w-96 h-96 bg-peb-blue/15 rounded-full blur-3xl opacity-20 animate-pulse"
+    class="absolute bottom-20 left-20 w-96 h-96 bg-peb-blue/10 rounded-full blur-3xl opacity-15 animate-pulse z-[1]"
   />
   <div
     id="orb-3"
-    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-peb-green/10 rounded-full blur-3xl opacity-20 animate-pulse"
+    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-peb-green/8 rounded-full blur-3xl opacity-15 animate-pulse z-[1]"
   />
 
   <!-- Content -->
